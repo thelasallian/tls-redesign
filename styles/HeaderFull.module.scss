@@ -1,0 +1,112 @@
+@import 'colors';
+
+.header__wrapper__full {
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    .logo__div__full {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .logo__link__full {
+            .logo__image__full {
+                height: 150px;
+            }
+        }
+    }
+
+    .header__navbar__full {
+        height: 50px;
+        background-color: $white;
+
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+
+        border-style: solid;
+
+        border-top-width: 1px;
+        border-top-color: $gray;
+
+        border-bottom-width: 1px;
+        border-bottom-color: $gray;
+
+        border-left: none;
+        border-right: none;
+
+        .navbar__button__section {
+            margin-left: 20px;
+            margin-right: 20px;
+
+            .navbar__link__section {
+                text-decoration: none;
+                color: $black;
+
+                &:hover {
+                    color: $dark-gray;
+                }
+            }
+
+            .logo__link__visible {
+                .logo__image__compact {
+                    height: 20px;
+                    width: 100%;
+                }
+
+                .logo__image__star {
+                    width: 35px;
+                }
+            }
+        }
+
+        .navbar__text__search {
+            height: 80%;
+            width: 900px;
+            @media all and (max-width: 1000px) {
+                width: 80%;
+            }
+
+            @media all and (max-width: 450px) {
+                width: 80%;
+            }
+
+            @media all and (max-width: 350px) {
+                width: 80%;
+            }
+
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+            padding-left: 5px;
+
+            font-size: 20px;
+        }
+
+        .navbar__button__search {
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $gray;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+
+// Does not follow BEM because this is a logic thing
+.sticky {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
