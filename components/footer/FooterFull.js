@@ -49,7 +49,7 @@ export default function FooterFull() {
                 </div>
             </div>
             <div className={styles.ender__details__wrapper}>
-                <div>License 2023</div>
+                <div>Powered by Depresso</div>
                 <div onClick={goToTheTop} className={styles.ender__toTheTop__link}>To the top</div>
             </div>
         </div>
