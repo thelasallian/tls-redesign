@@ -53,6 +53,7 @@ export default function HeaderFull() {
     });
 
     useEffect(() => {
+        setWindowWidth(window.innerWidth);
         window.addEventListener("resize", handlingWindowResize);
     });
 
