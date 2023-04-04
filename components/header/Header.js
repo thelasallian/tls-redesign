@@ -17,7 +17,7 @@ export default function Header() {
         window.addEventListener("resize", handlingWindowResize);
     },[]);
 
-    if(windowWidth < 800) {
+    if(windowWidth < 750) {
         return <HeaderMobile/>;
     } else {
         return <HeaderFull/>;

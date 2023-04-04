@@ -94,7 +94,7 @@ export default function HeaderMobile() {
                             <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>Opinion</div></div>
                         </div>
                     </a>
-                    <a className={header.settings__choices__link} href="/section/about">
+                    <a className={header.settings__choices__link} href="/about">
                         <div className={header.settings__menu__choice}>
                             <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>About</div></div>
                         </div>
