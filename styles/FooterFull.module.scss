@@ -8,6 +8,15 @@
 
     .socials__wrapper__list {
         padding-left: 100px;
+        @media all and (max-width: 700px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 400px) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
 
         display: flex;
         flex-direction: row;
@@ -25,8 +34,7 @@
         border-right: none;
 
         a {
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-right: 10px;
 
             .socials__icon__facebook {
                 width: 23px;
@@ -57,6 +65,15 @@
         padding-right: 100px;
         padding-top: 50px;
         padding-bottom: 50px;
+        @media all and (max-width: 700px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 400px) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
 
         .details__text__container {
             height: 100%;
@@ -83,6 +100,15 @@
         align-items: center;
         padding-left: 100px;
         padding-right: 100px;
+        @media all and (max-width: 700px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 400px) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
 
         justify-content: space-between;
 
