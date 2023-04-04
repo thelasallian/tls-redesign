@@ -29,6 +29,14 @@ export default function HeaderMobile() {
         }
     });
 
+    useEffect(() => {
+        if(settingsIsClicked) setSearchIsClicked(false);
+    },[settingsIsClicked]);
+
+    useEffect(() => {
+        if(searchIsClicked) setSettingsIsClicked(false);
+    },[searchIsClicked]);
+
     const changeNavbarToSearchBar = () => {
         setSearchIsClicked(!searchIsClicked);
     };
