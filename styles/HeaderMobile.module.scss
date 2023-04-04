@@ -123,11 +123,10 @@
             @media all and (max-width: 350px) {
                 height: 20px;
             }
-        }
 
-        &:hover {
-            background-color: $gray;
-            border-radius: 10px;
+            &:hover {
+                fill: $dark-gray;
+            }
         }
     }
 
@@ -151,11 +150,10 @@
             @media all and (max-width: 350px) {
                 height: 20px;
             }
-        }
 
-        &:hover {
-            background-color: $gray;
-            border-radius: 10px;
+            &:hover {
+                fill: $dark-gray;
+            }
         }
     }
 }
