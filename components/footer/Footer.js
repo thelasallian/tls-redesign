@@ -1,9 +1,8 @@
 import React from "react";
+import FooterFull from "./FooterFull";
 
 export default function Footer() {
     return (
-        <div className="body footer">
-            This is the footer
-        </div>
+        <FooterFull/>
     );
 }
