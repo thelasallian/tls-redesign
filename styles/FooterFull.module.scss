@@ -2,16 +2,17 @@
 
 .footer__wrapper__full {
     min-height: 200px;
-
     display: grid;
     grid-template-rows: 15% auto 12%;
 
     @media all and (max-width: 500px) {
-        font-size: 14px;
+        font-size: 12px;
+        grid-template-rows: 20% auto 12%;
     }
 
     .socials__wrapper__list {
         padding-left: 100px;
+
         @media all and (max-width: 700px) {
             padding-left: 50px;
             padding-right: 50px;
@@ -44,6 +45,21 @@
                 width: 23px;
                 height: 23px;
 
+                @media all and (max-width: 550px) {
+                    width: 42px;
+                    height: 42px;
+                }
+
+                @media all and (max-width: 450px) {
+                    width: 32px;
+                    height: 32px;
+                }
+    
+                @media all and (max-width: 350px) {
+                    width: 22px;
+                    height: 22px;
+                }
+
                 &:hover {
                     fill: $dark-gray;
                 }
@@ -52,6 +68,21 @@
             .socials__icon__svg {
                 width: 25px;
                 height: 25px;
+
+                @media all and (max-width: 550px) {
+                    width: 45px;
+                    height: 45px;
+                }
+
+                @media all and (max-width: 450px) {
+                    width: 35px;
+                    height: 35px;
+                }
+    
+                @media all and (max-width: 350px) {
+                    width: 25px;
+                    height: 25px;
+                }
 
                 &:hover {
                     fill: $dark-gray;
