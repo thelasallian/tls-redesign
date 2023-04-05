@@ -1,0 +1,31 @@
+@import 'colors';
+
+
+.article__wrapper__full {
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: $dark-gray;
+    z-index: 1;
+
+    // .article__link__wrapper {
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+
+    //     .article__image__full {
+    //         height: 100%;
+    //         width: 100%;
+    //         object-fit: cover;
+    //         opacity: .6;
+    //     }
+
+    //     &:hover {
+    //         .article__image__full {
+    //             opacity: .5;
+    //         }
+    //     }
+    // }
+
+}

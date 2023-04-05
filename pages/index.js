@@ -16,7 +16,7 @@ export default function Home({sections}) {
 
       <div className="wrapper">
         <Header/>
-        <Body/>
+        <Body sections={sections}/>
         <Footer/>
       </div>
     </>
@@ -30,19 +30,19 @@ export async function getServerSideProps({req, res}) {
   )
   
   const universityResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=4');
-  const universityData = await universityResponse.json();
+  const universityArticles = await universityResponse.json();
 
   const menagerieResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=8');
-  const menagerieData = await menagerieResponse.json();
+  const menagerieArticles = await menagerieResponse.json();
 
   const sportsResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=6');
-  const sportsData = await sportsResponse.json();
+  const sportsArticles = await sportsResponse.json();
 
   const vanguardResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=1883');
-  const vanguardData = await vanguardResponse.json();
+  const vanguardArticles = await vanguardResponse.json();
 
   const opinionResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=5');
-  const opinionData = await opinionResponse.json();
+  const opinionArticles = await opinionResponse.json();
 
   return {
       props: {
@@ -50,27 +50,27 @@ export async function getServerSideProps({req, res}) {
               {
                   name: 'University',
                   category: 4,
-                  articles: universityData,
+                  articles: universityArticles,
               },
               {
                   name: 'Menagerie',
                   category: 8,
-                  articles: menagerieData,
+                  articles: menagerieArticles,
               },
               {
                   name: 'Sports',
                   category: 6,
-                  articles: sportsData,
+                  articles: sportsArticles,
               },
               {
                   name: 'Vanguard',
                   category: 1883,
-                  articles: vanguardData,
+                  articles: vanguardArticles,
               },
               {
                   name: 'Opinions',
                   category: 5,
-                  articles: opinionData,
+                  articles: opinionArticles,
               },
           ],
       },

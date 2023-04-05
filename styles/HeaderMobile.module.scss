@@ -132,6 +132,7 @@
 
     .navbar__button__setting {
         position: absolute;
+        z-index: 2;
         left: 20px;
         @media all and (max-width: 500px) {
             left: 15px;
