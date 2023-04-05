@@ -106,6 +106,10 @@
     .navbar__button__search {
         position: absolute;
         right: 20px;
+        @media all and (max-width: 500px) {
+            right: 15px;
+        }
+
         cursor: pointer;
 
         .navbar__image__search {
@@ -133,6 +137,10 @@
     .navbar__button__setting {
         position: absolute;
         left: 20px;
+        @media all and (max-width: 500px) {
+            left: 15px;
+        }
+
         cursor: pointer;
 
         .navbar__image__setting {

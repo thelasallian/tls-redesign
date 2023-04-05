@@ -1,4 +1,5 @@
 import styles from '@/styles/FooterFull.module.scss'
+import dayjs from 'dayjs';
 
 export default function FooterFull() {
 
@@ -8,6 +9,10 @@ export default function FooterFull() {
             behavior: 'smooth',
         });
     }
+
+    const tlsCreationDate = dayjs('1960-10-24');
+    const currentDate = dayjs();
+    const tlsEra = currentDate.diff(tlsCreationDate, 'year');
 
     return (
         <div className={styles.footer__wrapper__full}>
@@ -41,7 +46,7 @@ export default function FooterFull() {
             </div>
             <div className={styles.footer__details__wrapper}>
                 <div className={styles.details__text__container}>
-                    <strong>The LaSallian</strong> is the official student publication of De La Salle University. It is of the students, by the students, and for the students. Our student writers, photographers, videographers, artists, and web managers are committed to the 61-year tradition of journalistic excellence and issue-oriented critical thinking.
+                    <strong>The LaSallian</strong> is the official student publication of De La Salle University. It is of the students, by the students, and for the students. Our student writers, photographers, videographers, artists, and web managers are committed to the {tlsEra}-year tradition of journalistic excellence and issue-oriented critical thinking.
                     <br/><br/>
                     502-A Bro. Connon Hall, De La Salle University, 2401 Taft Avenue
                     <br/>
