@@ -30,7 +30,12 @@ export default function HeaderMobile() {
     });
 
     useEffect(() => {
-        if(settingsIsClicked) setSearchIsClicked(false);
+        if(settingsIsClicked) {
+            setSearchIsClicked(false);
+            document.body.style.overflow = 'hidden';
+        } else if(!settingsIsClicked) {
+            document.body.style.overflow = 'visible';
+        }
     },[settingsIsClicked]);
 
     useEffect(() => {
