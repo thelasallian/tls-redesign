@@ -12,6 +12,10 @@
         height: 100%;
         object-fit: cover;
         border-radius: 20px;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
     .article__information__wrapper {
