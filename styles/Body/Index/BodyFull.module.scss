@@ -1,7 +1,6 @@
 @import '../../colors';
 
 .body__wrapper__full {
-    background-color: red;
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -35,14 +34,12 @@
         height: 400px;
         width: 100%;
 
-        background-color: yellow;
         margin-bottom: 50px;
     }
 
     .section__articles__full {
         height: 500px;
         width: 100%;
-        background-color: green;
         
         &:not(:last-child) {
             margin-bottom: 50px;

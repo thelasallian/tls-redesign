@@ -1,5 +1,4 @@
-export default function concatonateAuthors(authors){
-    console.log(authors);
+export default function createAuthorsList(authors){
     let concatonatedAuthors = [];
     for(let i=0; i<authors.length; i++) {
         if(authors.length > 2) {

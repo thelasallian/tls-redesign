@@ -1,19 +1,24 @@
 import React from "react";
 import styles from '@/styles/BannerArticleCard.module.scss';
-import concatonateAuthors from "../Functions/concatonateAuthors";
+import createAuthorsList from "../Functions/createAuthorsList";
+import cleanArticleExcerpt from "../Functions/cleanArticleExcerpt";
 
 export default function BannerArticle({article}) {
     const title = article.title["rendered"].replace(/<\/?[^>]+(>|$)/g, ""); // Solution by https://stackoverflow.com/questions/5002111/how-to-strip-html-tags-from-string-in-javascript
-    const authorList = concatonateAuthors(article.authors);
+    // const authorsList = createAuthorsList(article.authors);
+
+    const excerpt = cleanArticleExcerpt(article.excerpt["rendered"]);
+    console.log(excerpt);
 
     return (
-        <a className={styles.article__wrapper__full} href="">
+        <a className={styles.article__wrapper__full} href={`/presents/${article.slug}`}>
             <img className={styles.article__image__full} src={article.jetpack_featured_media_url}/>
             <div className={styles.article__information__wrapper}>
                 <div className={styles.article__headline__wrapper}>{title}</div>
-                <div className={styles.article__writer__wrapper}>by {authorList}</div>
+                <div className={styles.article__authors__wrapper}>by authorsList</div>
                 <div className={styles.article__snippet__wrapper}>
-                    The quick brown fox jumps over the lazy dog.
+                    {excerpt}
+                    <span className={styles.snippet__readMore__link}>Read More</span>
                 </div>
             </div>
         </a>
