@@ -2,30 +2,41 @@
 
 
 .article__wrapper__full {
-    width: 800px;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: $dark-gray;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    display: flex;
+    text-decoration: none;
 
-    // .article__link__wrapper {
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
+    .article__image__full {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
 
-    //     .article__image__full {
-    //         height: 100%;
-    //         width: 100%;
-    //         object-fit: cover;
-    //         opacity: .6;
-    //     }
+    .article__information__wrapper {
+        width: 50%;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
 
-    //     &:hover {
-    //         .article__image__full {
-    //             opacity: .5;
-    //         }
-    //     }
-    // }
+        .article__headline__wrapper {
+            color: $black;
+            font-weight: 700;
+            font-size: xx-large;
+            background-color: yellow;
+        }
 
+        .article__writer__wrapper {
+            color: $black;
+            background-color: green;
+        }
+
+        .article__snippet__wrapper {
+            color: $black;
+            height: 100%;
+            background-color: antiquewhite;
+        }
+    }
 }

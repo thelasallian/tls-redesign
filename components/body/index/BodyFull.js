@@ -10,7 +10,7 @@ export default function BodyFull({sections}) {
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.section__banners__full}>
-                lorem500
+                <BannerArticle article={sections[0].articles[0]}/>
             </div>
             <div className={styles.section__articles__full}>
                 lorem
