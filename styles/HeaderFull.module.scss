@@ -49,6 +49,10 @@
 
             margin-left: 20px;
             margin-right: 20px;
+            @media all and (max-width: 800px) {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
 
             .navbar__link__section {
                 text-decoration: none;
