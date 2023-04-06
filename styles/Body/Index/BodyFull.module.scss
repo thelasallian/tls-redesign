@@ -1,8 +1,8 @@
 @import '../../colors';
 
 .body__wrapper__full {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 
     display: flex;
     flex-direction: column;
@@ -33,9 +33,12 @@
     }
 
     .section__banners__full {
-        height: 400px;
-        @media all and (max-width: 900px) {
-            height: 370px;
+        height: 370px;
+        position: relative;
+        z-index: 0;
+        
+        @media all and (max-width: 800px) {
+            height: 300px;
         }
 
         width: 100%;

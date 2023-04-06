@@ -12,7 +12,7 @@ function createAuthorListWithNoLink(authors) {
 
     for(let i=0; i<authors.length; i++) {
         if(authors.length > 2) {
-            if(i == 0) {
+            if(i < authors.length - 1) {
                 concatonatedAuthors.push(<span key={`${authors[i].display_name}-comma`}>{`${authors[i].display_name}, `}</span>);
             } else {
                 concatonatedAuthors.push(<span key={`${authors[i].display_name}-and`}>{`and ${authors[i].display_name}`}</span>);
