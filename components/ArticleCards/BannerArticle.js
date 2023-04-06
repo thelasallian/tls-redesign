@@ -1,9 +1,21 @@
 import React from "react";
-import styles from '@/styles/BannerArticleCard.module.scss';
+import styles from '@/styles/BannerArticleCard/BannerArticleCardFull.module.scss';
 import createAuthorsList from "../Functions/createAuthorsList";
 import cleanArticleExcerpt from "../Functions/cleanArticleExcerpt";
 
 export default function BannerArticle({article}) {
+    const title = article.title["rendered"].replace(/<\/?[^>]+(>|$)/g, ""); // Solution by https://stackoverflow.com/questions/5002111/how-to-strip-html-tags-from-string-in-javascript
+    const authorsList = createAuthorsList(article.authors);
+    const excerpt = cleanArticleExcerpt(article.excerpt["rendered"]);
+
+    return (
+        <div className={styles.article__wrapper__banner}>
+            test
+        </div>
+    );
+}
+
+function BannerArticleOld({article}) {
     const title = article.title["rendered"].replace(/<\/?[^>]+(>|$)/g, ""); // Solution by https://stackoverflow.com/questions/5002111/how-to-strip-html-tags-from-string-in-javascript
     const authorsList = createAuthorsList(article.authors);
     const excerpt = cleanArticleExcerpt(article.excerpt["rendered"]);
@@ -22,3 +34,4 @@ export default function BannerArticle({article}) {
         </a>
     );
 }
+

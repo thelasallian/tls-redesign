@@ -1,6 +1,9 @@
 @import '../../colors';
 
 .body__wrapper__full {
+    width: 100%;
+    height: 100%;
+
     padding-top: 25px;
     padding-bottom: 25px;
 
@@ -33,7 +36,9 @@
     }
 
     .section__banners__full {
+        width: 100%;
         height: 370px;
+
         position: relative;
         z-index: 0;
         
@@ -49,6 +54,8 @@
     .section__articles__full {
         height: 500px;
         width: 100%;
+
+        background-color: green;
         
         &:not(:last-child) {
             margin-bottom: 50px;
