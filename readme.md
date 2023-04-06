@@ -20,7 +20,7 @@ This is the main TLS website's redesign build repository
 1. Maneuver to the `\developer.thelasallian.com\` folder
 1. Upload folder and unzip in same cPanel directory
 1. `Tools > Application Manager` and search for the `developer.thelasallian.com` domain. Run `Ensure Dependencies`
-1. Check `https://www.developer.thelasallian.com` for expected changes.
+1. Check https://www.developer.thelasallian.com for expected changes.
 
 ## Technologies used
 [comment]: <this was taken from: https://home.aveek.io/GitHub-Profile-Badges/>
