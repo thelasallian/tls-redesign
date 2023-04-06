@@ -5,9 +5,9 @@
     display: grid;
     grid-template-rows: 15% auto 12%;
 
-    @media all and (max-width: 500px) {
-        font-size: 12px;
+    @media all and (max-width: 800px) {
         grid-template-rows: 20% auto 12%;
+        font-size: 12px;
     }
 
     .socials__wrapper__list {
@@ -104,8 +104,8 @@
 
         padding-left: 15%;
         padding-right: 15%;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 25px;
+        padding-bottom: 25px;
 
         @media all and (max-width: 1450px) {
             padding-left: 100px;
