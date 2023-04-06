@@ -1,8 +1,11 @@
-export default function cleanArticleExcerpt(excerpt) {
+export default function cleanArticleExcerpt(excerpt, shortenTo=-1) {
     excerpt = excerpt.replace(/<[^>]+>/g, '')
     let ellipsisIndex = excerpt.indexOf("&hellip;");
 
-    // let finalWordIndex = getPositionOfString(excerpt, " ", 50);
+    if(shortenTo != -1) {
+        let finalWordIndex = getPositionOfString(excerpt, " ", shortenTo);
+        return excerpt.substring(0, finalWordIndex)+"...";
+    }
 
     if(ellipsisIndex == -1) {
         return excerpt.substring(0, excerpt.length-1)+"..";
