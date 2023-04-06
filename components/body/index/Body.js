@@ -23,8 +23,8 @@ export default function BodyFull({sections}) {
     const bannerArticles = sections.map(section => section.articles[0]);
     const bannerArticleCards = bannerArticles.map(bannerArticle =>
         (windowWidth < 750) ? 
-        <SwiperSlide><BannerArticleMobile key={bannerArticle.id} article={bannerArticle}/></SwiperSlide>:
-        <SwiperSlide><BannerArticleFull key={bannerArticle.id} article={bannerArticle}/></SwiperSlide>
+        <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleMobile key={`${bannerArticle.id}-bannerArticleMobile`} article={bannerArticle}/></SwiperSlide>:
+        <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleFull key={`${bannerArticle.id}-bannerArticleFull`}  article={bannerArticle}/></SwiperSlide>
     );
 
     //Single-responsibility useEffects
