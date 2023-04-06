@@ -34,8 +34,9 @@
 
     .section__banners__full {
         height: 370px;
-        @media all and (max-width: 900px) {
-            height: 370px;
+        
+        @media all and (max-width: 800px) {
+            height: 300px;
         }
 
         width: 100%;
