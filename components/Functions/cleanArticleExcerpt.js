@@ -4,7 +4,11 @@ export default function cleanArticleExcerpt(excerpt) {
 
     // let finalWordIndex = getPositionOfString(excerpt, " ", 50);
 
-    return excerpt.substring(0, ellipsisIndex)+"...";
+    if(ellipsisIndex == -1) {
+        return excerpt.substring(0, excerpt.length-1)+"..";
+    } else {
+        return excerpt.substring(0, ellipsisIndex)+"...";
+    } 
 }
 
 
