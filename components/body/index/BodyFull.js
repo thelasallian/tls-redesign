@@ -26,6 +26,7 @@ export default function BodyFull({sections}) {
         <div className={styles.body__wrapper__full}>
             <div className={styles.section__banners__full}>
                 <Swiper
+                    spaceBetween={30}
                     loop={true}
                     autoplay={{
                       delay: 2500,

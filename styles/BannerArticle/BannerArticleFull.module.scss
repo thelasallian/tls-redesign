@@ -22,8 +22,7 @@
     .article__image__wrapper {
         height: 100%;
         width: 100%;
-
-        background-color: aqua;
+        
         border-radius: 20px;
         overflow: hidden;
 
@@ -31,6 +30,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        &:hover {
+            opacity: 0.8;
         }
     }
 
@@ -56,6 +59,10 @@
 
             @media all and (max-width: 900px) {
                 font-size: 20px;
+            }
+
+            &:hover {
+                color: $dark-gray;
             }
         }
 
