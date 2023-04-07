@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import header from '@/styles/HeaderMobile.module.scss'
+import header from '@/styles/Header/HeaderMobile.module.scss'
 
 
 export default function HeaderMobile() {

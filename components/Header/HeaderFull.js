@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import header from '@/styles/HeaderFull.module.scss'
+import header from '@/styles/Header/HeaderFull.module.scss'
 
 
 export default function HeaderFull() {
