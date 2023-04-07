@@ -40,7 +40,7 @@ export default function BodyFull({sections}) {
                     spaceBetween={30}
                     loop={true}
                     autoplay={{
-                      delay: 2500,
+                      delay: 5000,
                       disableOnInteraction: false,
                     }}
                     modules={[Autoplay]}

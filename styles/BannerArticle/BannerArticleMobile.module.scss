@@ -25,13 +25,13 @@
             border-radius: 20px;
             object-fit: cover;
             opacity: 0.35;
-            transition: width 0.2s, height 0.2s, transform 0.2s;
+            transition: all 0.2s ease-in-out;
 
             &:hover {
                 width: 110%;
                 height: 110%;
                 opacity: 0.4;
-                transform: translate(-5%, -5%);
+                transform: scale(1.05,1.05);
             }
         }
     }
@@ -59,6 +59,10 @@
             color: $white;
             font-weight: 700;
             font-size: 20px;
+
+            &:hover {
+                color: $gray;
+            }
         }
         
         .article__author__wrapper {
