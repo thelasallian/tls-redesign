@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-import Header from '@/components/header/Header';
-import Body from '@/components/body/index/Body';
-import Footer from '@/components/footer/Footer';
+import Header from '@/components/Header/Header';
+import Body from '@/components/Body/index/Body';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home({sections}) {
 
