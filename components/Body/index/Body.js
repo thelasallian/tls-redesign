@@ -3,7 +3,7 @@ import styles from "@/styles/Body/index/Body.module.scss";
 
 import BannerArticleFull from "@/components/ArticleCards/BannerArticleFull";
 import BannerArticleMobile from "@/components/ArticleCards/BannerArticleMobile";
-import SectionStyle1 from "./SectionStyles/SectionStyle1";
+import {default as Style1} from "@/components/Section/Style1/Section";
 
 // Swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function BodyFull({sections}) {
+export default function Body({sections}) {
     
     const [windowWidth, setWindowWidth] = useState(0);
 
@@ -28,11 +28,9 @@ export default function BodyFull({sections}) {
         <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleFull key={`${bannerArticle.id}-bannerArticleFull`}  article={bannerArticle}/></SwiperSlide>
     );
 
-    console.log(sections);
-
     const sectionArticles = sections.map(section =>
         <div key={`${section.name}`} className={styles.section__articles__full}>
-            <SectionStyle1 section={section}/>
+            <Style1 section={section}/>
         </div>
     )
 
