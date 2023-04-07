@@ -66,14 +66,14 @@
         }
         
         .article__author__wrapper {
-            color: $gray;
+            color: $white;
             font-size: 14px;
         }
 
         //deprecated
         .article__snippet__wrapper {
+            color: $white;
             padding-top: 10px;
-            color: $gray;
             font-size: 14px;
         }
     }
