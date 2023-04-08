@@ -2,7 +2,7 @@
 
 .articles__primary__wrapper {
     width: 100%;
-    max-height: 100%;
+    height: 500px;
     text-decoration: none;
 
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -10,7 +10,7 @@
     box-sizing: border-box;
 
     .article__image__wrapper{
-        height: 80%;
+        height: 70%;
         overflow: hidden;
         border-radius: 20px;
 
@@ -18,16 +18,24 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+
+            &:hover{
+                opacity: 0.8;
+            }
         }
     }
 
     .article__information__wrapper {
-        height: 20%;
+        height: 30%;
 
         .article__headline__wrapper {
             color: $black;
             font-size: 28px;
             font-weight: 700;
+
+            &:hover {
+                color: $dark-gray;
+            }
         }
 
         .article__author__wrapper {
