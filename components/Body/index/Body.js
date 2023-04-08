@@ -56,7 +56,6 @@ export default function Body({sections}) {
                     {bannerArticleCards}
                 </Swiper>
             </div>
-
             {sectionArticles}
         </div>
     );
