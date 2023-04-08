@@ -1,0 +1,38 @@
+@import "../../colors";
+
+.articles__primary__wrapper {
+    width: 100%;
+    max-height: 100%;
+    text-decoration: none;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box;
+
+    .article__image__wrapper{
+        height: 80%;
+        overflow: hidden;
+        border-radius: 20px;
+
+        .article__image__img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .article__information__wrapper {
+        height: 20%;
+
+        .article__headline__wrapper {
+            color: $black;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .article__author__wrapper {
+            color: $dark-gray;
+            font-size: 16px;
+        }
+    }
+}

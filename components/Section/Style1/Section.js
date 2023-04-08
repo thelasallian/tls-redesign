@@ -7,9 +7,7 @@ export default function Section({section}) {
         <div className={styles.section__area__wrapper}>
             <div className={styles.section__headline__wrapper}>{section.name}</div>
             <div className={styles.section__articles__wrapper}>
-                <div className={styles.articles__primary__wrapper}>
-                    <PrimaryArticle article={section.articles[1]}/>
-                </div>
+                <PrimaryArticle article={section.articles[1]}/>
                 <div className={styles.articles__secondary__wrapper}>
                     secondary wrapper
                 </div>
