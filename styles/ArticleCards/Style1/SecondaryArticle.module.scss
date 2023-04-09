@@ -1,0 +1,50 @@
+@import "../../colors";
+
+.article__link__wrapper {
+    text-decoration: none;
+    
+
+    .article__box__wrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        
+
+        .article__image__wrapper{
+            height: 90px;
+            width: 125px;
+
+            .article__image__img {
+                object-fit: cover;
+                border-radius: 15px;
+                height: 100%;
+                width: 100%;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .article__information__wrapper {
+            width: 100%;
+            padding-left: 10px;
+
+            .article__headline__wrapper {
+                color: $black;
+                font-weight: 700;
+                font-size: 15px;
+
+                &:hover {
+                    color: $dark-gray;
+                }
+            }
+
+            .article__author__wrapper {
+                color: $dark-gray;
+                font-size: 14px;
+
+            }
+        }
+    }
+}
