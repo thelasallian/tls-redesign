@@ -27,12 +27,24 @@
 
     .section__articles__wrapper {
         display: grid;
+        grid-template-rows: 100%;
         grid-template-columns: 50% 50%;
         padding-top: 5px;
+        height: 100%;
+
+        @media all and (max-width: 750px) {
+            grid-template-columns: 100%;
+            grid-template-rows: auto auto;
+        }
 
         .articles__secondary__wrapper {
             overflow: hidden;
             padding-left: 7.5px;
+            height: 100%;
+            width: 100%;
+            @media all and (max-width: 750px) {
+                padding-left: 0px;
+            }
         }
     }
 }

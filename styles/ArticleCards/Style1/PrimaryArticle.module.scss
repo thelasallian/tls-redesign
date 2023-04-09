@@ -2,7 +2,7 @@
 
 .articles__primary__wrapper {
     width: 100%;
-    height: 100%;
+    height: 50%;
     text-decoration: none;
 
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -10,6 +10,9 @@
     box-sizing: border-box;
 
     padding-right: 7.5px;
+    @media all and (max-width: 750px) {
+        padding-right: 0px;
+    }
 
     .article__image__wrapper{
         width: 100%;
