@@ -13,15 +13,18 @@
         .article__image__wrapper{
             height: 90px;
             width: 125px;
+            background-color: $black;
+            overflow: hidden;
+            border-radius: 15px;
 
             .article__image__img {
                 object-fit: cover;
-                border-radius: 15px;
                 height: 100%;
                 width: 100%;
+                opacity: 0.9;
 
                 &:hover {
-                    opacity: 0.8;
+                    opacity: 0.6;
                 }
             }
         }

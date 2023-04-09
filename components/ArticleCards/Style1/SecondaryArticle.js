@@ -16,7 +16,7 @@ export default function SecondaryArticle({article}) {
                     <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
                 </div>
                 <div className={styles.article__information__wrapper}>
-                    <div className={styles.article__headline__wrapper}>{headline}</div>
+                    <div className={styles.article__headline__wrapper} dangerouslySetInnerHTML={{__html: headline}}/>
                     <div className={styles.article__author__wrapper}>by {authors}</div>
                 </div>
 
