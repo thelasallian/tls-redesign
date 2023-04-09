@@ -23,6 +23,12 @@
             width: 100%;
             object-fit: cover;
             opacity: 0.9;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05,1.05);
+            }
+
         }
 
         &:hover{
