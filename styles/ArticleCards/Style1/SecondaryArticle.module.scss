@@ -38,6 +38,14 @@
                 font-weight: 700;
                 font-size: 15px;
 
+                @media all and (max-width: 1100px) {
+                    font-size: 14px;
+                }
+    
+                @media all and (max-width: 900px) {
+                    font-size: 12px;
+                }
+
                 &:hover {
                     color: $dark-gray;
                 }
@@ -46,6 +54,10 @@
             .article__author__wrapper {
                 color: $dark-gray;
                 font-size: 14px;
+
+                @media all and (max-width: 1100px) {
+                    font-size: 12px;
+                }
 
             }
         }

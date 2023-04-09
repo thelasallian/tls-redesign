@@ -176,6 +176,9 @@
         .navbar__button__search {
             position: absolute;
             right: 20px;
+            @media all and (max-width: 1450px) {
+                right: 15px;
+            }
             cursor: pointer;
 
             .button__search__icon {
