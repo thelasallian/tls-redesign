@@ -45,11 +45,19 @@
 
         width: 100%;
 
-        margin-bottom: 50px;
+        padding-bottom: 25px;
+
+        border-style: solid;
+
+        border-bottom-width: 1px;
+        border-bottom-color: $gray;
+
+        border-top: none;
+        border-left: none;
+        border-right: none;
     }
 
     .section__articles__full {
-
         height: 500px;
         
         @media all and (max-width: 750px) {
@@ -57,9 +65,19 @@
         }
 
         width: 100%;
-        
+
+        padding-top: 15px;
+
         &:not(:last-child) {
-            margin-bottom: 15px;
+            border-style: solid;
+
+            border-bottom-width: 1px;
+            border-bottom-color: $gray;
+
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            
         }
     }
 }
