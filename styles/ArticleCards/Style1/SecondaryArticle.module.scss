@@ -7,8 +7,19 @@
     .article__box__wrapper {
         display: flex;
         flex-direction: row;
+        padding-bottom: 10px;
         margin-bottom: 10px;
-        
+
+        @media all and (max-width: 750px) {
+            border-style: solid;
+
+            border-bottom-width: 1px;
+            border-bottom-color: $gray;
+
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
 
         .article__image__wrapper{
             height: 90px;
