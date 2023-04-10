@@ -6,7 +6,7 @@ import PrimaryArticleMobile from "@/components/ArticleCards/Style1/PrimaryArticl
 
 export default function Section({section}) {
     const secondaryArticles = section.articles.slice(2);
-    const secondaryArticlesSection = secondaryArticles.map(secondaryArticle => <SecondaryArticle article={secondaryArticle}/>);
+    const secondaryArticlesSection = secondaryArticles.map(secondaryArticle => <SecondaryArticle key={`${secondaryArticle.id}-SecondaryArticle`} article={secondaryArticle}/>);
 
     const [windowWidth, setWindowWidth] = useState(0);
 

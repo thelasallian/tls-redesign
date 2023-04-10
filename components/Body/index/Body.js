@@ -29,8 +29,8 @@ export default function Body({sections}) {
     );
 
     const sectionArticles = sections.map(section =>
-        <div key={`${section.name}`} className={styles.section__articles__full}>
-            <Style1 section={section}/>
+        <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
+            <Style1 key={`${section.name}-Style1`}section={section}/>
         </div>
     )
 

@@ -24,13 +24,13 @@
             height: 100%;
             border-radius: 20px;
             object-fit: cover;
-            opacity: 0.35;
+            opacity: 0.4;
             transition: all 0.2s ease-in-out;
 
             &:hover {
                 width: 110%;
                 height: 110%;
-                opacity: 0.4;
+                opacity: 0.5;
                 transform: scale(1.05,1.05);
             }
         }
