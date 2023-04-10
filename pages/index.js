@@ -68,7 +68,7 @@ export async function getServerSideProps({req, res}) {
                   articles: vanguardArticles,
               },
               {
-                  name: 'Opinions',
+                  name: 'Opinion',
                   category: 5,
                   articles: opinionArticles,
               },

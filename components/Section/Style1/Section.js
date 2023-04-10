@@ -22,7 +22,7 @@ export default function Section({section}) {
     return (
         <div className={styles.section__area__wrapper}>
             <div className={styles.section__title__wrapper}>
-                <a className={styles.section__title__link} href={`/section/${section.name.toLowerCase()}`}>{section.name}</a>
+                <a className={styles.section__title__link} id={styles[`${section.name.toLowerCase()}`]} href={`/section/${section.name.toLowerCase()}`}>{section.name}</a>
             </div>
             <div className={styles.section__articles__wrapper}>
                 {(windowWidth < 750)? 
