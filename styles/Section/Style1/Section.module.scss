@@ -21,6 +21,7 @@
 
             &:hover {
                 color: $dark-gray;
+                opacity: 0.8;
             }
 
             @media all and (max-width: 1100px) {
