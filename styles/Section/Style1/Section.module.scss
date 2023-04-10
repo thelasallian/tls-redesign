@@ -60,11 +60,27 @@
 
         .articles__secondary__wrapper {
             overflow: hidden;
-            padding-left: 7.5px;
+            padding-left: 15px;
             height: 100%;
             width: 100%;
+
+            border-style: solid;
+
+            border-left-width: 1px;
+            border-left-color: $gray;
+            border-bottom: none;
+            border-top: none;
+            border-right: none;
+            
             @media all and (max-width: 750px) {
                 padding-left: 0px;
+
+                border-style: solid;
+            
+                border-left: none;
+                border-bottom: none;
+                border-top: none;
+                border-right: none;
             }
         }
     }
