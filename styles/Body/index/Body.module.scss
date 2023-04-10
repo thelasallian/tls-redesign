@@ -59,14 +59,13 @@
 
     .section__articles__full {
         height: 500px;
-        
+        width: 100%;
+        padding-top: 25px;
+
         @media all and (max-width: 750px) {
             height: 750px;
+            padding-bottom: 25px;
         }
-
-        width: 100%;
-
-        padding-top: 25px;
 
         &:not(:last-child) {
             border-style: solid;
