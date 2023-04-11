@@ -11,7 +11,9 @@ export default function PrimaryArticle({article}) {
 
     return (
         <a className={styles.articles__primary__wrapper} href={`/presents/${article.slug}`}>
-            primary
+            <div className={styles.article__image__wrapper}>
+                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
+            </div>
         </a>
     );
 }

@@ -34,10 +34,10 @@ export default function Section({section}) {
                     </>
                 :
                     <>
-                        <PrimaryArticle article={section.articles[1]}/>
                         <div className={styles.articles__secondary__wrapper}>
                             {secondaryArticlesSection}
                         </div>
+                        <PrimaryArticle article={section.articles[1]}/>
                     </>
                 }
             </div>

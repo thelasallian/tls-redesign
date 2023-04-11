@@ -1,5 +1,16 @@
 @import "../../colors";
 
 .articles__primary__wrapper {
-    
+    .article__image__wrapper {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+
+        .article__image__img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+    }
 }
