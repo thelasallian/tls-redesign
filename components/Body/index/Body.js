@@ -4,6 +4,7 @@ import styles from "@/styles/Body/index/Body.module.scss";
 import BannerArticleFull from "@/components/ArticleCards/BannerArticleFull";
 import BannerArticleMobile from "@/components/ArticleCards/BannerArticleMobile";
 import {default as Style1} from "@/components/Section/Style1/Section";
+import {default as Style2} from "@/components/Section/Style2/Section";
 
 // Swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,7 +31,11 @@ export default function Body({sections}) {
 
     const sectionArticles = sections.map(section =>
         <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
-            <Style1 key={`${section.name}-Style1`}section={section}/>
+            {
+                (section.name === "Menagerie") ?
+                <Style2 key={`${section.name}-Style1`}section={section}/> :
+                <Style1 key={`${section.name}-Style1`}section={section}/>
+            }
         </div>
     )
 
