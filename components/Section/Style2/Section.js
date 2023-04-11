@@ -25,21 +25,12 @@ export default function Section({section}) {
                 <a className={styles.section__title__link} id={styles[`${section.name.toLowerCase()}`]} href={`/section/${section.name.toLowerCase()}`}>{section.name}</a>
             </div>
             <div className={styles.section__articles__wrapper}>
-                {(windowWidth < 750)? 
-                    <>
-                        <div className={styles.articles__secondary__wrapper}>
-                            {secondaryArticlesSection}
-                        </div>
-                        <PrimaryArticleMobile article={section.articles[1]}/>
-                    </>
-                :
-                    <>
-                        <div className={styles.articles__secondary__wrapper}>
-                            {secondaryArticlesSection}
-                        </div>
-                        <PrimaryArticle article={section.articles[1]}/>
-                    </>
-                }
+                <div className={styles.articles__left__wrapper}>
+                    left
+                </div>
+                <div className={styles.articles__right__wrapper}>
+                    right
+                </div>
             </div>
         </div>
     );

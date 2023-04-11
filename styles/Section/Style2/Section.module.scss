@@ -62,9 +62,8 @@
             grid-template-rows: auto auto;
         }
 
-        .articles__secondary__wrapper {
-            overflow: hidden;
-            padding-left: 15px;
+        .articles__left__wrapper {
+            background-color: red;
             height: 100%;
             width: 100%;
 
@@ -75,17 +74,13 @@
             border-bottom: none;
             border-top: none;
             border-left: none;
-            
-            @media all and (max-width: 750px) {
-                padding-left: 0px;
+        }
 
-                border-style: solid;
+        .articles__right__wrapper {
+            background-color: green;
+            height: 100%;
+            width: 100%;
             
-                border-left: none;
-                border-bottom: none;
-                border-top: none;
-                border-right: none;
-            }
         }
     }
 }
