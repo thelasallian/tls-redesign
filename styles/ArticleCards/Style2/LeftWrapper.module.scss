@@ -1,0 +1,14 @@
+@import "../../colors";
+
+.articles__wrapper__left {
+    width: 100%;
+    height: 100%;
+
+    .articles__primary__wrapper {
+        background-color: pink;
+    }
+
+    .articles__secondary__wrapper {
+        background-color: aqua;
+    }
+}
