@@ -6,7 +6,7 @@ import cleanArticleExcerpt from "../../Functions/cleanArticleExcerpt";
 
 export default function LeftWrapper({articles}) {
 
-    const secondaryArticles = articles.slice(1).map(article => 
+    const secondaryArticles = articles.slice(1,4).map(article => 
         <a className={styles.article__link__wrapper} href="">
             <div className={styles.articles__secondary__wrapper}>
                 <div className={styles.article__headline__wrapper}>
@@ -18,8 +18,6 @@ export default function LeftWrapper({articles}) {
             </div>
         </a>
     );
-
-    console.log(secondaryArticles);
 
     return (
         <div className={styles.articles__wrapper__left}>
