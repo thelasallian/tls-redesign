@@ -7,7 +7,7 @@ import cleanArticleExcerpt from "../../Functions/cleanArticleExcerpt";
 export default function LeftWrapper({articles}) {
 
     const secondaryArticles = articles.slice(1,4).map(article => 
-        <a className={styles.article__link__wrapper} href="">
+        <a className={styles.article__link__wrapper} href={`/presents/${article.slug}`}>
             <div className={styles.articles__secondary__wrapper}>
                 <div className={styles.article__headline__wrapper}>
                     {article.title["rendered"]}

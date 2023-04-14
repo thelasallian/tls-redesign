@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style2/Section.module.scss";
 import LeftWrapper from "@/components/ArticleCards/Style2/LeftWrapper";
+import RightWrapper from "@/components/ArticleCards/Style2/RightWrapper";
 import SecondaryArticle from "@/components/ArticleCards/Style2/SecondaryArticle";
 import PrimaryArticleMobile from "@/components/ArticleCards/Style2/PrimaryArticleMobile";
 
@@ -26,7 +27,7 @@ export default function Section({section}) {
                     <LeftWrapper articles={section.articles.slice(1)}/>
                 </div>
                 <div className={styles.articles__right__wrapper}>
-                    right
+                    <RightWrapper article={section.articles[1]}/>
                 </div>
             </div>
         </div>

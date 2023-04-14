@@ -1,0 +1,29 @@
+@import "../../colors";
+
+.article__wrapper__right {
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box;
+
+    .article__image__wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        border-radius: 20px;
+
+        .article__image__img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
