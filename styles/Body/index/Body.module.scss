@@ -59,8 +59,12 @@
     }
 
     .section__articles__full {
-        height: 500px;
+        height: 100%;
         width: 100%;
+
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox */
+        box-sizing: border-box;
         
         margin-bottom: 25px;
         padding-bottom: 25px;
