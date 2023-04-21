@@ -1,10 +1,14 @@
 export default function dehtml(string) {
-    string = string.replace(/<\/?[^>]+(>|$)/g, "");
-    string = string.replaceAll("&#8217;", "'"); // '
-    string = string.replaceAll("&#39;", "'"); // ' (right side)
-    string = string.replaceAll("&#8212;", "—"); // em dash
-    string = string.replaceAll("&#8208;", "-"); // dash
-    string = string.replaceAll("&#8230;", "..."); //elipsis
+    string = string
+        .replace(/<\/?[^>]+(>|$)/g, "")
+        .replaceAll("&#8217;", "'") // apostrophe
+        .replaceAll("&#39;", "'") // right apostrophe to apostrophe
+        .replaceAll("&#8212;", "—") // different dash to em dash
+        .replaceAll("&#8211;", "—") // different dash to em dash
+        .replaceAll("&#8208;", "-") // normal dash 
+        .replaceAll("&#8230;", "...") // ellipsis
+        .replaceAll("&hellip;", "...") //elipsis
+        .replaceAll("&nbsp;", " "); // non breaking space
     
     return string;
 }

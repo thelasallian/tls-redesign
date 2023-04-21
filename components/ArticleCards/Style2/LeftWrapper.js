@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/ArticleCards/Style2/LeftWrapper.module.scss";
 import createAuthorsList from "../../Functions/createAuthorsList";
-import cleanArticleExcerpt from "../../Functions/cleanArticleExcerpt";
-
+import shorten from "@/components/Functions/shorten";
+import dehtml from "@/components/Functions/dehtml";
 
 export default function LeftWrapper({articles}) {
 
@@ -10,7 +10,7 @@ export default function LeftWrapper({articles}) {
         <a className={styles.article__link__wrapper} href={`/presents/${article.slug}`}>
             <div className={styles.articles__secondary__wrapper}>
                 <div className={styles.article__headline__wrapper}>
-                    {article.title["rendered"]}
+                    {dehtml(article.title["rendered"])}
                 </div>
                 <div className={styles.article__author__wrapper}>
                     by {createAuthorsList(article.authors)}
@@ -24,12 +24,14 @@ export default function LeftWrapper({articles}) {
             <a className={styles.article__link__wrapper} href={`/presents/${articles[0].slug}`}>
                 <div className={styles.articles__primary__wrapper}>
                     <div className={styles.article__headline__wrapper}>
-                        {articles[0].title["rendered"]}
+                        {dehtml(articles[0].title["rendered"])}
                     </div>
                     <div className={styles.article__author__wrapper}>
                         by {createAuthorsList(articles[0].authors)}
                     </div>
-                    <div className={styles.article__snippet__wrapper} dangerouslySetInnerHTML={{__html: articles[0].excerpt["rendered"]}}>
+                    <div className={styles.article__snippet__wrapper}>
+                        {shorten(dehtml(articles[0].excerpt["rendered"]), 30)}
+                        <span className={styles.snippet__readMore__link}>Read More</span>
                     </div>
                 </div>
             </a>

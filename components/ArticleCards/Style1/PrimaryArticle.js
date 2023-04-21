@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "@/styles/ArticleCards/Style1/PrimaryArticle.module.scss";
 import createAuthorsList from "../../Functions/createAuthorsList";
-import cleanArticleExcerpt from "../../Functions/cleanArticleExcerpt";
 import dehtml from "@/components/Functions/dehtml";
+import shorten from "@/components/Functions/shorten";
 
 export default function PrimaryArticle({article}) {
     const headline = dehtml(article.title["rendered"]);
     const authors = createAuthorsList(article.authors);
-    const excerpt = cleanArticleExcerpt(article.excerpt["rendered"]);
+    const excerpt = dehtml(article.excerpt["rendered"]);
 
     return (
         <a className={styles.articles__primary__wrapper} href={`/presents/${article.slug}`}>

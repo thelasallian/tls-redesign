@@ -43,6 +43,12 @@
                 font-size: 14px;
                 color: $dark-gray;
                 line-height: 20px;
+
+                .snippet__readMore__link {
+                    &:hover{
+                        color: $gray;
+                    }
+                }
             }
         }
     
