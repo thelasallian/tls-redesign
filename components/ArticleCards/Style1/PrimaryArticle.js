@@ -7,7 +7,7 @@ import shorten from "@/components/Functions/shorten";
 export default function PrimaryArticle({article}) {
     const headline = dehtml(article.title["rendered"]);
     const authors = createAuthorsList(article.authors);
-    const excerpt = dehtml(article.excerpt["rendered"]);
+    const excerpt = shorten(dehtml(article.excerpt["rendered"]), 30);
 
     return (
         <a className={styles.articles__primary__wrapper} href={`/presents/${article.slug}`}>
@@ -17,6 +17,10 @@ export default function PrimaryArticle({article}) {
             <div className={styles.article__information__wrapper}>
                 <div className={styles.article__headline__wrapper}>{headline}</div>
                 <div className={styles.article__author__wrapper}>by {authors}</div>
+                <div className={styles.article__snippet__wrapper}>
+                    {excerpt}
+                    <span className={styles.snippet__readMore__link}>Read More</span>
+                </div>
             </div>
         </a>
     );

@@ -74,5 +74,19 @@
                 font-size: 12px;
             }
         }
+
+        .article__snippet__wrapper {
+            padding-top: 10px;
+            font-size: 14px;
+            color: $dark-gray;
+            line-height: 20px;
+            text-align: left;
+
+            .snippet__readMore__link {
+                &:hover{
+                    color: $gray;
+                }
+            }
+        }
     }
 }

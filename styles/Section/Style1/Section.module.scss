@@ -7,6 +7,10 @@
     display: flex;
     flex-direction: column;
 
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box;
+
     .section__title__wrapper{
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
         -moz-box-sizing: border-box;    /* Firefox */
@@ -64,7 +68,6 @@
 
         .articles__secondary__wrapper {
             overflow: hidden;
-            padding-left: 15px;
             height: 100%;
             width: 100%;
 
