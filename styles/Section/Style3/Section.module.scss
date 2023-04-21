@@ -1,0 +1,79 @@
+@import '../../colors';
+
+.section__area__wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    .section__title__wrapper{
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox */
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        
+        .section__title__link {
+            font-size: 35px;
+            font-weight: 700;
+            text-decoration: none;
+
+            color: $black;
+
+            &:hover {
+                color: $dark-gray;
+                opacity: 0.8;
+            }
+
+            @media all and (max-width: 1100px) {
+                font-size: 30px;
+            }
+        }
+
+        #university {
+            color: $color--university;
+        }
+
+        #menagerie {
+            color: $color--menagerie;
+        }
+
+        #sports {
+            color: $color--sports;
+        }
+
+        #vanguard {
+            color: $color--vanguard;
+        }
+
+        #opinion {
+            color: $color--opinion;
+        }
+    }
+
+    .section__articles__wrapper {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 50% 50%;
+        padding-top: 5px;
+        height: 100%;
+
+        @media all and (max-width: 750px) {
+            grid-template-columns: 100%;
+            grid-template-rows: auto auto;
+        }
+
+        .articles__left__wrapper {
+            background-color: red;
+            height: 100%;
+            width: 100%;
+        }
+
+        .articles__right__wrapper {
+            background-color: yellow;
+            height: 100%;
+            width: 100%;
+            
+        }
+    }
+}
