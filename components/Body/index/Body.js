@@ -5,6 +5,7 @@ import BannerArticleFull from "@/components/ArticleCards/BannerArticleFull";
 import BannerArticleMobile from "@/components/ArticleCards/BannerArticleMobile";
 import {default as Style1} from "@/components/Section/Style1/Section";
 import {default as Style2} from "@/components/Section/Style2/Section";
+import {default as Style3} from "@/components/Section/Style3/Section";
 
 // Swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,15 +30,28 @@ export default function Body({sections}) {
         <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleFull key={`${bannerArticle.id}-bannerArticleFull`}  article={bannerArticle}/></SwiperSlide>
     );
 
-    const sectionArticles = sections.map(section =>
-        <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
-            {
-                (section.name === "Menagerie") ?
-                <Style2 key={`${section.name}-Style1`}section={section}/> :
-                <Style1 key={`${section.name}-Style1`}section={section}/>
-            }
-        </div>
-    )
+    const sectionArticles = sections.map(section => {
+        if(section.name === "Menagerie") {
+            return (
+                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
+                    <Style2 key={`${section.name}-Style1`}section={section}/>
+                </div>
+            );
+        } else if(section.name === "Sports") {
+            return (
+                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
+                    <Style3 key={`${section.name}-Style1`}section={section}/>
+                </div>
+            );
+        } else {
+            return (
+                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
+                    <Style1 key={`${section.name}-Style1`}section={section}/>
+                </div>
+            );
+        }
+
+    });
 
     //Single-responsibility useEffects
     useEffect(() => {

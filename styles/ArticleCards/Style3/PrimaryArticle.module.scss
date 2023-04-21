@@ -16,7 +16,7 @@
 
     .article__image__wrapper{
         width: 100%;
-        height: 300px;
+        height: 350px;
         overflow: hidden;
         border-radius: 8px;
         background-color: $black;
@@ -47,6 +47,7 @@
             color: $black;
             font-size: 28px;
             font-weight: 700;
+            text-align: center;
 
             @media all and (max-width: 1100px) {
                 font-size: 24px;
@@ -65,6 +66,7 @@
         .article__author__wrapper {
             color: $dark-gray;
             font-size: 16px;
+            text-align: center;
 
             @media all and (max-width: 1100px) {
                 font-size: 14px;
@@ -80,7 +82,7 @@
             font-size: 14px;
             color: $dark-gray;
             line-height: 20px;
-            text-align: left;
+            text-align: center;
 
             .snippet__readMore__link {
                 &:hover{

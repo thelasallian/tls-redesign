@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/Section/Style2/Section.module.scss";
-import LeftWrapper from "@/components/ArticleCards/Style2/LeftWrapper";
-import RightWrapper from "@/components/ArticleCards/Style2/RightWrapper";
-import SecondaryArticle from "@/components/ArticleCards/Style1/SecondaryArticle";
-import PrimaryArticleMobile from "@/components/ArticleCards/Style1/PrimaryArticleMobile";
+import styles from "@/styles/Section/Style3/Section.module.scss";
+import PrimaryArticle from "@/components/ArticleCards/Style3/PrimaryArticle";
+import SecondaryArticle from "@/components/ArticleCards/Style3/SecondaryArticle";
+import PrimaryArticleMobile from "@/components/ArticleCards/Style3/PrimaryArticleMobile";
 
 export default function Section({section}) {
     const secondaryArticles = section.articles.slice(2);
@@ -35,11 +34,9 @@ export default function Section({section}) {
                     </>
                 :
                     <>
-                        <div className={styles.articles__left__wrapper}>
-                            left--wrappper
-                        </div>
-                        <div className={styles.articles__right__wrapper}>
-                            right--wrapper
+                        <PrimaryArticle article={section.articles[1]}/>
+                        <div className={styles.articles__secondary__wrapper}>
+                            {secondaryArticlesSection}
                         </div>
                     </>
                 }

@@ -7,7 +7,7 @@ import dehtml from "@/components/Functions/dehtml";
 export default function LeftWrapper({articles}) {
 
     const secondaryArticles = articles.slice(1,4).map(article => 
-        <a className={styles.article__link__wrapper} href={`/presents/${article.slug}`}>
+        <a key={`${article.id}-a`} className={styles.article__link__wrapper} href={`/presents/${article.slug}`}>
             <div className={styles.articles__secondary__wrapper}>
                 <div className={styles.article__headline__wrapper}>
                     {dehtml(article.title["rendered"])}

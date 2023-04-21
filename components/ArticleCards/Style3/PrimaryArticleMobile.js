@@ -1,7 +1,7 @@
 import React from "react";
 import createAuthorsList from "../../Functions/createAuthorsList";
 import cleanArticleExcerpt from "../../Functions/cleanArticleExcerpt";
-import styles from "@/styles/ArticleCards/Style1/PrimaryArticleMobile.module.scss";
+import styles from "@/styles/ArticleCards/Style3/PrimaryArticleMobile.module.scss";
 
 export default function PrimaryArticleMobile({article}) {
     const headline = article.title["rendered"].replace(/<\/?[^>]+(>|$)/g, ""); // Solution by https://stackoverflow.com/questions/5002111/how-to-strip-html-tags-from-string-in-javascript
@@ -19,6 +19,7 @@ export default function PrimaryArticleMobile({article}) {
                 <div className={styles.article__headline__wrapper}>{headline}</div>
                 <div className={styles.article__author__wrapper}>by {authors}</div>
             </div>
+            
         </a>
     );
 }

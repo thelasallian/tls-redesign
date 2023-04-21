@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/ArticleCards/Style1/PrimaryArticle.module.scss";
+import styles from "@/styles/ArticleCards/Style3/PrimaryArticle.module.scss";
 import createAuthorsList from "../../Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
 import shorten from "@/components/Functions/shorten";
