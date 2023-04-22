@@ -36,10 +36,19 @@
 
         .is__banner {
             width: 800px;
+            height: 450px;
 
-            @media all and (max-width: 1800px) {
-                font-size: 100%;
+            @media all and (max-width: 1600px) {
+                width: 600px;
             }
+
+            @media all and (max-width: 1000px) {
+                width: 500px;
+            }
+
+            
+
+            
         }
     }
 
