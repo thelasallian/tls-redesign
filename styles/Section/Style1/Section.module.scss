@@ -15,8 +15,6 @@
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
         -moz-box-sizing: border-box;    /* Firefox */
         box-sizing: border-box;
-
-        background-color: yellow;
         
         .section__title__link {
             font-size: 35px;
@@ -58,7 +56,6 @@
         display: grid;
         grid-template-rows: 100%;
         grid-template-columns: 50% 50%;
-        height: 100%;
 
         @media all and (max-width: 750px) {
             grid-template-columns: 100%;
@@ -66,11 +63,22 @@
         }
 
         .articles__left__wrapper {
-            background-color: green;
+
         }
 
         .articles__right__wrapper {
-            background-color: blue;
+            border-style: solid;
+            border-left-width: 1px;
+            border-left-color: $gray;
+            border-bottom: none;
+            border-top: none;
+            border-right: none;
+
+            .article__wrapper__full {
+                &:not(:first-child) {
+                    padding-top: 20px;
+                }
+            }
         }
     }
 }

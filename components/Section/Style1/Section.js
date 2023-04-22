@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style1/Section.module.scss";
 
+import {default as SecondaryArticle} from "@/components/ArticleCards/compact__full__right/ArticleCard";
+
 export default function Section({section}) {
+
+    const primaryArticle = section.articles[1];
+    const secondaryArticles = section.articles.slice(2);
+
+    const seconaryArticlesWrapper = secondaryArticles.map(article =>
+        <div className={styles.article__wrapper__full}>
+            <SecondaryArticle article={article}/>
+        </div>
+    );
 
     return (
         <div className={styles.section__wrapper__full}>
@@ -12,10 +23,10 @@ export default function Section({section}) {
 
             <div className={styles.section__articles__wrapper}>
                 <div className={styles.articles__left__wrapper}>
-                    left
+                    picture
                 </div>
                 <div className={styles.articles__right__wrapper}>
-                    right
+                    {seconaryArticlesWrapper}
                 </div>
             </div>
 

@@ -1,9 +1,9 @@
 export default function createAuthorsList(authors, options="none"){
     
-    if(options === "none") {
-        return createAuthorListWithNoLink(authors);
-    } else {
+    if(options === "link") {
         return createAuthorListWithLink(authors);
+    } else {
+        return createAuthorListWithNoLink(authors);
     }
 }
 
@@ -35,7 +35,7 @@ function createAuthorListWithLink(authors) {
 
     for(let i=0; i<authors.length; i++) {
         if(authors.length > 2) {
-            if(i == 0) {
+            if(i < authors.length - 1) {
                 concatonatedAuthors.push(
                     <a 
                         key={`${authors[i].display_name}-link`} 
