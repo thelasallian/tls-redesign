@@ -4,7 +4,6 @@ import styles from "@/styles/Body/index/Body.module.scss";
 // Swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import {default as Card__DetailedFullRight} from "@/components/ArticleCards/detailed__full__right/ArticleCard";
 import {default as Section__Style1} from "@/components/Section/Style1/Section";
 
 import "swiper/css";
@@ -24,17 +23,6 @@ export default function Body({sections}) {
         setIsMobile(window.innerWidth < 750);
         window.addEventListener("resize", handlingWindowResize);
     },[]);
-
-    // const bannerArticlesWrapper = bannerArticles.map(article =>
-    //     (isMobile) ? 
-    //     <SwiperSlide key={`${article.id}-SwiperSlide`}>
-    //         <DetailedFullRightCard key={`${article.id}-bannerArticleMobile`} article={article}/>
-    //     </SwiperSlide>
-    //     :
-    //     <SwiperSlide key={`${article.id}-SwiperSlide`}>
-    //         <DetailedFullRightCard key={`${article.id}-bannerArticleMobile`} article={article}/>
-    //     </SwiperSlide>
-    // );
 
     const sectionArticlesWrapper = sections.map(section => 
         <div className={styles.body__section__wrapper}>

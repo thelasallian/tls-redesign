@@ -1,12 +1,14 @@
-//style__amount of detail__where the text is with respect to image
-import styles from "@/styles/ArticleCards/compact__full__right/ArticleCard.module.scss";
+//detailed__full__right
+import styles from "@/styles/ArticleCards/large__detailed__bottom/ArticleCard.module.scss";
+
+import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
 import shorten from "@/components/Functions/shorten";
-import createAuthorsList from "@/components/Functions/createAuthorsList";
 
 export default function ArticleCard({article}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
+    const excerpt = shorten(dehtml(article.excerpt["rendered"]), 30);
 
     return (
         <div className={styles.card__wrapper__full}>
@@ -16,7 +18,6 @@ export default function ArticleCard({article}) {
                     <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
                 </div>
             </a>
-            
 
             <div className={styles.article__information__wrapper}>
                 <div className={styles.article__headline__wrapper}>
@@ -26,11 +27,8 @@ export default function ArticleCard({article}) {
                 </div>
                 <div className={styles.article__author__wrapper}>by {authorsList}</div>
             </div>
-            
+
+
         </div>
     );
 }
-
-
-{/* <div className={styles.article__headline__wrapper}>{headline}</div>
-<div className={styles.article__authors__wrapper}>by {authorsList}</div> */}
