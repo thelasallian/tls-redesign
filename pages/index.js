@@ -5,9 +5,7 @@ import Body from '@/components/Body/index/Body';
 import Footer from '@/components/Footer/Footer';
 
 export default function Home({sections}) {
-
-
-
+  
   return (
     <>
       <Head>

@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Body/index/Body.module.scss";
 
-import BannerArticleFull from "@/components/ArticleCards/BannerArticleFull";
-import BannerArticleMobile from "@/components/ArticleCards/BannerArticleMobile";
-import {default as Style1} from "@/components/Section/Style1/Section";
-import {default as Style2} from "@/components/Section/Style2/Section";
-import {default as Style3} from "@/components/Section/Style3/Section";
-
 // Swiper library
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import {default as Card__DetailedFullRight} from "@/components/ArticleCards/detailed__full__right/ArticleCard";
+import {default as Section__Style1} from "@/components/Section/Style1/Section";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,65 +13,42 @@ import "swiper/css/navigation";
 
 export default function Body({sections}) {
     
-    const [windowWidth, setWindowWidth] = useState(0);
+    const [isMobile, setIsMobile] = useState(0);
+    const bannerArticles = sections.map(section => section.articles[0]);
 
     const handlingWindowResize = () => {
-        setWindowWidth(window.innerWidth);
+        setIsMobile(window.innerWidth < 750);
     }
-
-    const bannerArticles = sections.map(section => section.articles[0]);
-    const bannerArticleCards = bannerArticles.map(bannerArticle =>
-        (windowWidth < 750) ? 
-        <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleMobile key={`${bannerArticle.id}-bannerArticleMobile`} article={bannerArticle}/></SwiperSlide>:
-        <SwiperSlide key={`${bannerArticle.id}-SwiperSlide`}><BannerArticleFull key={`${bannerArticle.id}-bannerArticleFull`}  article={bannerArticle}/></SwiperSlide>
-    );
-
-    const sectionArticles = sections.map(section => {
-        if(section.name === "Menagerie") {
-            return (
-                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
-                    <Style2 key={`${section.name}-Style1`}section={section}/>
-                </div>
-            );
-        } else if(section.name === "Sports") {
-            return (
-                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
-                    <Style3 key={`${section.name}-Style1`}section={section}/>
-                </div>
-            );
-        } else {
-            return (
-                <div key={`${section.name}-sectionArticles`} className={styles.section__articles__full}>
-                    <Style1 key={`${section.name}-Style1`}section={section}/>
-                </div>
-            );
-        }
-
-    });
-
-    //Single-responsibility useEffects
+    
     useEffect(() => {
-        setWindowWidth(window.innerWidth);
+        setIsMobile(window.innerWidth < 750);
         window.addEventListener("resize", handlingWindowResize);
     },[]);
 
+    // const bannerArticlesWrapper = bannerArticles.map(article =>
+    //     (isMobile) ? 
+    //     <SwiperSlide key={`${article.id}-SwiperSlide`}>
+    //         <DetailedFullRightCard key={`${article.id}-bannerArticleMobile`} article={article}/>
+    //     </SwiperSlide>
+    //     :
+    //     <SwiperSlide key={`${article.id}-SwiperSlide`}>
+    //         <DetailedFullRightCard key={`${article.id}-bannerArticleMobile`} article={article}/>
+    //     </SwiperSlide>
+    // );
+
+    const sectionArticlesWrapper = sections.map(section => 
+        <div className={styles.body__section__wrapper}>
+            <Section__Style1 section={section} isMobile={isMobile}/>
+        </div>
+    );
+
     return (
         <div className={styles.body__wrapper__full}>
-            <div className={styles.section__banners__full}>
-                <Swiper
-                    spaceBetween={30}
-                    loop={true}
-                    autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                >
-                    {bannerArticleCards}
-                </Swiper>
+            <div className={styles.body__section__wrapper}>
+                banner
             </div>
-            {sectionArticles}
+
+            {sectionArticlesWrapper}
         </div>
     );
 }

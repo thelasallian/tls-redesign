@@ -1,11 +1,11 @@
+//detailed__full__right
 import React from "react";
 import styles from "@/styles/BannerArticle/BannerArticleFull.module.scss";
 import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
 import shorten from "@/components/Functions/shorten";
 
-
-export default function BannerArticleFull({article}) {
+export default function ArticleCard({article}) {
     const headline = dehtml(article.title["rendered"]);
     const authors = createAuthorsList(article.authors);
     const excerpt = shorten(dehtml(article.excerpt["rendered"]), 30);
