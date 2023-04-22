@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style1/Section.module.scss";
 
-import {default as PrimaryArticle} from "@/components/ArticleCards/large__no-snippet__bottom/ArticleCard";
+import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
 import {default as SecondaryArticle} from "@/components/ArticleCards/small__no-snippet__right/ArticleCard";
 
 export default function Section({section}) {

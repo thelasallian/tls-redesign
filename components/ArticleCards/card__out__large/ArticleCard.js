@@ -1,16 +1,28 @@
 //detailed__full__right
-import styles from "@/styles/ArticleCards/large__detailed__bottom/ArticleCard.module.scss";
+import styles from "@/styles/ArticleCards/card__out__large/ArticleCard.module.scss";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
 import shorten from "@/components/Functions/shorten";
 
-export default function ArticleCard({article, isCentered=false, direction="bottom", hasHeadline=true, hasSnippet=true, hasAuthor=true, hasImage=true}) {
+export default function ArticleCard({article, isCentered=false, direction="bottom", hasHeadline=true, hasSnippet=true, hasAuthor=true, hasImage=true, isBanner=false}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
     const snippet = shorten(dehtml(article.excerpt["rendered"]), 30);
 
     const flexDirection = (direction === "right" || direction === "left") ? "row":"column";
+
+    const imageWrapper = (hasImage) ? 
+    (
+        <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
+            <div className={`${styles.article__image__wrapper} ${(isBanner ? styles.is__banner : "")}`}>
+                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
+            </div>
+        </a>
+    ) :
+    (
+        null
+    );
 
     const headlineWrapper = (hasHeadline) ? 
     (
@@ -59,19 +71,11 @@ export default function ArticleCard({article, isCentered=false, direction="botto
                             {snippetWrapper}
                         </div>
 
-                        <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-                            <div className={styles.article__image__wrapper}>
-                                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
-                            </div>
-                        </a>
+                        {imageWrapper}
                     </>
                 ):(
                     <>
-                        <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-                            <div className={styles.article__image__wrapper}>
-                                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
-                            </div>
-                        </a>
+                        {imageWrapper}
 
                         <div className={styles.article__information__wrapper} style={{paddingLeft: (direction=="right") ? 15:0 }}>
                             {headlineWrapper}
