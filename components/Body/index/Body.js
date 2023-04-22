@@ -66,21 +66,32 @@ export default function Body({sections}) {
 
     });
 
-    const bannerArticlesWrapper = bannerArticles.map(article => {
-        <PrimaryArticle
-            key={`${article.id}-PrimaryArticle`}
-            article={article}
-        />
-    });
+    const bannerArticlesWrapper = bannerArticles.map(article => 
+        <SwiperSlide key={`${article.id}-SwiperSlide`}>
+            <PrimaryArticle 
+                article={article}
+                direction={"right"}
+                isBanner={true}
+            />
+        </SwiperSlide>
+    );
 
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.body__section__wrapper}>
-                <PrimaryArticle
-                    article={bannerArticles[0]}
-                    direction={"right"}
-                    isBanner={true}
-                />
+                <Swiper
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={true}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper"
+                    >
+                    {bannerArticlesWrapper}
+                </Swiper>
             </div>
 
             {sectionArticlesWrapper}
