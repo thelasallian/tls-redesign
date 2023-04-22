@@ -31,21 +31,21 @@ export default function Body({sections}) {
     const sectionArticlesWrapper = sections.map(section => {
         if(section.name === "University") {
             return (
-                <div className={styles.body__section__wrapper}>
-                    <Section__Style1 section={section} isMobile={isMobile}/>
+                <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
+                    <Section__Style1 key={`${section.name}-Section__Style1`} section={section} isMobile={isMobile}/>
                 </div>
             );
         }
         else if(section.name === "Menagerie") {
             return (
-                <div className={styles.body__section__wrapper}>
-                    <Section__Style2 section={section} isMobile={isMobile}/>
+                <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
+                    <Section__Style2 key={`${section.name}-Section__Style2`} section={section} isMobile={isMobile}/>
                 </div>
             );
         } else {
             return (
-                <div className={styles.body__section__wrapper}>
-                    <Section__Style3 section={section} isMobile={isMobile}/>
+                <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
+                    <Section__Style3 key={`${section.name}-Section__Style3`} section={section} isMobile={isMobile}/>
                 </div>
             );
         }
@@ -54,6 +54,7 @@ export default function Body({sections}) {
 
     const bannerArticlesWrapper = bannerArticles.map(article => {
         <PrimaryArticle
+            key={`${article.id}-PrimaryArticle`}
             article={article}
         />
     });
