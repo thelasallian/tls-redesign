@@ -9,8 +9,8 @@
 
     .article__image__link {
         .article__image__wrapper {
-            height: 400px;
-            width: 100%;
+            height: 100%;
+            width: 100px;
             min-width: 100px;
     
             overflow: hidden;
@@ -46,9 +46,8 @@
                 width: 500px;
             }
 
-            @media all and (max-width: 800px) {
-                width: 400px;
-            }
+            
+
             
         }
     }
@@ -68,14 +67,18 @@
 
                 color: $black;
                 font-weight: 700;
-                font-size: 28px;
+                font-size: 15px;
 
                 @media all and (max-width: 1100px) {
-                    font-size: 24px;
+                    font-size: 14px;
                 }
     
                 @media all and (max-width: 900px) {
-                    font-size: 20px;
+                    font-size: 12px;
+                }
+
+                @media all and (max-width: 750px) {
+                    font-size: 16px;
                 }
 
                 &:hover {
@@ -86,7 +89,7 @@
 
         .article__author__wrapper {
             color: $dark-gray;
-            font-size: 14px;
+            font-size: 12px;
 
             a {
                 text-decoration: none;
@@ -96,12 +99,16 @@
                     opacity: 0.8;
                 }
             }
+
+            @media all and (max-width: 1100px) {
+                font-size: 12px;
+            }
         }
 
         .article__snippet__wrapper {
             padding-top: 10px;
             color: $dark-gray;
-            font-size: 16px;
+            font-size: 12px;
 
             a {
                 text-decoration: none;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style1/Section.module.scss";
 
 import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
-import {default as SecondaryArticle} from "@/components/ArticleCards/small__no-snippet__right/ArticleCard";
+import {default as SecondaryArticle} from "@/components/ArticleCards/card__out__small/ArticleCard";
 
 export default function Section({section}) {
 
@@ -20,7 +20,11 @@ export default function Section({section}) {
 
     const secondaryArticlesWrapper = secondaryArticles.map(article =>
         <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
-            <SecondaryArticle article={article}/>
+            <SecondaryArticle 
+                article={article}
+                direction={"right"}
+                hasSnippet={false}
+            />
         </div>
     );
 
