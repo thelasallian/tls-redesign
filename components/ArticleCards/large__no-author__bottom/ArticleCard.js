@@ -1,5 +1,5 @@
 //detailed__full__right
-import styles from "@/styles/ArticleCards/large__detailed__bottom/ArticleCard.module.scss";
+import styles from "@/styles/ArticleCards/large__no-author__bottom/ArticleCard.module.scss";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
@@ -25,7 +25,6 @@ export default function ArticleCard({article}) {
                         {headline}
                     </a>
                 </div>
-                <div className={styles.article__author__wrapper}>by {authorList}</div>
                 <div className={styles.article__snippet__wrapper}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
             </div>
 

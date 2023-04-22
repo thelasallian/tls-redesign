@@ -1,5 +1,5 @@
 //detailed__full__right
-import styles from "@/styles/ArticleCards/large__detailed__bottom/ArticleCard.module.scss";
+import styles from "@/styles/ArticleCards/large__no-snippet__bottom/ArticleCard.module.scss";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
@@ -7,8 +7,8 @@ import shorten from "@/components/Functions/shorten";
 
 export default function ArticleCard({article}) {
     const headline = dehtml(article.title["rendered"]);
-    const authorList = createAuthorsList(article.authors, "link");
-    const snippet = shorten(dehtml(article.excerpt["rendered"]), 30);
+    const authorsList = createAuthorsList(article.authors, "link");
+    const excerpt = shorten(dehtml(article.excerpt["rendered"]), 30);
 
     return (
         <div className={styles.card__wrapper__full}>
@@ -25,8 +25,7 @@ export default function ArticleCard({article}) {
                         {headline}
                     </a>
                 </div>
-                <div className={styles.article__author__wrapper}>by {authorList}</div>
-                <div className={styles.article__snippet__wrapper}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
+                <div className={styles.article__author__wrapper}>by {authorsList}</div>
             </div>
 
 
