@@ -15,7 +15,11 @@ export default function ArticleCard({article, isCentered=false, direction="botto
     const imageWrapper = (hasImage) ? 
     (
         <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-            <div className={`${styles.article__image__wrapper} ${(isBanner ? styles.is__banner : "")}`}>
+            <div className={`${styles.article__image__wrapper} ${(isBanner ? styles.is__banner : "")}`} 
+                style={{
+                    height: (isBanner && (direction=="bottom" || direction=="top")) ? 450 : "", 
+                    width: (isBanner && (direction=="bottom" || direction=="top")) ? "100%" : "",
+                }}>
                 <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
             </div>
         </a>

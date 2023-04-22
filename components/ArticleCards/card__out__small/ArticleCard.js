@@ -8,7 +8,7 @@ import shorten from "@/components/Functions/shorten";
 export default function ArticleCard({article, isCentered=false, direction="bottom", hasHeadline=true, hasSnippet=true, hasAuthor=true, hasImage=true, isBanner=false}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
-    const snippet = shorten(dehtml(article.excerpt["rendered"]), 20);
+    const snippet = shorten(dehtml(article.excerpt["rendered"]), 30);
 
     const flexDirection = (direction === "right" || direction === "left") ? "row":"column";
 
@@ -38,7 +38,7 @@ export default function ArticleCard({article, isCentered=false, direction="botto
 
     const authorWrapper = (hasAuthor) ? 
     (
-        <div className={styles.article__author__wrapper} style={{textAlign: isCentered ? "center" : "", fontSize: (hasSnippet) ? "" : 16}}>
+        <div className={styles.article__author__wrapper} style={{textAlign: isCentered ? "center" : ""}}>
             by {authorsList}
         </div>
     ) : 
@@ -77,7 +77,7 @@ export default function ArticleCard({article, isCentered=false, direction="botto
                     <>
                         {imageWrapper}
 
-                        <div className={styles.article__information__wrapper} style={{paddingLeft: (direction=="right") ? 15:0 }}>
+                        <div className={styles.article__information__wrapper} style={{paddingLeft: (direction=="right") ? (hasImage ? 15:0) :0 }}>
                             {headlineWrapper}
                             {authorWrapper}
                             {snippetWrapper}

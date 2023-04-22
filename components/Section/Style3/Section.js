@@ -1,46 +1,50 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/Section/Style3/Section.module.scss";
-import PrimaryArticle from "@/components/ArticleCards/Style3/PrimaryArticle";
-import SecondaryArticle from "@/components/ArticleCards/Style3/SecondaryArticle";
-import PrimaryArticleMobile from "@/components/ArticleCards/Style3/PrimaryArticleMobile";
+import styles from "@/styles/Section/Style1/Section.module.scss";
+
+import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
+import {default as SecondaryArticle} from "@/components/ArticleCards/card__out__small/ArticleCard";
 
 export default function Section({section}) {
+
+    const primaryArticle = section.articles[1];
     const secondaryArticles = section.articles.slice(2);
-    const secondaryArticlesSection = secondaryArticles.map(secondaryArticle => <SecondaryArticle key={`${secondaryArticle.id}-SecondaryArticle`} article={secondaryArticle}/>);
 
-    const [windowWidth, setWindowWidth] = useState(0);
+    const primaryArticleWrapper = (
+        <PrimaryArticle 
+            article={primaryArticle} 
+            direction={"bottom"} 
+            hasAuthor={true}
+            hasSnippet={true}
+        />
+    );
 
-    const handlingWindowResize = () => {
-        setWindowWidth(window.innerWidth);
-    }
-
-    useEffect(() => {
-        setWindowWidth(window.innerWidth);
-        window.addEventListener("resize", handlingWindowResize);
-    },[]);
+    const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
+        <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
+            <SecondaryArticle 
+                article={article}
+                direction={"right"}
+                hasSnippet={false}
+                hasImage={true}
+            />
+        </div>
+    );
 
     return (
-        <div className={styles.section__area__wrapper}>
+        <div className={styles.section__wrapper__full}>
+
             <div className={styles.section__title__wrapper}>
                 <a className={styles.section__title__link} id={styles[`${section.name.toLowerCase()}`]} href={`/section/${section.name.toLowerCase()}`}>{section.name}</a>
             </div>
+
             <div className={styles.section__articles__wrapper}>
-                {(windowWidth < 750)? 
-                    <>
-                        <div className={styles.articles__secondary__wrapper}>
-                            {secondaryArticlesSection}
-                        </div>
-                        <PrimaryArticleMobile article={section.articles[1]}/>
-                    </>
-                :
-                    <>
-                        <PrimaryArticle article={section.articles[1]}/>
-                        <div className={styles.articles__secondary__wrapper}>
-                            {secondaryArticlesSection}
-                        </div>
-                    </>
-                }
+                <div className={styles.articles__left__wrapper}>
+                    {primaryArticleWrapper}
+                </div>
+                <div className={styles.articles__right__wrapper}>
+                    {secondaryArticlesWrapper}
+                </div>
             </div>
+
         </div>
     );
 }

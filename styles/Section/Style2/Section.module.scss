@@ -1,27 +1,30 @@
 @import '../../colors';
 
-.section__area__wrapper {
+.section__wrapper__full {
     width: 100%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
 
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box;
+
     .section__title__wrapper{
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
         -moz-box-sizing: border-box;    /* Firefox */
         box-sizing: border-box;
-        margin-bottom: 10px;
+        
+        padding-bottom: 5px;
         
         .section__title__link {
             font-size: 35px;
             font-weight: 700;
             text-decoration: none;
-
             color: $black;
 
             &:hover {
-                color: $dark-gray;
                 opacity: 0.8;
             }
 
@@ -54,9 +57,7 @@
     .section__articles__wrapper {
         display: grid;
         grid-template-rows: 100%;
-        grid-template-columns: 50% 50%;
-        padding-top: 5px;
-        height: 100%;
+        grid-template-columns: 70% 30%;
 
         @media all and (max-width: 750px) {
             grid-template-columns: 100%;
@@ -64,14 +65,36 @@
         }
 
         .articles__left__wrapper {
-            height: 100%;
-            width: 100%;
+            padding-right: 15px;
         }
 
         .articles__right__wrapper {
-            height: 100%;
-            width: 100%;
-            
+            border-style: solid;
+            border-left-width: 1px;
+            border-left-color: $gray;
+            border-bottom: none;
+            border-top: none;
+            border-right: none;
+
+            padding-left: 15px;
+
+            .article__wrapper__full {
+                height: 100px;
+                &:not(:first-child) {
+                    padding-top: 15px;
+                }
+
+                &:not(:last-child) {
+                    border-style: solid;
+                    border-bottom-width: 1px;
+                    border-bottom-color: $gray;
+                    border-left: none;
+                    border-top: none;
+                    border-right: none;
+
+                    padding-bottom: 15px;
+                }
+            }
         }
     }
 }

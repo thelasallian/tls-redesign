@@ -18,12 +18,13 @@ export default function Section({section}) {
         />
     );
 
-    const secondaryArticlesWrapper = secondaryArticles.map(article =>
-        <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
+    const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
+        <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`} style={{height: (index==0) ? 140 : 70}}>
             <SecondaryArticle 
                 article={article}
                 direction={"right"}
-                hasSnippet={false}
+                hasSnippet={index==0}
+                hasImage={false}
             />
         </div>
     );
