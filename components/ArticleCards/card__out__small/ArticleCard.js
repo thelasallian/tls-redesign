@@ -8,7 +8,7 @@ import shorten from "@/components/Functions/shorten";
 export default function ArticleCard({article, isCentered=false, direction="bottom", hasHeadline=true, hasSnippet=true, hasAuthor=true, hasImage=true, isBanner=false}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
-    const snippet = shorten(dehtml(article.excerpt["rendered"]), 30);
+    const snippet = shorten(dehtml(article.excerpt["rendered"]), 20);
 
     const flexDirection = (direction === "right" || direction === "left") ? "row":"column";
 
