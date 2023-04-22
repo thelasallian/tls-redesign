@@ -9,10 +9,10 @@ export default function Section({section}) {
     const primaryArticle = section.articles[1];
     const secondaryArticles = section.articles.slice(2);
 
-    const primaryArticleWrapper = <PrimaryArticle article={primaryArticle}/>;
+    const primaryArticleWrapper = <PrimaryArticle article={primaryArticle} direction={"bottom"}/>;
 
     const secondaryArticlesWrapper = secondaryArticles.map(article =>
-        <div className={styles.article__wrapper__full}>
+        <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
             <SecondaryArticle article={article}/>
         </div>
     );
