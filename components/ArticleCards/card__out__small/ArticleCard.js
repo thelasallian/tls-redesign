@@ -12,10 +12,27 @@ export default function ArticleCard({article, isCentered=false, direction="botto
 
     const flexDirection = (direction === "right" || direction === "left") ? "row":"column";
 
+    const imageWrapperStyle = () => {
+        if(isBanner && isCentered && (direction === "bottom" || direction === "top")) {
+            return {
+                height: 450,
+                width: "100%"
+            };
+        } else if(direction==="bottom" || direction==="top") {
+            return {
+                height: 120,
+                width: "100%"
+            };
+        } else {
+            return {};
+        }
+    }
+
     const imageWrapper = (hasImage) ? 
     (
         <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-            <div className={`${styles.article__image__wrapper} ${(isBanner ? styles.is__banner : "")}`}>
+            <div className={`${styles.article__image__wrapper} ${(isBanner ? styles.is__banner : "")}`} 
+                style={imageWrapperStyle()}>
                 <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
             </div>
         </a>

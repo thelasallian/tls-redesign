@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/Section/Style3/Section.module.scss";
+import styles from "@/styles/Section/Style4/Section.module.scss";
 
 import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
 import {default as SecondaryArticle} from "@/components/ArticleCards/card__out__small/ArticleCard";
@@ -20,11 +20,11 @@ export default function Section({section}) {
 
     const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
         <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
-            <SecondaryArticle 
+            <SecondaryArticle
                 article={article}
-                direction={"left"}
+                direction={"bottom"}
+                hasAuthor={true}
                 hasSnippet={false}
-                hasImage={true}
             />
         </div>
     );
@@ -38,10 +38,10 @@ export default function Section({section}) {
 
             <div className={styles.section__articles__wrapper}>
                 <div className={styles.articles__left__wrapper}>
-                    {secondaryArticlesWrapper}
+                    {primaryArticleWrapper}
                 </div>
                 <div className={styles.articles__right__wrapper}>
-                    {primaryArticleWrapper}
+                    {secondaryArticlesWrapper}
                 </div>
             </div>
 

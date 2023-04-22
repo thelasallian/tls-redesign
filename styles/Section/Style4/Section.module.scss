@@ -57,7 +57,7 @@
     .section__articles__wrapper {
         display: grid;
         grid-template-rows: 100%;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 65% 35%;
 
         @media all and (max-width: 750px) {
             grid-template-columns: 100%;
@@ -66,24 +66,6 @@
 
         .articles__left__wrapper {
             padding-right: 15px;
-
-            .article__wrapper__full {
-                height: 100px;
-                &:not(:first-child) {
-                    padding-top: 15px;
-                }
-
-                &:not(:last-child) {
-                    border-style: solid;
-                    border-bottom-width: 1px;
-                    border-bottom-color: $gray;
-                    border-left: none;
-                    border-top: none;
-                    border-right: none;
-
-                    padding-bottom: 15px;
-                }
-            }
         }
 
         .articles__right__wrapper {
@@ -95,6 +77,14 @@
             border-right: none;
 
             padding-left: 15px;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-auto-rows: 350px;
+            grid-column-gap: 15px;
+
+            .article__wrapper__full {
+                
+            }
         }
     }
 }
