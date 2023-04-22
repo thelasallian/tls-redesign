@@ -64,27 +64,10 @@
             }
         }
 
-        .article__author__wrapper {
-            color: $dark-gray;
-            font-size: 14px;
-
-            @media all and (max-width: 1100px) {
-                font-size: 12px;
-            }
-
-            a {
-                text-decoration: none;
-                color: $dark-gray;
-
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-
         .article__snippet__wrapper {
             color: $dark-gray;
             font-size: 16px;
+            padding-top: 5px;
 
             @media all and (max-width: 1100px) {
                 font-size: 14px;
