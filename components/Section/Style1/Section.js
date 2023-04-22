@@ -23,7 +23,7 @@ export default function Section({section}) {
 
             <div className={styles.section__articles__wrapper}>
                 <div className={styles.articles__left__wrapper}>
-                    picture
+                    left
                 </div>
                 <div className={styles.articles__right__wrapper}>
                     {seconaryArticlesWrapper}

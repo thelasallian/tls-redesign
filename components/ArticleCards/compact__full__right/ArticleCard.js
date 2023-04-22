@@ -11,9 +11,12 @@ export default function ArticleCard({article}) {
     return (
         <div className={styles.card__wrapper__full}>
 
-            <div className={styles.article__image__wrapper}>
-                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
-            </div>
+            <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
+                <div className={styles.article__image__wrapper}>
+                    <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
+                </div>
+            </a>
+            
 
             <div className={styles.article__information__wrapper}>
                 <div className={styles.article__headline__wrapper}>

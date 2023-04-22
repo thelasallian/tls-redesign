@@ -74,9 +74,23 @@
             border-top: none;
             border-right: none;
 
+            padding-left: 15px;
+
             .article__wrapper__full {
+                height: 100px;
                 &:not(:first-child) {
-                    padding-top: 20px;
+                    padding-top: 15px;
+                }
+
+                &:not(:last-child) {
+                    border-style: solid;
+                    border-bottom-width: 1px;
+                    border-bottom-color: $gray;
+                    border-left: none;
+                    border-top: none;
+                    border-right: none;
+
+                    padding-bottom: 15px;
                 }
             }
         }
