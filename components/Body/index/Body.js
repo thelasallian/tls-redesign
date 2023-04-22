@@ -9,6 +9,7 @@ import {default as Section__Style1} from "@/components/Section/Style1/Section";
 import {default as Section__Style2} from "@/components/Section/Style2/Section";
 import {default as Section__Style3} from "@/components/Section/Style3/Section";
 import {default as Section__Style4} from "@/components/Section/Style4/Section";
+import {default as Section__Style5} from "@/components/Section/Style5/Section";
 import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
 
 import "swiper/css";
@@ -43,16 +44,22 @@ export default function Body({sections}) {
                     <Section__Style2 key={`${section.name}-Section__Style2`} section={section} isMobile={isMobile}/>
                 </div>
             );
+        } else if(section.name === "Sports") {
+            return (
+                <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
+                    <Section__Style3 key={`${section.name}-Section__Style3`} section={section} isMobile={isMobile}/>
+                </div>
+            );
         } else if(section.name === "Vanguard") {
             return (
                 <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
-                    <Section__Style4 key={`${section.name}-Section__Style3`} section={section} isMobile={isMobile}/>
+                    <Section__Style4 key={`${section.name}-Section__Style4`} section={section} isMobile={isMobile}/>
                 </div>
             );
         } else {
             return (
                 <div className={styles.body__section__wrapper} key={`${section.name}-body__section__wrapper`}>
-                    <Section__Style3 key={`${section.name}-Section__Style3`} section={section} isMobile={isMobile}/>
+                    <Section__Style5 key={`${section.name}-Section__Style5`} section={section} isMobile={isMobile}/>
                 </div>
             );
         }

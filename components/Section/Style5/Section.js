@@ -22,7 +22,7 @@ export default function Section({section}) {
         <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
             <SecondaryArticle 
                 article={article}
-                direction={"left"}
+                direction={"right"}
                 hasSnippet={false}
                 hasImage={true}
             />
@@ -42,7 +42,6 @@ export default function Section({section}) {
                 </div>
                 <div className={styles.articles__right__wrapper}>
                     {secondaryArticlesWrapper}
-                    
                 </div>
             </div>
 
