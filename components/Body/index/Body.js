@@ -10,7 +10,7 @@ import {default as Section__Style2} from "@/components/Section/Style2/Section";
 import {default as Section__Style3} from "@/components/Section/Style3/Section";
 import {default as Section__Style4} from "@/components/Section/Style4/Section";
 import {default as Section__Style5} from "@/components/Section/Style5/Section";
-import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
+import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -68,9 +68,15 @@ export default function Body({sections}) {
 
     const bannerArticlesWrapper = bannerArticles.map(article => 
         <SwiperSlide key={`${article.id}-SwiperSlide`}>
-            <PrimaryArticle 
+            <ArticleCard 
                 article={article}
-                direction={"right"}
+                textAlignment={"left"}
+                textLocation={"right"}
+                hasHeadline={true}
+                hasAuthor={true}
+                hasSnippet={true}
+                hasImage={true}
+                isMobile={false}
                 isBanner={true}
             />
         </SwiperSlide>
