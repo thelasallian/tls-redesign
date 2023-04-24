@@ -7,13 +7,13 @@
     display: flex;
     flex-direction: column;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
     box-sizing: border-box;
 
     .section__title__wrapper{
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox */
         box-sizing: border-box;
         
         padding-bottom: 5px;

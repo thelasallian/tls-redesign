@@ -1,5 +1,5 @@
 //style__amount of detail__where the text is with respect to image
-import styles from "@/styles/ArticleCards/small__no-snippet__right/ArticleCard.module.scss";
+import styles from "@/styles/ArticleCards/card__in__small/ArticleCard.module.scss";
 
 import dehtml from "@/components/Functions/dehtml";
 import createAuthorsList from "@/components/Functions/createAuthorsList";
@@ -16,7 +16,6 @@ export default function ArticleCard({article}) {
                     <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
                 </div>
             </a>
-            
 
             <div className={styles.article__information__wrapper}>
                 <div className={styles.article__headline__wrapper}>
