@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style4/Section.module.scss";
 
-import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
-import {default as SecondaryArticle} from "@/components/ArticleCards/card__out__small/ArticleCard";
+import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
 export default function Section({section}) {
 
@@ -10,21 +9,31 @@ export default function Section({section}) {
     const secondaryArticles = section.articles.slice(2);
 
     const primaryArticleWrapper = (
-        <PrimaryArticle 
-            article={primaryArticle} 
-            direction={"bottom"} 
+        <ArticleCard 
+            article={primaryArticle}
+            textAlignment={"left"}
+            textLocation={"bottom"}
+            hasHeadline={true}
             hasAuthor={true}
             hasSnippet={true}
+            hasImage={true}
+            isMobile={false}
+            isBanner={true}
         />
     );
 
     const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
         <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
-            <SecondaryArticle
+            <ArticleCard
                 article={article}
-                direction={"bottom"}
+                textAlignment={"left"}
+                textLocation={"bottom"}
+                hasHeadline={true}
                 hasAuthor={true}
                 hasSnippet={false}
+                hasImage={true}
+                isMobile={false}
+                isBanner={false}
             />
         </div>
     );
