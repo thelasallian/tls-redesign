@@ -9,6 +9,7 @@ export default function ArticleCard({
     article,
     textAlignment = "left",
     textLocation = "bottom",
+    hasHeadline = true,
     hasAuthor = true,
     hasSnippet = true,
     hasImage = true,
@@ -35,6 +36,36 @@ export default function ArticleCard({
         else if(textLocation == "top") return styles.is__top;
         else return styles.is__bottom;
     }
+
+    const setTextSize = (property) => {
+        if(property === "headline") return styles.is__primary;
+        if(property === "author" && hasSnippet) return styles.is__tertiary; 
+        if(property === "author" && !hasSnippet) return styles.is__secondary;
+        if(property === "snippet") return styles.is__secondary;
+        else return property.is__secondary;
+    }
+
+    const setHeadline = hasHeadline ? (
+        <div className={`${styles.article__headline__wrapper} ${setTextSize("headline")}`}>
+            <a className={styles.article__headline__link} href={`/presents/${article.slug}`}>
+                {headline}
+            </a>
+        </div>
+    ) : (
+        null
+    );
+
+    const setAuthor = hasAuthor ? (
+        <div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList}</div>
+    ) : (
+        null
+    );
+
+    const setSnippet = hasSnippet ? (
+        <div className={`${styles.article__snippet__wrapper} ${setTextSize("snippet")}`}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
+    ) : (
+        null
+    ) ;
     
     return (
         <div className={`${styles.card__wrapper__full} ${setTextLocation()}`}>
@@ -46,13 +77,9 @@ export default function ArticleCard({
             </a>
 
             <div className={`${styles.article__information__wrapper} ${setTextAlignment()}`}>
-                <div className={styles.article__headline__wrapper}>
-                    <a className={styles.article__headline__link} href={`/presents/${article.slug}`}>
-                        {headline}
-                    </a>
-                </div>
-                <div className={styles.article__author__wrapper}>by {authorsList}</div>
-                <div className={styles.article__snippet__wrapper}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
+                {setHeadline}
+                {setAuthor}
+                {setSnippet}
             </div>
 
             

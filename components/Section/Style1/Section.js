@@ -14,8 +14,9 @@ export default function Section({section}) {
             article={primaryArticle}
             textAlignment={"left"}
             textLocation={"bottom"}
+            hasHeadline={true}
             hasAuthor={true}
-            hasSnippet={false}
+            hasSnippet={true}
             hasImage={false}
             isMobile={false}
         />
@@ -47,7 +48,7 @@ export default function Section({section}) {
                     {primaryArticleWrapper}
                 </div>
                 <div className={styles.articles__right__wrapper}>
-                    {secondaryArticlesWrapper}
+                    
                 </div>
             </div>
 
