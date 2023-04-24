@@ -45,6 +45,16 @@ export default function ArticleCard({
         else return property.is__secondary;
     }
 
+    const setImage = hasImage ? (
+        <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
+            <div className={styles.article__image__wrapper}>
+                <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
+            </div>
+        </a>
+    ) : (
+        null
+    );
+
     const setHeadline = hasHeadline ? (
         <div className={`${styles.article__headline__wrapper} ${setTextSize("headline")}`}>
             <a className={styles.article__headline__link} href={`/presents/${article.slug}`}>
@@ -70,11 +80,7 @@ export default function ArticleCard({
     return (
         <div className={`${styles.card__wrapper__full} ${setTextLocation()}`}>
 
-            <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-                <div className={styles.article__image__wrapper}>
-                    <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
-                </div>
-            </a>
+            {setImage}
 
             <div className={`${styles.article__information__wrapper} ${setTextAlignment()}`}>
                 {setHeadline}
