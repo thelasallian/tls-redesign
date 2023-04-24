@@ -14,9 +14,10 @@ export default function ArticleCard({
     hasSnippet = true,
     hasImage = true,
     isMobile = false,
+    isBanner = false,
  }) {
 
-    const wordCount = (isMobile) ? 15 : 30;
+    const wordCount = (isMobile || !isBanner) ? 20 : 30;
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
     const snippet = shorten(dehtml(article.excerpt["rendered"]), wordCount);
@@ -46,8 +47,8 @@ export default function ArticleCard({
     }
 
     const setImage = hasImage ? (
-        <a className={styles.article__image__link} href={`/presents/${article.slug}`}>
-            <div className={styles.article__image__wrapper}>
+        <a className={`${styles.article__image__link}`} href={`/presents/${article.slug}`}>
+            <div className={`${styles.article__image__wrapper} ${setTextLocation()}`}>
                 <img className={styles.article__image__img} src={article.jetpack_featured_media_url}/>
             </div>
         </a>
@@ -78,7 +79,7 @@ export default function ArticleCard({
     ) ;
     
     return (
-        <div className={`${styles.card__wrapper__full} ${setTextLocation()}`}>
+        <div className={`${styles.card__wrapper__full} ${setTextLocation()} ${isBanner ? styles.is__banner : null}`}>
 
             {setImage}
 

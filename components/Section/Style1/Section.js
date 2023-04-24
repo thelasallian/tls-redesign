@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style1/Section.module.scss";
 
-import {default as PrimaryArticle} from "@/components/ArticleCards/card__out/ArticleCard";
-import {default as SecondaryArticle} from "@/components/ArticleCards/card__out/ArticleCard";
+import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
 export default function Section({section}) {
 
@@ -10,28 +9,34 @@ export default function Section({section}) {
     const secondaryArticles = section.articles.slice(2);
 
     const primaryArticleWrapper = (
-        <PrimaryArticle 
+        <ArticleCard 
             article={primaryArticle}
             textAlignment={"left"}
             textLocation={"bottom"}
             hasHeadline={true}
             hasAuthor={true}
-            hasSnippet={true}
-            hasImage={false}
+            hasSnippet={false}
+            hasImage={true}
             isMobile={false}
+            isBanner={true}
         />
     );
 
     const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
         <div 
             className={styles.article__wrapper__full} 
-            key={`${article.id}-articleWrapperFull`} 
-            style={{height: (index==0) ? 140 : 70}}>
-                <SecondaryArticle 
+            key={`${article.id}-articleWrapperFull`}
+            >
+                <ArticleCard 
                     article={article}
-                    direction={"right"}
-                    hasSnippet={index==0}
-                    hasImage={false}
+                    textAlignment={"left"}
+                    textLocation={"right"}
+                    hasHeadline={true}
+                    hasAuthor={true}
+                    hasSnippet={false}
+                    hasImage={true}
+                    isMobile={false}
+                    isBanner={false}
                 />
         </div>
     );
@@ -48,7 +53,7 @@ export default function Section({section}) {
                     {primaryArticleWrapper}
                 </div>
                 <div className={styles.articles__right__wrapper}>
-                    
+                    {secondaryArticlesWrapper}
                 </div>
             </div>
 

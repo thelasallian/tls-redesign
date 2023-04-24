@@ -57,7 +57,7 @@
     .section__articles__wrapper {
         display: grid;
         grid-template-rows: 100%;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 65% 35%;
 
         @media all and (max-width: 750px) {
             grid-template-columns: 100%;

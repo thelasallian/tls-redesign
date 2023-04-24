@@ -79,6 +79,7 @@
             padding-left: 15px;
 
             .article__wrapper__full {
+                min-height: 100px;
                 height: 100px;
                 &:not(:first-child) {
                     padding-top: 15px;
