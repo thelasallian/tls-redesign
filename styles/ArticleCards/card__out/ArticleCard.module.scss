@@ -1,0 +1,130 @@
+//compact__full__right
+
+@import "../../colors";
+
+.card__wrapper__full {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .article__image__link {
+        .article__image__wrapper {
+            height: 400px;
+            width: 100%;
+
+            background-color: $black;
+    
+            overflow: hidden;
+            border-radius: 8px;
+    
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;    /* Firefox */
+            box-sizing: border-box;
+    
+            .article__image__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.2s ease-in-out;
+
+                opacity: 0.8;
+                
+    
+                &:hover {
+                    transform: scale(1.05,1.05);
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .is__banner {
+            width: 800px;
+            height: 450px;
+        }
+    }
+
+    .article__information__wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding-top: 5px;
+
+        .article__headline__wrapper {
+            
+
+            .article__headline__link{
+                
+                text-decoration: none;
+
+                color: $black;
+                font-weight: 700;
+                font-size: 2rem;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .article__author__wrapper {
+            color: $dark-gray;
+            font-size: 0.8rem;
+
+            a {
+                text-decoration: none;
+                color: $dark-gray;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .article__snippet__wrapper {
+            padding-top: 10px;
+            color: $dark-gray;
+            font-size: 1rem;
+
+            a {
+                text-decoration: none;
+                color: $dark-gray;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .is__right {
+        text-align: right;
+    }
+
+    .is__left {
+        text-align: left;
+    }
+
+    .is__center {
+        text-align: center;
+    }
+
+    .is__justified {
+        text-align: justify;
+    }
+}
+
+.is__top {
+    flex-direction: column-reverse;
+}
+
+.is__bottom {
+    flex-direction: column;
+}
+
+.is__right {
+    flex-direction: row;
+}
+
+.is__left {
+    flex-direction: row-reverse;
+}

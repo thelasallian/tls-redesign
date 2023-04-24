@@ -1,5 +1,5 @@
 //style__amount of detail__where the text is with respect to image
-import styles from "@/styles/ArticleCards/card__in__small/ArticleCard.module.scss";
+import styles from "@/styles/ArticleCards/card__in/ArticleCard.module.scss";
 
 import dehtml from "@/components/Functions/dehtml";
 import createAuthorsList from "@/components/Functions/createAuthorsList";

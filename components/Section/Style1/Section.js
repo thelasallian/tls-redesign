@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style1/Section.module.scss";
 
-import {default as PrimaryArticle} from "@/components/ArticleCards/card__out__large/ArticleCard";
-import {default as SecondaryArticle} from "@/components/ArticleCards/card__out__small/ArticleCard";
+import {default as PrimaryArticle} from "@/components/ArticleCards/card__out/ArticleCard";
+import {default as SecondaryArticle} from "@/components/ArticleCards/card__out/ArticleCard";
 
 export default function Section({section}) {
 
@@ -11,10 +11,13 @@ export default function Section({section}) {
 
     const primaryArticleWrapper = (
         <PrimaryArticle 
-            article={primaryArticle} 
-            direction={"bottom"} 
+            article={primaryArticle}
+            textAlignment={"left"}
+            textLocation={"bottom"}
             hasAuthor={true}
             hasSnippet={false}
+            hasImage={false}
+            isMobile={false}
         />
     );
 
