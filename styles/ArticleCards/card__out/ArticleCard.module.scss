@@ -3,12 +3,16 @@
 @import "../../colors";
 
 .card__wrapper__full {
+    min-height: 100px;
     height: 100%;
     display: flex;
     flex-direction: column;
 
     .article__image__link {
         .article__image__wrapper {
+            height: 100px;
+            width: 100px;
+
             background-color: $black;
     
             overflow: hidden;

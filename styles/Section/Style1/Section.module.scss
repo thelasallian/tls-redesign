@@ -80,7 +80,8 @@
 
             .article__wrapper__full {
                 min-height: 100px;
-                height: 100px;
+                height: auto;
+
                 &:not(:first-child) {
                     padding-top: 15px;
                 }
