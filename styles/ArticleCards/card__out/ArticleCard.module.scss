@@ -137,14 +137,21 @@
 
 .is__banner {
     .article__image__link {
-        .is__left {
+        .is__left, .is__right {
             width: 800px;
             height: 450px;
-        }
 
-        .is__right {
-            width: 800px;
-            height: 450px;
+            @media all and (max-width: 1400px) {
+                width: 600px;
+            }
+
+            @media all and (max-width: 1000px) {
+                width: 500px;
+            }
+
+            @media all and (max-width: 900px) {
+                width: 400px;
+            }
         }
 
         .is__top {
@@ -160,10 +167,18 @@
 
     .is__primary {
         font-size: 2rem;
+        
+        @media all and (max-width: 900px) {
+            font-size: 1.5rem;
+        }
     }
     
     .is__secondary {
         font-size: 1rem;
+
+        @media all and (max-width: 900px) {
+            font-size: 0.8rem;
+        }
     }
     
     .is__tertiary {
