@@ -124,6 +124,9 @@ export default function HeaderFull() {
                                 <div className={header.more__div__container}>
                                     <a className={header.more__link__option} href="/specials/">Specials</a>
                                 </div>
+                                <div className={header.more__div__container}>
+                                    <a className={header.more__link__option} href="/pop-town/">Pop Town</a>
+                                </div>
                             </div>
 
                         </div>
