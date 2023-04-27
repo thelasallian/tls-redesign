@@ -41,6 +41,10 @@
         .is__left, .is__right {
             width: 100px;
             height: 100%;
+            @media all and (max-width: 900px) {
+                width: 100px;
+                height: 100px;
+            }
         }
 
         .is__top {
@@ -119,10 +123,16 @@
 
     .is__primary {
         font-size: 1.2rem;
+        @media all and (max-width: 1000px) {
+            font-size: 1rem;
+        }
     }
     
     .is__secondary {
         font-size: 0.8rem;
+        @media all and (max-width: 1000px) {
+            font-size: 0.7rem;
+        }
     }
     
     .is__tertiary {
