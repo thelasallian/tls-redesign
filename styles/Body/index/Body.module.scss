@@ -17,6 +17,11 @@
 
     overflow: hidden;
 
+    @media all and (max-width: 1700px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
     @media all and (max-width: 1500px) {
         padding-left: 50px;
         padding-right: 50px;
