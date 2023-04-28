@@ -11,6 +11,7 @@ import {default as Section__Style3} from "@/components/Section/Style3/Section";
 import {default as Section__Style4} from "@/components/Section/Style4/Section";
 import {default as Section__Style5} from "@/components/Section/Style5/Section";
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
+import {default as MobileArticleCard} from "@/components/ArticleCards/card__in/ArticleCard";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -68,17 +69,31 @@ export default function Body({sections}) {
 
     const bannerArticlesWrapper = bannerArticles.map(article => 
         <SwiperSlide key={`${article.id}-SwiperSlide`}>
-            <ArticleCard 
-                article={article}
-                textAlignment={"left"}
-                textLocation={"right"}
-                hasHeadline={true}
-                hasAuthor={true}
-                hasSnippet={true}
-                hasImage={true}
-                isMobile={false}
-                isBanner={true}
-            />
+            {(isMobile) ? (
+                <MobileArticleCard 
+                    article={article}
+                    textAlignment={"left"}
+                    textLocation={"right"}
+                    hasHeadline={true}
+                    hasAuthor={true}
+                    hasSnippet={true}
+                    hasImage={true}
+                    isMobile={false}
+                    isBanner={true}
+                />
+            ) : (
+                <ArticleCard 
+                    article={article}
+                    textAlignment={"left"}
+                    textLocation={"right"}
+                    hasHeadline={true}
+                    hasAuthor={true}
+                    hasSnippet={true}
+                    hasImage={true}
+                    isMobile={false}
+                    isBanner={true}
+                />
+            )}
         </SwiperSlide>
     );
 
