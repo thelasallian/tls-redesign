@@ -18,7 +18,7 @@ export default function Section({section, isMobile}) {
             hasAuthor={true}
             hasSnippet={true}
             hasImage={true}
-            isMobile={false}
+            isMobile={isMobile}
             isBanner={true}
         />
     );
@@ -34,7 +34,7 @@ export default function Section({section, isMobile}) {
                     hasAuthor={true}
                     hasSnippet={false}
                     hasImage={false}
-                    isMobile={false}
+                    isMobile={isMobile}
                     isBanner={false}
                 />
             ) : (
@@ -46,7 +46,7 @@ export default function Section({section, isMobile}) {
                     hasAuthor={true}
                     hasSnippet={isMobile}
                     hasImage={false}
-                    isMobile={false}
+                    isMobile={isMobile}
                     isBanner={false}
                 />
             )}

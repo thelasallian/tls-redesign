@@ -19,7 +19,7 @@ export default function ArticleCard({
 
     
     const wordCount = () => {
-        if(isMobile) return null;
+        if(isMobile) return 30;
         else if(isBanner) return 30;
         else return 20;
     }
@@ -47,6 +47,7 @@ export default function ArticleCard({
     const setTextSize = (property) => {
         if(property === "headline") return styles.is__primary;
         if(property === "author" && hasSnippet) return styles.is__tertiary; 
+        if(property === "author" && isMobile) return styles.is__tertiary;
         if(property === "author" && !hasSnippet) return styles.is__secondary;
         if(property === "snippet") return styles.is__secondary;
         else return property.is__secondary;

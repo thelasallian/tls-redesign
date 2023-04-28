@@ -17,7 +17,7 @@ export default function Section({section, isMobile}) {
             hasAuthor={true}
             hasSnippet={true}
             hasImage={true}
-            isMobile={false}
+            isMobile={isMobile}
             isBanner={true}
         />
     );
