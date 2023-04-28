@@ -76,7 +76,7 @@ export default function Body({sections}) {
                     textLocation={"right"}
                     hasHeadline={true}
                     hasAuthor={true}
-                    hasSnippet={true}
+                    hasSnippet={false}
                     hasImage={true}
                     isBanner={true}
                 />

@@ -32,7 +32,7 @@ export default function Section({section, isMobile}) {
                     textLocation={"bottom"}
                     hasHeadline={true}
                     hasAuthor={true}
-                    hasSnippet={isMobile}
+                    hasSnippet={false}
                     hasImage={false}
                     isMobile={false}
                     isBanner={false}

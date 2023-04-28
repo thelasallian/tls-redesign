@@ -3,7 +3,7 @@ import styles from "@/styles/Section/Style1/Section.module.scss";
 
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
-export default function Section({section}) {
+export default function Section({section, isMobile}) {
 
     const primaryArticle = section.articles[1];
     const secondaryArticles = section.articles.slice(2);
@@ -27,12 +27,12 @@ export default function Section({section}) {
             <ArticleCard 
                 article={article}
                 textAlignment={"left"}
-                textLocation={"right"}
+                textLocation={isMobile ? "left" : "right"}
                 hasHeadline={true}
                 hasAuthor={true}
-                hasSnippet={false}
-                hasImage={true}
-                isMobile={false}
+                hasSnippet={isMobile}
+                hasImage={!isMobile}
+                isMobile={isMobile}
                 isBanner={false}
             />
         </div>

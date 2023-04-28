@@ -31,11 +31,11 @@
                 height: 100%;
                 object-fit: cover;
                 transition: all 0.2s ease-in-out;
-                opacity: 0.7;
+                opacity: 0.5;
     
                 &:hover {
                     transform: scale(1.05,1.05);
-                    opacity: 0.8;
+                    opacity: 0.6;
                 }
             }
         }
@@ -57,22 +57,8 @@
         .article__headline__wrapper {
             .article__headline__link{
                 text-decoration: none;
-
                 color: $white;
                 font-weight: 700;
-                font-size: 1.2rem;
-
-                @media all and (max-width: 1100px) {
-                    font-size: 1.1rem;
-                }
-    
-                @media all and (max-width: 900px) {
-                    font-size: 1rem;
-                }
-
-                @media all and (max-width: 750px) {
-                    font-size: 1.2rem;
-                }
 
                 &:hover {
                     opacity: 0.8;
@@ -82,7 +68,6 @@
 
         .article__author__wrapper {
             color: $white;
-            font-size: 14px;
 
             a {
                 text-decoration: none;
@@ -92,6 +77,66 @@
                     opacity: 0.8;
                 }
             }
+        }
+
+        .article__snippet__wrapper {
+            padding-top: 10px;
+            color: $white;
+
+            a {
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .is__right {
+        text-align: right;
+    }
+
+    .is__left {
+        text-align: left;
+    }
+
+    .is__center {
+        text-align: center;
+    }
+
+    .is__justified {
+        text-align: justify;
+    }
+
+    .is__primary {
+        font-size: 1.2rem;
+        @media all and (max-width: 1000px) {
+            font-size: 1rem;
+        }
+
+        @media all and (max-width: 750px) {
+            font-size: 1.2rem;
+        }
+    }
+    
+    .is__secondary {
+        font-size: 0.8rem;
+        @media all and (max-width: 1000px) {
+            font-size: 0.7rem;
+        }
+
+        @media all and (max-width: 750px) {
+            font-size: 0.9rem;
+        }
+    }
+    
+    .is__tertiary {
+        font-size: 0.8rem;
+
+        @media all and (max-width: 750px) {
+            font-size: 0.8rem;
         }
     }
 }

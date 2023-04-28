@@ -3,6 +3,7 @@ import styles from "@/styles/ArticleCards/card__in/ArticleCard.module.scss";
 
 import dehtml from "@/components/Functions/dehtml";
 import createAuthorsList from "@/components/Functions/createAuthorsList";
+import shorten from "@/components/Functions/shorten";
 
 export default function ArticleCard({
     article,
@@ -10,7 +11,7 @@ export default function ArticleCard({
     textLocation = "bottom",
     hasHeadline = true,
     hasAuthor = true,
-    hasSnippet = true,
+    hasSnippet = false,
     hasImage = true,
     isMobile = false,
     isBanner = false,
@@ -24,6 +25,7 @@ export default function ArticleCard({
 
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
+    const snippet = shorten(dehtml(article.excerpt["rendered"]), wordCount());
 
     const setTextAlignment = () => {
         if(textAlignment == "left") return styles.is__left; 
@@ -49,6 +51,28 @@ export default function ArticleCard({
         else return property.is__secondary;
     }
 
+    const setHeadline = hasHeadline ? (
+        <div className={`${styles.article__headline__wrapper} ${setTextSize("headline")}`}>
+            <a className={styles.article__headline__link} href={`/presents/${article.slug}`}>
+                {headline}
+            </a>
+        </div>
+    ) : (
+        null
+    );
+
+    const setAuthor = hasAuthor ? (
+        <div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList}</div>
+    ) : (
+        null
+    );
+
+    const setSnippet = hasSnippet ? (
+        <div className={`${styles.article__snippet__wrapper} ${setTextSize("snippet")}`}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
+    ) : (
+        null
+    ) ;
+
     return (
         <div className={`${styles.card__wrapper__full} ${setTextLocation()} ${isBanner ? styles.is__banner : null}`}>
 
@@ -59,12 +83,9 @@ export default function ArticleCard({
             </a>
 
             <div className={styles.article__information__wrapper}>
-                <div className={styles.article__headline__wrapper}>
-                    <a className={styles.article__headline__link} href={`/presents/${article.slug}`}>
-                        {headline}
-                    </a>
-                </div>
-                <div className={styles.article__author__wrapper}>by {authorsList}</div>
+                {setHeadline}
+                {setAuthor}
+                {setSnippet}
             </div>
             
         </div>

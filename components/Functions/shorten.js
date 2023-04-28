@@ -1,6 +1,11 @@
 export default function shorten(string, wordLimit=null) {
     if(wordLimit === null) {
-        string = string.substring(0, string.length-1)
+        if (string.includes("...")) {
+            string = string.substring(0, string.length-4) + "...";
+        } else {
+            string = string.substring(0, string.length-2) + "...";
+        }
+        
         return string;
     }
 
