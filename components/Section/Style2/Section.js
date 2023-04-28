@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/Section/Style2/Section.module.scss";
 
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
+import {default as MobileArticleCard} from "@/components/ArticleCards/card__in/ArticleCard";
 
 export default function Section({section, isMobile}) {
 
@@ -24,17 +25,31 @@ export default function Section({section, isMobile}) {
 
     const secondaryArticlesWrapper = secondaryArticles.map((article, index) =>
         <div className={styles.article__wrapper__full} key={`${article.id}-articleWrapperFull`}>
-            <ArticleCard 
-                article={article}
-                textAlignment={"left"}
-                textLocation={"bottom"}
-                hasHeadline={true}
-                hasAuthor={true}
-                hasSnippet={isMobile}
-                hasImage={false}
-                isMobile={false}
-                isBanner={isMobile}
-            />
+            {(isMobile) ? (
+                <MobileArticleCard 
+                    article={article}
+                    textAlignment={"left"}
+                    textLocation={"bottom"}
+                    hasHeadline={true}
+                    hasAuthor={true}
+                    hasSnippet={isMobile}
+                    hasImage={false}
+                    isMobile={false}
+                    isBanner={false}
+                />
+            ) : (
+                <ArticleCard 
+                    article={article}
+                    textAlignment={"left"}
+                    textLocation={"bottom"}
+                    hasHeadline={true}
+                    hasAuthor={true}
+                    hasSnippet={isMobile}
+                    hasImage={false}
+                    isMobile={false}
+                    isBanner={false}
+                />
+            )}
         </div>
     );
 

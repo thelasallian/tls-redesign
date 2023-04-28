@@ -30,7 +30,7 @@ export default function Section({section, isMobile}) {
                 <ArticleCard 
                     article={article}
                     textAlignment={"left"}
-                    textLocation={"right"}
+                    textLocation={(isMobile) ? "left" : "right"}
                     hasHeadline={true}
                     hasAuthor={true}
                     hasSnippet={false}

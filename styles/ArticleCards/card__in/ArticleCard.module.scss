@@ -4,16 +4,9 @@
 
 .card__wrapper__full {
     height: 100%;
+
     @media all and (max-width: 750px) {
-        height: 400px;
-    }
-
-    @media all and (max-width: 600px) {
-        height: 300px;
-    }
-
-    @media all and (max-width: 500px) {
-        height: 250px;
+        height: 200px;
     }
 
     display: flex;
@@ -100,5 +93,19 @@
                 }
             }
         }
+    }
+}
+
+.is__banner {
+    @media all and (max-width: 750px) {
+        height: 400px;
+    }
+
+    @media all and (max-width: 600px) {
+        height: 300px;
+    }
+
+    @media all and (max-width: 500px) {
+        height: 250px;
     }
 }
