@@ -17,10 +17,16 @@ export default function ArticleCard({
     isBanner = false,
  }) {
 
-    const wordCount = (isMobile || !isBanner) ? 20 : 30;
+    
+    const wordCount = () => {
+        if(isMobile) return null;
+        else if(isBanner) return 30;
+        else return 20;
+    }
+    
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
-    const snippet = shorten(dehtml(article.excerpt["rendered"]), wordCount);
+    const snippet = shorten(dehtml(article.excerpt["rendered"]), wordCount());
 
     const setTextAlignment = () => {
         if(textAlignment == "left") return styles.is__left; 

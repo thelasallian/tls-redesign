@@ -1,4 +1,9 @@
-export default function shorten(string, wordLimit) {
+export default function shorten(string, wordLimit=null) {
+    if(wordLimit === null) {
+        string = string.substring(0, string.length-1)
+        return string;
+    }
+
     const wordCount = string.split(" ").length;
     if(wordLimit < wordCount) {
         string = string.split(" ", wordLimit).join(" ");
