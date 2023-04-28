@@ -126,12 +126,20 @@
         @media all and (max-width: 1000px) {
             font-size: 1rem;
         }
+
+        @media all and (max-width: 750px) {
+            font-size: 1.2rem;
+        }
     }
     
     .is__secondary {
         font-size: 0.8rem;
         @media all and (max-width: 1000px) {
             font-size: 0.7rem;
+        }
+
+        @media all and (max-width: 750px) {
+            font-size: 0.8rem;
         }
     }
     
