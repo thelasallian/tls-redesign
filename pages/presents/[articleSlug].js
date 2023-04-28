@@ -9,6 +9,8 @@ export default function ArticlePage({article, section}) {
     const router = useRouter();
     const articleSlug = router.query.articleSlug;
 
+    console.log(article);
+
     return (
         <>
             <Head>
@@ -25,19 +27,19 @@ export default function ArticlePage({article, section}) {
 }
 
 export async function getServerSideProps({params}) {
-    const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,content,title,slug,categories,jetpack_featured_media_url&slug=${params.articleSlug}`);
-    const data = await response.json();
-    const result = data[0];
+    const articleResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?slug=${params.articleSlug}`);
+    const articleData = await articleResponse.json();
+    const article = articleData[0];
 
     const section = () => {
-        if(result.categories.includes(4)) return "University";
+        if(article.categories.includes(4)) return "University";
         else return "Other";
     }
 
     return {
         props: {
-            article: result,
-            section: section(),
+            article: article,
+            section: section()
         },
     };
 }
