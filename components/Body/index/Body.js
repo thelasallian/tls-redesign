@@ -78,7 +78,6 @@ export default function Body({sections}) {
                     hasAuthor={true}
                     hasSnippet={true}
                     hasImage={true}
-                    isMobile={false}
                     isBanner={true}
                 />
             ) : (
@@ -90,7 +89,6 @@ export default function Body({sections}) {
                     hasAuthor={true}
                     hasSnippet={true}
                     hasImage={true}
-                    isMobile={false}
                     isBanner={true}
                 />
             )}

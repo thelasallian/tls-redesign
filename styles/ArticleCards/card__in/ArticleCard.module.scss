@@ -4,6 +4,18 @@
 
 .card__wrapper__full {
     height: 100%;
+    @media all and (max-width: 750px) {
+        height: 400px;
+    }
+
+    @media all and (max-width: 600px) {
+        height: 300px;
+    }
+
+    @media all and (max-width: 500px) {
+        height: 250px;
+    }
+
     display: flex;
     flex-direction: row;
     position: relative;
@@ -11,7 +23,6 @@
     .article__image__link {
         .article__image__wrapper {
             height: 100%;
-            width: 100%;
             min-width: 100px;
     
             overflow: hidden;
