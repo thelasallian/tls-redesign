@@ -1,0 +1,52 @@
+@import '../colors';
+
+.header__wrapper__full {
+    min-height: 150px;
+    width: 100%;
+    background-color: yellow;
+
+    .header__logo__wrapper {
+        width: 100%;
+
+        background-color: pink;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        a {
+            display: flex;
+            
+            .logo__image__img {
+                height: 150px;
+                width: auto;
+            }
+        }
+    }
+
+    .header__navbar__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 50px;
+
+        .navbar__option__wrapper {
+            a {
+                text-decoration: none;
+                color: $black;
+            }
+        }
+    }
+}
+
+.is__sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
