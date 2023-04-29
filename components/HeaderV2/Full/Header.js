@@ -3,9 +3,7 @@ import styles from "@/styles/HeaderV2/Header.module.scss";
 
 
 export default function Header({section="None", minimized=false}) {
-    const [searchIsClicked, setSearchIsClicked] = useState(true);
-    const [pageYOffset, setPageYOffset] = useState(0);
-
+    const [searchIsClicked, setSearchIsClicked] = useState(false);
     const clickedSearch = () => {
         setSearchIsClicked(prevValue => !prevValue);
     }
@@ -68,24 +66,26 @@ export default function Header({section="None", minimized=false}) {
     );
 
     const logPageYOffset = () => {
-        setPageYOffset(window.pageYOffset);
-    }
-
-    useEffect(() => {
-        setPageYOffset(window.pageYOffset);
-        window.addEventListener("scroll", logPageYOffset);
-    },[]);
-
-    useEffect(() => {
+        const headerWrapper = document.querySelector("."+styles.header__wrapper__full);
         const navbarWrapper = document.querySelector("."+styles.header__navbar__wrapper);
-        const navbarWrapperOffsetHeight = navbarWrapper.offsetTop;
 
-        if(navbarWrapperOffsetHeight < pageYOffset) {
+        const headerWrapperFullHeight = headerWrapper.offsetHeight;
+        const navbarWrapperFullHeight = navbarWrapper.offsetHeight;
+        const navbarStartingYValue = parseFloat(headerWrapperFullHeight - navbarWrapperFullHeight);
+
+        const currentYValue = window.pageYOffset;
+
+        if(currentYValue > navbarStartingYValue) {
             navbarWrapper.classList.add(styles.is__sticky);
         } else {
             navbarWrapper.classList.remove(styles.is__sticky);
         }
-    },[pageYOffset]);
+        
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", logPageYOffset);
+    },[]);
 
     return (
         <div className={`${styles.header__wrapper__full}`}>
