@@ -4,6 +4,8 @@ import styles from "@/styles/HeaderV2/Header.module.scss";
 
 export default function Header({section="None", minimized=false}) {
     const [searchIsClicked, setSearchIsClicked] = useState(false);
+    const [navbarIsSticky, setNavbarIsSticky] = useState(false);
+
     const clickedSearch = () => {
         setSearchIsClicked(prevValue => !prevValue);
     }
@@ -18,12 +20,24 @@ export default function Header({section="None", minimized=false}) {
         </svg>
     );
 
+    const setStickyLogo = (navbarIsSticky) ? (
+        <div className={styles.navbar__logo__wrapper}>
+            <a href="/">
+                <img className={styles.logo__image__img} src="/media/svg/logo--tls--compact.svg"/>
+            </a>
+        </div>
+    ) : (
+        null
+    );
+
     const setNavbar = (searchIsClicked) ? (
         <>
             <input className={styles.navbar__input__search}/>
         </>
     ) : (
         <>
+            {setStickyLogo}
+
             <div className={styles.navbar__option__wrapper}>
                 <a href="/section/university">University</a>
             </div>
@@ -65,7 +79,7 @@ export default function Header({section="None", minimized=false}) {
         </>
     );
 
-    const logPageYOffset = () => {
+    const logCurrentYValue = () => {
         const headerWrapper = document.querySelector("."+styles.header__wrapper__full);
         const navbarWrapper = document.querySelector("."+styles.header__navbar__wrapper);
 
@@ -77,14 +91,16 @@ export default function Header({section="None", minimized=false}) {
 
         if(currentYValue > navbarStartingYValue) {
             navbarWrapper.classList.add(styles.is__sticky);
+            setNavbarIsSticky(true);
         } else {
             navbarWrapper.classList.remove(styles.is__sticky);
+            setNavbarIsSticky(false);
         }
         
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", logPageYOffset);
+        window.addEventListener("scroll", logCurrentYValue);
     },[]);
 
     return (
@@ -97,6 +113,7 @@ export default function Header({section="None", minimized=false}) {
             </div>
 
             <div className={`${styles.header__navbar__wrapper}`}>
+
                 {setNavbar}
 
                 <div className={styles.navbar__button__wrapper} onClick={clickedSearch}>

@@ -34,7 +34,7 @@
         justify-content: center;
         gap: 50px;
 
-        min-height: 2.5rem;
+        min-height: 3rem;
 
         position: relative;
 
@@ -46,7 +46,7 @@
         }
 
         .navbar__input__search {
-            height: 1.8rem;
+            height: 2.2rem;
             width: 50%;
         }
         
@@ -60,7 +60,7 @@
             justify-content: center;
 
             background-color: green;
-            height: 2.5rem;
+            height: 3rem;
 
             &:hover .dropdown__options__list  {
                 display: flex;
@@ -72,7 +72,7 @@
                 position: absolute;
                 width: 150px;
                 z-index: 2;
-                top: 2.5rem;
+                top: 3rem;
 
                 background-color: pink;
             }
@@ -92,6 +92,15 @@
                 width: 30px;
                 height: 30px;
                 cursor: pointer;
+            }
+        }
+
+        .navbar__logo__wrapper {
+            a {
+                .logo__image__img {
+                    height: 1.5rem;
+                    width: auto;
+                }
             }
         }
     }
