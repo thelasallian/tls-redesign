@@ -36,10 +36,44 @@
         padding-bottom: 10px;
         gap: 50px;
 
+        min-height: 1.5rem;
+
+        position: relative;
+
         .navbar__option__wrapper {
             a {
                 text-decoration: none;
                 color: $black;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            background-color: green;
+            position: relative;
+
+            &:hover .dropdown__options__list  {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .dropdown__options__list {
+                display: none;
+                position: absolute;
+                min-width: 100%;
+                background-color: green;
+                z-index: 2;
+            }
+        }
+
+        .navbar__button__wrapper {
+            display: flex;
+            position: absolute;
+            right: 15px;
+
+            .button__icon__search {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
             }
         }
     }
