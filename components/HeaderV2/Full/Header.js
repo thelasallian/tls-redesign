@@ -11,6 +11,8 @@ export default function Header({
     const [navbarIsSticky, setNavbarIsSticky] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
 
+    const compactWindowSize = 1050;
+
     const clickedSearch = () => {
         setSearchIsClicked(prevValue => !prevValue);
     }
@@ -68,15 +70,19 @@ export default function Header({
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">University</a>
+                <a href="/section/university">Menagerie</a>
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">University</a>
+                <a href="/section/university">Sports</a>
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">University</a>
+                <a href="/section/university">Vanguard</a>
+            </div>
+
+            <div className={styles.navbar__option__wrapper}>
+                <a href="/section/university">Opinion</a>
             </div>
 
             <div className={`${styles.navbar__option__wrapper} ${styles.navbar__dropdown__wrapper}`}>
@@ -88,6 +94,10 @@ export default function Header({
                 </a>
                 
                 <div className={styles.dropdown__options__list}>
+                    <div className={styles.dropdown__option__wrapper}>
+                        <a href="/section/university">About Us</a>
+                    </div>
+
                     <div className={styles.dropdown__option__wrapper}>
                         <a href="/section/university">Contact Us</a>
                     </div>
@@ -140,11 +150,11 @@ export default function Header({
     },[]);
 
     const handleWindowResize = () => {
-        setIsCompact(window.innerWidth < 1000);
+        setIsCompact(window.innerWidth < compactWindowSize);
     }
 
     useEffect(() => {
-        setIsCompact(window.innerWidth < 1000);
+        setIsCompact(window.innerWidth < compactWindowSize);
         window.addEventListener("resize", handleWindowResize);
     },[]);
 
