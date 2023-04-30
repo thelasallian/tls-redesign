@@ -168,3 +168,67 @@
         }
     }
 }
+
+.menagerie {
+    background-color: $color--menagerie;
+
+    .header__setting__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+
+    .header__search__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.sports {
+    background-color: $color--sports;
+
+    .header__setting__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+
+    .header__search__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.vanguard {
+    background-color: $color--vanguard;
+
+    .header__setting__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+
+    .header__search__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.opinion {
+    background-color: $color--opinion;
+
+    .header__setting__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+
+    .header__search__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+}
