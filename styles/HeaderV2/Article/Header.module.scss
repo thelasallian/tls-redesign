@@ -1,7 +1,7 @@
 @import '../../colors';
 
 .header__wrapper__full {
-    position: sticky;
+    position: fixed;
     z-index: 2;
     min-height: 3rem;
     height: 3rem;
