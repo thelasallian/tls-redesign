@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import styles from "@/styles/Body/article/Body.module.scss";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
@@ -10,8 +10,6 @@ export default function Body({article, section}) {
     const authorsList = createAuthorsList(article.authors, "link");
     const dateCreated = dayjs(article.date).format("MMMM D, YYYY");
 
-    console.log(article.content.rendered);
-
     const setBackgroundColor = () => {
         if (section === "University") return styles.university;
         else if (section === "Menagerie") return styles.menagerie;
@@ -21,6 +19,27 @@ export default function Body({article, section}) {
         else return null;
 
     }
+
+    const logCurrentYValue = () => {
+        const informationWrapper = document.querySelector("."+styles.body__information__wrapper);
+        const currentYValue = window.pageYOffset;
+        console.log(currentYValue);
+
+        if(informationWrapper === null) return;
+
+        const informationWrapperFullHeight = informationWrapper.offsetHeight + 300;
+        
+
+        if(currentYValue > informationWrapperFullHeight) {
+            console.log("show headline");
+        } else {
+            console.log("dont show headline");
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", logCurrentYValue);
+    },[]);
 
     
 

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Article/Header.module.scss";
 
+import dehtml from "@/components/Functions/dehtml";
+
 
 export default function Header({
     article,
     section = "None"
 }) {
+    const headline = dehtml(article.title["rendered"]);
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
+    const [showHeadline, setShowHeadline] = useState(false);
 
     const compactWindowSize = 1050;
 
@@ -53,64 +57,79 @@ export default function Header({
         }
     }
 
-    const setNavbar = (searchIsClicked) ? (
-        <>
-            <input className={styles.navbar__input__search}/>
-        </>
-    ) : (
-        <>
-            {setLogo()}
+    const setNavbar = () => {
+        if(searchIsClicked) {
+            return (
+                <input className={styles.navbar__input__search}/>
+            );
+        } else if(showHeadline) {
+            return (
+                <>
+                    <div className={styles.navbar__logo__wrapper}>
+                        <a href="/">
+                            <img className={styles.logo__image__star} src="/media/svg/icon__tls__star__white.svg"/>
+                        </a>
+                    </div>
+                    <div className={styles.navbar__headline__wrapper}>{headline}</div>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    {setLogo()}
 
-            <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">University</a>
-            </div>
-
-            <div className={styles.navbar__option__wrapper}>
-                <a href="/section/menagerie">Menagerie</a>
-            </div>
-
-            <div className={styles.navbar__option__wrapper}>
-                <a href="/section/sports">Sports</a>
-            </div>
-
-            <div className={styles.navbar__option__wrapper}>
-                <a href="/section/vanguard">Vanguard</a>
-            </div>
-
-            <div className={styles.navbar__option__wrapper}>
-                <a href="/section/opinion">Opinion</a>
-            </div>
-
-            <div className={`${styles.navbar__option__wrapper} ${styles.navbar__dropdown__wrapper}`}>
-                <a href="">
-                    More
-                    <svg className={styles.button__icon__more} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
-                        <path d="M480 697.537 253.847 471.385l32.615-32.615L480 632.924l193.538-193.539L706.153 472 480 697.537Z"/>
-                    </svg>
-                </a>
-                
-                <div className={styles.dropdown__options__list}>
-                    <div className={styles.dropdown__option__wrapper}>
-                        <a href="/about-us">About Us</a>
+                    <div className={styles.navbar__option__wrapper}>
+                        <a href="/section/university">University</a>
                     </div>
 
-                    <div className={styles.dropdown__option__wrapper}>
-                        <a href="/contact-us">Contact Us</a>
+                    <div className={styles.navbar__option__wrapper}>
+                        <a href="/section/menagerie">Menagerie</a>
                     </div>
-                    <div className={styles.dropdown__option__wrapper}>
-                        <a href="/web-specials">Web Specials</a>
+
+                    <div className={styles.navbar__option__wrapper}>
+                        <a href="/section/sports">Sports</a>
                     </div>
-                    <div className={styles.dropdown__option__wrapper}>
-                        <a href="/pop-town">Pop Town</a>
+
+                    <div className={styles.navbar__option__wrapper}>
+                        <a href="/section/vanguard">Vanguard</a>
                     </div>
-                    <div className={styles.dropdown__option__wrapper}>
-                        <a href="/painting-with-lights">Painting with Lights</a>
+
+                    <div className={styles.navbar__option__wrapper}>
+                        <a href="/section/opinion">Opinion</a>
                     </div>
-                </div>
-                
-            </div>
-        </>
-    );
+
+                    <div className={`${styles.navbar__option__wrapper} ${styles.navbar__dropdown__wrapper}`}>
+                        <a href="">
+                            More
+                            <svg className={styles.button__icon__more} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                                <path d="M480 697.537 253.847 471.385l32.615-32.615L480 632.924l193.538-193.539L706.153 472 480 697.537Z"/>
+                            </svg>
+                        </a>
+                        
+                        <div className={styles.dropdown__options__list}>
+                            <div className={styles.dropdown__option__wrapper}>
+                                <a href="/about-us">About Us</a>
+                            </div>
+
+                            <div className={styles.dropdown__option__wrapper}>
+                                <a href="/contact-us">Contact Us</a>
+                            </div>
+                            <div className={styles.dropdown__option__wrapper}>
+                                <a href="/web-specials">Web Specials</a>
+                            </div>
+                            <div className={styles.dropdown__option__wrapper}>
+                                <a href="/pop-town">Pop Town</a>
+                            </div>
+                            <div className={styles.dropdown__option__wrapper}>
+                                <a href="/painting-with-lights">Painting with Lights</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </>
+            );
+        }
+    }
 
     const setSectionColor = () => {
         if (section === "University") return styles.university;
@@ -130,12 +149,27 @@ export default function Header({
         window.addEventListener("resize", handleWindowResize);
     },[]);
 
+    const logCurrentYValue = () => {
+        const currentYValue = window.pageYOffset;
+        console.log(currentYValue);
+        
+        if(currentYValue > 500) {
+            setShowHeadline(true);
+        } else {
+            setShowHeadline(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", logCurrentYValue);
+    },[]);
+
     return (
         <div className={`${styles.header__wrapper__full} ${setSectionColor()}`}>
 
             <div className={`${styles.header__navbar__wrapper} ${setSectionColor()}`}>
 
-                {setNavbar}
+                {setNavbar()}
 
                 <div className={styles.navbar__button__wrapper} onClick={clickedSearch}>
                     {setSearchIcon}

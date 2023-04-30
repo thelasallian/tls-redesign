@@ -40,6 +40,10 @@
         border-right: none;
         border-color: $gray;
 
+        .navbar__headline__wrapper {
+            color: $white;
+        }
+
         .navbar__option__wrapper {
             a {
                 text-decoration: none;
@@ -139,6 +143,11 @@
 
         .navbar__logo__wrapper {
             a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                
                 .logo__image__img {
                     height: 1.5rem;
                     width: auto;
@@ -165,7 +174,7 @@
 }
 
 .university {
-    background-color: $color--university;
+    background-color: $transparent--color--university;
 
     .header__navbar__wrapper {
         border-color: $color--university;
