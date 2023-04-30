@@ -69,19 +69,19 @@ export default function Header({
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">Menagerie</a>
+                <a href="/section/menagerie">Menagerie</a>
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">Sports</a>
+                <a href="/section/sports">Sports</a>
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">Vanguard</a>
+                <a href="/section/vanguard">Vanguard</a>
             </div>
 
             <div className={styles.navbar__option__wrapper}>
-                <a href="/section/university">Opinion</a>
+                <a href="/section/opinion">Opinion</a>
             </div>
 
             <div className={`${styles.navbar__option__wrapper} ${styles.navbar__dropdown__wrapper}`}>
@@ -94,20 +94,20 @@ export default function Header({
                 
                 <div className={styles.dropdown__options__list}>
                     <div className={styles.dropdown__option__wrapper}>
-                        <a href="/section/university">About Us</a>
+                        <a href="/about-us">About Us</a>
                     </div>
 
                     <div className={styles.dropdown__option__wrapper}>
-                        <a href="/section/university">Contact Us</a>
+                        <a href="/contact-us">Contact Us</a>
                     </div>
                     <div className={styles.dropdown__option__wrapper}>
-                        <a href="/section/university">Web Specials</a>
+                        <a href="/web-specials">Web Specials</a>
                     </div>
                     <div className={styles.dropdown__option__wrapper}>
-                        <a href="/section/university">Pop Town</a>
+                        <a href="/pop-town">Pop Town</a>
                     </div>
                     <div className={styles.dropdown__option__wrapper}>
-                        <a href="/section/university">Painting with Lights</a>
+                        <a href="/painting-with-lights">Painting with Lights</a>
                     </div>
                 </div>
                 
@@ -129,7 +129,7 @@ export default function Header({
         const navbarWrapper = document.querySelector("."+styles.header__navbar__wrapper);
 
         if(headerWrapper === null) return;
-        
+
         const headerWrapperFullHeight = headerWrapper.offsetHeight;
         const navbarWrapperFullHeight = navbarWrapper.offsetHeight;
         const navbarStartingYValue = parseFloat(headerWrapperFullHeight - navbarWrapperFullHeight);
