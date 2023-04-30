@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/HeaderV2/Header.module.scss";
-
+import styles from "@/styles/HeaderV2/Full/Header.module.scss";
 
 export default function Header({
+    article,
     section = "None"
 }) {
     const [searchIsClicked, setSearchIsClicked] = useState(false);
