@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import Header from '@/components/Header/Header';
+import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/index/Body';
 import Footer from '@/components/Footer/Footer';
 

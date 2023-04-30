@@ -1,35 +1,13 @@
 @import '../../colors';
 
 .header__wrapper__full {
-    min-height: 150px;
+    position: sticky;
+    z-index: 2;
+    min-height: 3rem;
+    top: 0px;
+    
     width: 100%;
     background-color: $white;
-
-    .header__logo__wrapper {
-        width: 100%;
-
-        background-color: $white;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        padding-top: 15px;
-        padding-bottom: 15px;
-
-        a {
-            display: flex;
-            
-            .logo__image__img {
-                height: 150px;
-                width: auto;
-            }
-
-            &:hover {
-                opacity: 0.8;
-            }
-        }
-    }
 
     .header__navbar__wrapper {
         display: flex;
@@ -37,7 +15,6 @@
         align-items: center;
         justify-content: center;
         gap: 50px;
-        background-color: $white;
 
         @media all and (max-width: 900px) {
             gap: 40px;
