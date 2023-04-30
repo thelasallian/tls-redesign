@@ -14,6 +14,7 @@ export default function Header({
     const [showHeadline, setShowHeadline] = useState(false);
 
     const compactWindowSize = 1050;
+    const headlineYValue = 500;
 
     const clickedSearch = () => {
         setSearchIsClicked(prevValue => !prevValue);
@@ -151,9 +152,8 @@ export default function Header({
 
     const logCurrentYValue = () => {
         const currentYValue = window.pageYOffset;
-        console.log(currentYValue);
-        
-        if(currentYValue > 500) {
+
+        if(currentYValue > headlineYValue) {
             setShowHeadline(true);
         } else {
             setShowHeadline(false);

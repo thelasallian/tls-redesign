@@ -19,30 +19,7 @@ export default function Body({article, section}) {
         else return null;
 
     }
-
-    const logCurrentYValue = () => {
-        const informationWrapper = document.querySelector("."+styles.body__information__wrapper);
-        const currentYValue = window.pageYOffset;
-        console.log(currentYValue);
-
-        if(informationWrapper === null) return;
-
-        const informationWrapperFullHeight = informationWrapper.offsetHeight + 300;
-        
-
-        if(currentYValue > informationWrapperFullHeight) {
-            console.log("show headline");
-        } else {
-            console.log("dont show headline");
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", logCurrentYValue);
-    },[]);
-
     
-
     return (
         <div className={styles.body__wrapper__full}>
             <div className={`${styles.body__background__wrapper} ${setBackgroundColor()}`}>

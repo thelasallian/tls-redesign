@@ -36,6 +36,19 @@
         z-index: 1;
         background-color: $white;
         width: 55%;
+
+        @media all and (max-width: 1800px) {
+            width: 70%;
+        }
+
+        @media all and (max-width: 1500px) {
+            width: 80%;
+        }
+
+        @media all and (max-width: 1000px) {
+            width: 90%;
+        }
+        
         height: auto;
 
         border-top-left-radius: 8px;
