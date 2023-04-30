@@ -28,7 +28,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div class={styles.header__logo__wrapper}>
+            <div className={styles.header__logo__wrapper}>
                 <a href="/">
                     <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
                 </a>

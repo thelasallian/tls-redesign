@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Full/Header.module.scss";
 
+
 export default function Header({
     article,
     section = "None"
@@ -127,6 +128,8 @@ export default function Header({
         const headerWrapper = document.querySelector("."+styles.header__wrapper__full);
         const navbarWrapper = document.querySelector("."+styles.header__navbar__wrapper);
 
+        if(headerWrapper === null) return;
+        
         const headerWrapperFullHeight = headerWrapper.offsetHeight;
         const navbarWrapperFullHeight = navbarWrapper.offsetHeight;
         const navbarStartingYValue = parseFloat(headerWrapperFullHeight - navbarWrapperFullHeight);
@@ -140,7 +143,6 @@ export default function Header({
             navbarWrapper.classList.remove(styles.is__sticky);
             setNavbarIsSticky(false);
         }
-        
     }
 
     useEffect(() => {

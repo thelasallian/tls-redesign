@@ -8,8 +8,6 @@ export default function Body({article, section}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
 
-    console.log(article);
-
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.body__section__wrapper}>
