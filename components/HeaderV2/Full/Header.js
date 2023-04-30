@@ -9,6 +9,7 @@ export default function Header({
 }) {
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [navbarIsSticky, setNavbarIsSticky] = useState(false);
+    const [isCompact, setIsCompact] = useState(false);
 
     const clickedSearch = () => {
         setSearchIsClicked(prevValue => !prevValue);
@@ -29,7 +30,11 @@ export default function Header({
             return (
                 <div className={styles.navbar__logo__wrapper}>
                     <a href="/">
-                        <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
+                        {(isCompact) ? (
+                            <img className={styles.logo__image__star} src="/media/svg/icon__tls__star.svg"/>
+                        ) : (
+                            <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
+                        )}
                     </a>
                 </div>
             );
@@ -37,7 +42,11 @@ export default function Header({
             return (
                 <div className={styles.navbar__logo__wrapper}>
                     <a href="/">
-                        <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact__white.svg"/>
+                        {(isCompact) ? (
+                            <img className={styles.logo__image__star} src="/media/svg/icon__tls__star__white.svg"/>
+                        ) : (
+                            <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact__white.svg"/>
+                        )}
                     </a>
                 </div>
             );
@@ -128,6 +137,15 @@ export default function Header({
 
     useEffect(() => {
         window.addEventListener("scroll", logCurrentYValue);
+    },[]);
+
+    const handleWindowResize = () => {
+        setIsCompact(window.innerWidth < 1000);
+    }
+
+    useEffect(() => {
+        setIsCompact(window.innerWidth < 1000);
+        window.addEventListener("resize", handleWindowResize);
     },[]);
 
     return (
