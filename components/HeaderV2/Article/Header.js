@@ -167,7 +167,7 @@ export default function Header({
     return (
         <div className={`${styles.header__wrapper__full} ${setSectionColor()}`}>
 
-            <div className={`${styles.header__navbar__wrapper} ${setSectionColor()}`}>
+            <div className={`${styles.header__navbar__wrapper} ${setSectionColor()} ${(showHeadline) ? (styles.has__headline) : (null)}`}>
 
                 {setNavbar()}
 
