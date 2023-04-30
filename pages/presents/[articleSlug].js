@@ -31,7 +31,11 @@ export async function getServerSideProps({params}) {
 
     const section = () => {
         if(article.categories.includes(4)) return "University";
-        else return "Other";
+        else if(article.categories.includes(8)) return "Menagerie";
+        else if(article.categories.includes(6)) return "Sports";
+        else if(article.categories.includes(1883)) return "Vanguard";
+        else if(article.categories.includes(5)) return "Opinion";
+        else return "None";
     }
 
     return {

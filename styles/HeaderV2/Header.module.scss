@@ -5,6 +5,8 @@
     width: 100%;
     background-color: $white;
 
+    background-color: rgba(255, 255, 255, 0);
+
     .header__logo__wrapper {
         width: 100%;
 
@@ -103,17 +105,19 @@
                     padding-left: 5px;
                     padding-right: 5px;
 
-                    border-style: solid;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    border-bottom-width: 1px;
-                    border-color: $gray;
-
                     text-align: center;
 
                     &:hover a {
                         opacity: 0.8;
+                    }
+
+                    &:not(&:last-child) {
+                        border-style: solid;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom-width: 1px;
+                        border-color: $gray;
                     }
                 }
             }
@@ -133,6 +137,10 @@
                 width: 30px;
                 height: 30px;
                 cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
 
@@ -152,9 +160,179 @@
     top: 0px;
     z-index: 2;
     width: 100%;
-    background-color: $white;
 }
 
 .university {
     background-color: $color--university;
+
+    .header__navbar__wrapper {
+        border-color: $color--university;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+                
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menagerie {
+    background-color: $color--menagerie;
+
+    .header__navbar__wrapper {
+        border-color: $color--menagerie;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+                
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sports {
+    background-color: $color--sports;
+
+    .header__navbar__wrapper {
+        border-color: $color--sports;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vanguard {
+    background-color: $color--vanguard;
+
+    .header__navbar__wrapper {
+        border-color: $color--vanguard;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.opinion {
+    background-color: $color--opinion;
+
+    .header__navbar__wrapper {
+        border-color: $color--opinion;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -85,6 +85,15 @@ export default function Header({
         </>
     );
 
+    const setSectionColor = () => {
+        if (section === "University") return styles.university;
+        else if (section === "Menagerie") return styles.menagerie;
+        else if (section === "Sports") return styles.sports;
+        else if (section === "Vanguard") return styles.vanguard;
+        else if (section === "Opinion") return styles.opinion;
+        else return null;
+    }
+
     const logCurrentYValue = () => {
         const headerWrapper = document.querySelector("."+styles.header__wrapper__full);
         const navbarWrapper = document.querySelector("."+styles.header__navbar__wrapper);
@@ -110,7 +119,7 @@ export default function Header({
     },[]);
 
     return (
-        <div className={`${styles.header__wrapper__full}`}>
+        <div className={`${styles.header__wrapper__full} ${setSectionColor()}`}>
 
             <div className={styles.header__logo__wrapper}>
                 <a href="/">
@@ -118,7 +127,7 @@ export default function Header({
                 </a>
             </div>
 
-            <div className={`${styles.header__navbar__wrapper}`}>
+            <div className={`${styles.header__navbar__wrapper} ${setSectionColor()}`}>
 
                 {setNavbar}
 
