@@ -26,6 +26,10 @@
                 height: 150px;
                 width: auto;
             }
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
 
@@ -149,6 +153,10 @@
                 .logo__image__img {
                     height: 1.5rem;
                     width: auto;
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }

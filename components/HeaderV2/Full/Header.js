@@ -24,15 +24,27 @@ export default function Header({
         </svg>
     );
 
-    const setStickyLogo = (navbarIsSticky) ? (
-        <div className={styles.navbar__logo__wrapper}>
-            <a href="/">
-                <img className={styles.logo__image__img} src="/media/svg/logo--tls--compact.svg"/>
-            </a>
-        </div>
-    ) : (
-        null
-    );
+    const setStickyLogo = () => {
+        if(navbarIsSticky && section === "None") {
+            return (
+                <div className={styles.navbar__logo__wrapper}>
+                    <a href="/">
+                        <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
+                    </a>
+                </div>
+            );
+        } else if(navbarIsSticky && section !=- "None") {
+            return (
+                <div className={styles.navbar__logo__wrapper}>
+                    <a href="/">
+                        <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact__white.svg"/>
+                    </a>
+                </div>
+            );
+        } else {
+            return null;
+        }
+    }
 
     const setNavbar = (searchIsClicked) ? (
         <>
@@ -40,7 +52,7 @@ export default function Header({
         </>
     ) : (
         <>
-            {setStickyLogo}
+            {setStickyLogo()}
 
             <div className={styles.navbar__option__wrapper}>
                 <a href="/section/university">University</a>
