@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Head from 'next/head'
 
-import Header from '@/components/HeaderV2/Full/Header';
+import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/article/Body';
 import Footer from '@/components/Footer/Footer';
 
@@ -16,7 +16,7 @@ export default function ArticlePage({article, section}) {
             </Head>
 
             <div className="wrapper">
-                <Header section={section}/>
+                <Header article={article} section={section}/>
                 <Body article={article} section={section}/>
                 <Footer/>
             </div>

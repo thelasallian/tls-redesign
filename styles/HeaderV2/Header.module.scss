@@ -40,6 +40,18 @@
         justify-content: center;
         gap: 50px;
 
+        @media all and (max-width: 900px) {
+            gap: 40px;
+        }
+
+        @media all and (max-width: 800px) {
+            gap: 30px;
+        }
+
+        @media all and (max-width: 750px) {
+            gap: 0px;
+        }
+
         min-height: 3rem;
 
         position: relative;
