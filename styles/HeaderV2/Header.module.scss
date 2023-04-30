@@ -49,6 +49,14 @@
             a {
                 text-decoration: none;
                 color: $black;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
 
@@ -101,6 +109,8 @@
                     border-right: none;
                     border-bottom-width: 1px;
                     border-color: $gray;
+
+                    text-align: center;
 
                     &:hover a {
                         opacity: 0.8;
