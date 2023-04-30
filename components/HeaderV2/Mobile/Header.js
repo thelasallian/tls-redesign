@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Mobile/Header.module.scss";
 
-export default function Header() {
+export default function Header({
+    article,
+    section = "None"
+}) {
     const [settingsIsClicked, setSettingsIsClicked] = useState(false);
     const [searchIsClicked, setSearchIsClicked] = useState(false);
 
@@ -19,7 +22,13 @@ export default function Header() {
         <input className={styles.header__input__search} type="text"/>
     ) : (
         <a href="/">
-            <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
+            {
+                (section === "None") ? (
+                    <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact.svg"/>
+                ) : (
+                    <img className={styles.logo__image__img} src="/media/svg/logo__tls__compact__white.svg"/>
+                )
+            }
         </a>
     );
 
@@ -41,9 +50,18 @@ export default function Header() {
             dropdownWrapper.classList.add(styles.is__hidden);
         }
     },[settingsIsClicked]);
+
+    const setSectionColor = () => {
+        if (section === "University") return styles.university;
+        else if (section === "Menagerie") return styles.menagerie;
+        else if (section === "Sports") return styles.sports;
+        else if (section === "Vanguard") return styles.vanguard;
+        else if (section === "Opinion") return styles.opinion;
+        else return null;
+    }
     
     return (
-        <div className={styles.header__wrapper__full}>
+        <div className={`${styles.header__wrapper__full} ${setSectionColor()}`}>
 
             <div className={styles.header__setting__wrapper}>
                 <div className={styles.navbar__button__wrapper}>

@@ -31,8 +31,6 @@
         padding-left: 12px;
         padding-right: 12px;
 
-        background-color: $white;
-
         svg {
             &:hover {
                 opacity: 0.8;
@@ -48,7 +46,6 @@
         justify-content: center;
 
         width: 100%;
-        background-color: $white;
 
         padding-top: 15px;
         padding-bottom: 15px;
@@ -149,4 +146,20 @@
 
 .is__hidden {
     display: none;
+}
+
+.university {
+    background-color: $color--university;
+
+    .header__setting__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
+
+    .header__search__wrapper {
+        svg {
+            fill: $white;
+        }
+    }
 }
