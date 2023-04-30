@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Header.module.scss";
 
 
-export default function Header({section="None", minimized=false}) {
+export default function Header({
+    section = "None", 
+    minimized = false, 
+    forcedSticky = false
+}) {
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [navbarIsSticky, setNavbarIsSticky] = useState(false);
 
