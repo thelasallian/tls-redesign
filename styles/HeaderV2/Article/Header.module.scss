@@ -42,6 +42,16 @@
 
         .navbar__headline__wrapper {
             color: $white;
+
+            .headline__span__section {
+                font-weight: 700;
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
 
         .navbar__option__wrapper {

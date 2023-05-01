@@ -71,7 +71,7 @@ export default function Header({
                             <img className={styles.logo__image__star} src="/media/svg/icon__tls__star__white.svg"/>
                         </a>
                     </div>
-                    <div className={styles.navbar__headline__wrapper}>{headline}</div>
+                    <div className={styles.navbar__headline__wrapper}><a href={`/section/${section.toLowerCase()}`} className={styles.headline__span__section}>{section}</a>: {headline}</div>
                 </>
             );
         } else {
