@@ -19,7 +19,7 @@
     .body__background__wrapper {
         position: absolute;
         z-index: 0;
-        background-color: $white;
+        background-color: yellow;
         width: 100%;
         height: 800px;
         display: flex;
@@ -81,8 +81,7 @@
             }
 
             .body__author__wrapper {
-                padding-bottom: 20px;
-
+                padding-bottom: 5px;
                 a {
                     text-decoration: none;
                     color: $black;
@@ -93,22 +92,27 @@
                 }
             }
 
+            .body__date__wrapper {
+                font-size: 0.8rem;
+            }
+
         }
 
         .body__content__wrapper {
             padding-top: 20px;
             width: 100%;
             height: auto;
+            // letter-spacing: 0.5px;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-top: 40px;
+
+            }
 
             p {
-                font-size: 1.2rem;
-
-                &:not(&:first-child) {
-                    margin-top: 20px;
-                }
-
+                font-size: 1rem;
                 margin-bottom: 20px;
-                
             }
 
             figure {
@@ -124,6 +128,37 @@
                     width: 100%;
                     object-fit: contain;
                 }
+            }
+        }
+
+        .body__suggestions__wrapper {
+            border-style: solid;
+            border-top-width: 1px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 0px;
+            border-color: $gray;
+            padding-top: 15px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            .suggestions__header__wrapper {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                font-size: 1.5rem;
+                padding-bottom: 5px;
+            }
+
+            .suggestions__articles__wrapper {
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 20px;
             }
         }
     }

@@ -1,7 +1,9 @@
 import {React, useEffect} from "react";
 import styles from "@/styles/Body/article/Body.module.scss";
+import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
+import parseRelatedArticles from "@/components/Functions/parseRelatedArticles";
 import dehtml from "@/components/Functions/dehtml";
 import dayjs from "dayjs";
 
@@ -9,6 +11,16 @@ export default function Body({article, section}) {
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
     const dateCreated = dayjs(article.date).format("MMMM D, YYYY");
+    const relatedArticles = parseRelatedArticles(article["jetpack-related-posts"].slice(0,3));
+    const relatedArticlesCard = relatedArticles.map(article => 
+        <ArticleCard 
+            article={article}
+            hasSnippet={false}
+            hasAuthor={false}
+            hasImage={true}
+        />
+    )
+    
 
     const setBackgroundColor = () => {
         if (section === "University") return styles.university;
@@ -35,6 +47,12 @@ export default function Body({article, section}) {
                     className={styles.body__content__wrapper} 
                     dangerouslySetInnerHTML={{__html: article.content.rendered}}
                 />
+                <div className={styles.body__suggestions__wrapper}>
+                    <div className={styles.suggestions__header__wrapper}>Related posts</div>
+                    <div className={styles.suggestions__articles__wrapper}>
+                        {relatedArticlesCard}
+                    </div>
+                </div>
             </div>
         </div>
     );

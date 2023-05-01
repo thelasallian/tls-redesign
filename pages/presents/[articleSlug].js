@@ -7,7 +7,7 @@ import Footer from '@/components/Footer/Footer';
 
 export default function ArticlePage({article, section}) {
     const router = useRouter();
-    const articleSlug = router.query.articleSlug;
+    console.log(article);
     
     return (
         <>

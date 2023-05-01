@@ -33,6 +33,8 @@ function createAuthorListWithNoLink(authors) {
 function createAuthorListWithLink(authors) {
     let concatonatedAuthors = [];
 
+    if (authors === null) return;
+
     for(let i=0; i<authors.length; i++) {
         if(authors.length > 2) {
             if(i < authors.length - 1) {
