@@ -5,14 +5,16 @@ import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/article/Body';
 import Footer from '@/components/Footer/Footer';
 
+import dehtml from "@/components/Functions/dehtml";
+
 export default function ArticlePage({article, section}) {
     const router = useRouter();
-    console.log(article);
-    
+    const headline = dehtml(article.title["rendered"]);
+
     return (
         <>
             <Head>
-                <title>{article.title["rendered"]}</title>
+                <title>{headline}</title>
             </Head>
 
             <div className="wrapper">
