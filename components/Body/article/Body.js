@@ -14,6 +14,7 @@ export default function Body({article, section}) {
     const relatedArticles = parseRelatedArticles(article["jetpack-related-posts"].slice(0,3));
     const relatedArticlesCard = relatedArticles.map(article => 
         <ArticleCard 
+            key={`${article.slug}-articleCard`}
             article={article}
             hasSnippet={false}
             hasAuthor={false}
