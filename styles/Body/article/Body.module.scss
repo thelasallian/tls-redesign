@@ -37,7 +37,7 @@
         background-color: $white;
         width: 55%;
 
-        @media all and (max-width: 1800px) {
+        @media all and (max-width: 1900px) {
             width: 70%;
         }
 
@@ -47,6 +47,10 @@
 
         @media all and (max-width: 1000px) {
             width: 90%;
+        }
+
+        @media all and (max-width: 750px) {
+            margin-top: 100px;
         }
         
         height: auto;
@@ -62,6 +66,11 @@
         padding-left: 100px;
         padding-right: 100px;
         padding-bottom: 50px;
+
+        @media all and (max-width: 750px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
 
         .body__information__wrapper {
             border-style: solid;
