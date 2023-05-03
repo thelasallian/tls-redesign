@@ -9,6 +9,7 @@ export default function dehtml(string) {
         .replaceAll("&#8230;", "...") // ellipsis
         .replaceAll("&hellip;", "...") //elipsis
         .replaceAll("&#8216;", "‘") // left apostrophe
+        .replaceAll("&#038;", "&")
         .replaceAll("&nbsp;", " "); // non breaking space
     
     return string;

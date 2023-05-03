@@ -1,6 +1,8 @@
 @import '../../colors';
 
 .footer__wrapper__full {
+    z-index: 5;
+    background-color: $white;
     min-height: 200px;
     display: grid;
     grid-template-rows: 15% auto 12%;

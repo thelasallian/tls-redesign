@@ -4,6 +4,7 @@ import styles from "@/styles/ArticleCards/card__out/ArticleCard.module.scss";
 import createAuthorsList from "@/components/Functions/createAuthorsList";
 import dehtml from "@/components/Functions/dehtml";
 import shorten from "@/components/Functions/shorten";
+import dayjs from "dayjs";
 
 export default function ArticleCard({
     article,
@@ -15,6 +16,7 @@ export default function ArticleCard({
     hasImage = true,
     isMobile = false,
     isBanner = false,
+    hasDate = false,
  }) {
 
     
@@ -83,7 +85,9 @@ export default function ArticleCard({
         <div className={`${styles.article__snippet__wrapper} ${setTextSize("snippet")}`}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
     ) : (
         null
-    ) ;
+    );
+
+
     
     return (
         <div className={`${styles.card__wrapper__full} ${setTextLocation()} ${isBanner ? styles.is__banner : null}`}>

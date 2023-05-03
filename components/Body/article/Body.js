@@ -32,6 +32,8 @@ export default function Body({article, section}) {
         else return null;
 
     }
+
+    console.log(article);
     
     return (
         <div className={styles.body__wrapper__full}>
@@ -39,22 +41,44 @@ export default function Body({article, section}) {
                 <img className={styles.background__image__img} src={article.jetpack_featured_media_url}/>
             </div>
             <div className={styles.body__foreground__wrapper}>
-                <div className={styles.body__information__wrapper}>
-                    <div className={styles.body__headline__wrapper}>{headline}</div>
-                    <div className={styles.body__author__wrapper}>by {authorsList}</div>
-                    <div className={styles.body__date__wrapper}>{dateCreated}</div>
-                </div>
-                <div 
-                    className={styles.body__content__wrapper} 
-                    dangerouslySetInnerHTML={{__html: article.content.rendered}}
-                />
-                <div className={styles.body__suggestions__wrapper}>
-                    <div className={styles.suggestions__header__wrapper}>Related posts</div>
-                    <div className={styles.suggestions__articles__wrapper}>
-                        {relatedArticlesCard}
+                
+                <div className={styles.body__content__wrapper}>
+
+                    <div className={styles.body__information__wrapper}>
+                        <div className={styles.body__headline__wrapper}>{headline}</div>
+                        <div className={styles.body__author__wrapper}>by {authorsList}</div>
+                        <div className={styles.body__date__wrapper}>{dateCreated}</div>
                     </div>
+
+                    <div className={styles.body__text__wrapper} dangerouslySetInnerHTML={{__html: article.content.rendered}}/>
+
+                    <div className={styles.body__suggestions__wrapper}>
+                        <div className={styles.suggestions__header__wrapper}>Related posts</div>
+                        <div className={styles.suggestions__articles__wrapper}>
+                            {relatedArticlesCard}
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     );
 }
+
+{/* <div className={styles.body__foreground__wrapper}>
+    <div className={styles.body__information__wrapper}>
+        <div className={styles.body__headline__wrapper}>{headline}</div>
+        <div className={styles.body__author__wrapper}>by {authorsList}</div>
+        <div className={styles.body__date__wrapper}>{dateCreated}</div>
+    </div>
+    <div 
+        className={styles.body__content__wrapper} 
+        dangerouslySetInnerHTML={{__html: article.content.rendered}}
+    />
+    <div className={styles.body__suggestions__wrapper}>
+        <div className={styles.suggestions__header__wrapper}>Related posts</div>
+        <div className={styles.suggestions__articles__wrapper}>
+            {relatedArticlesCard}
+        </div>
+    </div>
+</div> */}

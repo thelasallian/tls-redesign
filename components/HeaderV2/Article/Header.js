@@ -66,12 +66,12 @@ export default function Header({
         } else if(showHeadline) {
             return (
                 <>
-                    <div className={styles.navbar__logo__wrapper}>
+                    <div className={`${styles.navbar__logo__wrapper} ${styles.navbar__logo__star}`}>
                         <a href="/">
                             <img className={styles.logo__image__star} src="/media/svg/icon__tls__star__white.svg"/>
                         </a>
                     </div>
-                    <div className={styles.navbar__headline__wrapper}><a href={`/section/${section.toLowerCase()}`} className={styles.headline__span__section}>{section}</a>: {headline}</div>
+                    <div className={styles.navbar__headline__wrapper}><a href={`/section/${section.toLowerCase()}`} className={styles.headline__span__section}>{section}</a> | {headline}</div>
                 </>
             );
         } else {

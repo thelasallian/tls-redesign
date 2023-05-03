@@ -11,6 +11,7 @@
     background-color: $white;
 
     .header__navbar__wrapper {
+
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -42,6 +43,7 @@
 
         .navbar__headline__wrapper {
             color: $white;
+            animation: 0.5s appear;
 
             .headline__span__section {
                 font-weight: 700;
@@ -173,6 +175,16 @@
                 }
             }
         }
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
     }
 }
 
