@@ -1,7 +1,4 @@
 export default function parseRelatedArticles(relatedArticles) {
-
-    console.log(relatedArticles);
-
     const parsedArticles = relatedArticles.map(article => {
         const indexAdder = 16;
         const startOfSlugIndex = article.url.indexOf(".com/") + indexAdder;
