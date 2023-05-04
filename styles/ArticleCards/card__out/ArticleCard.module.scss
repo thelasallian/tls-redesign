@@ -63,6 +63,7 @@
         max-width: 100%;
         overflow: hidden;
         padding-top: 5px;
+        
 
         .article__headline__wrapper {
             .article__headline__link{
@@ -102,6 +103,10 @@
                     opacity: 0.8;
                 }
             }
+        }
+
+        .article__date__wrapper {
+            color: $black;
         }
     }
 

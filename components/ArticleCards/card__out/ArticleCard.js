@@ -29,6 +29,7 @@ export default function ArticleCard({
     const headline = dehtml(article.title["rendered"]);
     const authorsList = createAuthorsList(article.authors, "link");
     const snippet = shorten(dehtml(article.excerpt["rendered"]), wordCount());
+    const date = dayjs(article.date).format("MMMM D, YYYY");
 
     const setTextAlignment = () => {
         if(textAlignment == "left") return styles.is__left; 
@@ -87,6 +88,12 @@ export default function ArticleCard({
         null
     );
 
+    const setDate = hasDate ? (
+        <div className={styles.article__date__wrapper}>{date}</div>
+    ) : (
+        null
+    );
+
 
     
     return (
@@ -98,6 +105,7 @@ export default function ArticleCard({
                 {setHeadline}
                 {setAuthor}
                 {setSnippet}
+                {setDate}
             </div>
 
             

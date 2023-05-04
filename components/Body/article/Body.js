@@ -19,6 +19,7 @@ export default function Body({article, section}) {
             hasSnippet={false}
             hasAuthor={false}
             hasImage={true}
+            hasDate={true}
         />
     )
     
@@ -32,8 +33,6 @@ export default function Body({article, section}) {
         else return null;
 
     }
-
-    console.log(article);
     
     return (
         <div className={styles.body__wrapper__full}>

@@ -1,5 +1,7 @@
 export default function parseRelatedArticles(relatedArticles) {
 
+    console.log(relatedArticles);
+
     const parsedArticles = relatedArticles.map(article => {
         const indexAdder = 16;
         const startOfSlugIndex = article.url.indexOf(".com/") + indexAdder;
@@ -9,6 +11,7 @@ export default function parseRelatedArticles(relatedArticles) {
         const excerpt = article.excerpt;
         const title = article.title;
         const jetpack_featured_media_url = article.img["src"];
+        const date = article.date;
 
         return {
             title: {
@@ -18,6 +21,7 @@ export default function parseRelatedArticles(relatedArticles) {
             excerpt: {
                 ["rendered"]: excerpt,
             },
+            date: date,
             slug: slug,
             jetpack_featured_media_url: jetpack_featured_media_url,
 
