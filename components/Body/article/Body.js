@@ -39,6 +39,7 @@ export default function Body({article, section}) {
             <div className={`${styles.body__background__wrapper} ${setBackgroundColor()}`}>
                 <img className={styles.background__image__img} src={article.jetpack_featured_media_url}/>
             </div>
+            
             <div className={styles.body__foreground__wrapper}>
                 
                 <div className={styles.body__content__wrapper}>
