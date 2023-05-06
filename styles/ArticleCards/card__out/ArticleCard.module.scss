@@ -107,6 +107,9 @@
 
         .article__date__wrapper {
             color: $black;
+            @media all and (max-width: 750px) {
+                font-size: 0.8rem;
+            }
         }
     }
 
