@@ -44,7 +44,7 @@ export default function FooterFull() {
                 <div className={styles.details__text__container}>
                     <strong>The LaSallian</strong> is the official student publication of De La Salle University. It is of the students, by the students, and for the students. Our student writers, photographers, videographers, artists, and web managers are committed to the {tlsEra}-year tradition of journalistic excellence and issue-oriented critical thinking.
                     <br/><br/>
-                    502-A Bro. Connon Hall, De La Salle University, 2401 Taft Avenue
+                    Student Media House, Fifth Floor Br. Connon Hall, De La Salle University, 2401 Taft Avenue
                     <br/><br/>
                     Manila, Philippines
                 </div>
