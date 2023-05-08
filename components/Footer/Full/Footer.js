@@ -1,4 +1,4 @@
-import styles from '@/styles/Footer.module.scss'
+import styles from '@/styles/Footer/Full/Footer.module.scss'
 import dayjs from 'dayjs';
 
 export default function FooterFull() {

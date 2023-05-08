@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/index/Body';
-import Footer from '@/components/Footer/Footer';
+import Footer from '@/components/Footer/Full/Footer';
 
 export default function Home({sections}) {
   

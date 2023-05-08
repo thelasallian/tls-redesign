@@ -1,0 +1,197 @@
+@import '../../colors';
+
+.footer__wrapper__full {
+    z-index: 5;
+    background-color: $white;
+    min-height: 200px;
+    display: grid;
+    grid-template-rows: 15% auto 12%;
+
+    @media all and (max-width: 750px) {
+        grid-template-rows: 20% auto 12%;
+        font-size: 12px;
+    }
+
+    .socials__wrapper__list {
+        padding-left: 15%;
+        padding-right: 15%;
+
+        @media all and (max-width: 1700px) {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    
+        @media all and (max-width: 1500px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 1000px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media all and (max-width: 750px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        border-style: solid;
+
+        border-top-width: 1px;
+        border-top-color: $gray;
+
+        border-bottom-width: 1px;
+        border-bottom-color: $gray;
+
+        border-left: none;
+        border-right: none;
+
+        a {
+            padding-right: 20px;
+
+            .socials__icon__facebook {
+                width: 23px;
+                height: 23px;
+
+                @media all and (max-width: 550px) {
+                    width: 42px;
+                    height: 42px;
+                }
+
+                @media all and (max-width: 450px) {
+                    width: 32px;
+                    height: 32px;
+                }
+    
+                @media all and (max-width: 350px) {
+                    width: 22px;
+                    height: 22px;
+                }
+
+                &:hover {
+                    fill: $dark-gray;
+                }
+            }
+
+            .socials__icon__svg {
+                width: 25px;
+                height: 25px;
+
+                @media all and (max-width: 550px) {
+                    width: 45px;
+                    height: 45px;
+                }
+
+                @media all and (max-width: 450px) {
+                    width: 35px;
+                    height: 35px;
+                }
+    
+                @media all and (max-width: 350px) {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                &:hover {
+                    fill: $dark-gray;
+                }
+            }
+        }
+    }
+
+    .footer__details__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        @media all and (max-width: 1700px) {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    
+        @media all and (max-width: 1500px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 1000px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media all and (max-width: 750px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .details__text__container {
+            height: 100%;
+            width: 600px;
+
+            @media all and (max-width: 1250px) {
+                width: 100%;
+            }
+
+            text-align: justify;
+        }
+    }
+
+    .ender__details__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 15%;
+        padding-right: 15%;
+
+        @media all and (max-width: 1700px) {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    
+        @media all and (max-width: 1500px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media all and (max-width: 1000px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media all and (max-width: 750px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        justify-content: space-between;
+
+        border-style: solid;
+
+        border-top-width: 1px;
+        border-top-color: $gray;
+
+        border-bottom: none;
+
+        border-left: none;
+        border-right: none;
+
+        .ender__toTheTop__link {
+            color: $dark-gray;
+            cursor: pointer;
+
+            &:hover {
+                color: $gray;
+            }
+        }
+    }
+}

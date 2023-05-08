@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/article/Body';
-import Footer from '@/components/Footer/Article/Footer';
+import Footer from '@/components/Footer/Full/Footer';
 
 import dehtml from "@/components/Functions/dehtml";
 
