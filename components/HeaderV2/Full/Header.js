@@ -85,7 +85,7 @@ export default function Header({
             </div>
 
             <div className={`${styles.navbar__option__wrapper} ${styles.navbar__dropdown__wrapper}`}>
-                <a href="">
+                <a>
                     More
                     <svg className={styles.button__icon__more} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
                         <path d="M480 697.537 253.847 471.385l32.615-32.615L480 632.924l193.538-193.539L706.153 472 480 697.537Z"/>
