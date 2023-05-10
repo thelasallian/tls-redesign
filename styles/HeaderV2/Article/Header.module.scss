@@ -45,6 +45,12 @@
             color: $white;
             animation: 0.5s appear;
 
+            height: 100%;
+            
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
             .headline__span__section {
                 font-weight: 700;
                 text-decoration: none;
