@@ -1,8 +1,8 @@
 @import '../../colors';
 
 .header__wrapper__full {
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 80px;
+    max-height: 80px;
 
     width: 100%;
     background-color: $white;
@@ -93,7 +93,7 @@
     .header__dropdown__wrapper {
         display: solid;
 
-        top: 100px;
+        top: 80px;
         position: absolute;
         width: 100%;
         background-color: pink;
