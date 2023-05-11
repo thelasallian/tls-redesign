@@ -1,5 +1,5 @@
 import {React, useEffect} from "react";
-import styles from "@/styles/Body/article/Body.module.scss";
+import styles from "@/styles/Body/article/Full/Body.module.scss";
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 
 import createAuthorsList from "@/components/Functions/createAuthorsList";
