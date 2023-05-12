@@ -13,7 +13,7 @@ export default function SectionPage({sectionName}) {
             <title>{sectionNameCapitalized}</title>
             </Head>
             <div className="wrapper">
-                <Header/>
+                <Header section={sectionNameCapitalized}/>
                 <Body/>
                 <Footer/>
             </div>

@@ -172,7 +172,6 @@ export default function Header({
                 {setNavbar}
 
                 <div className={styles.navbar__button__wrapper} onClick={clickedSearch}>
-                    hello
                     {setSearchIcon}
                 </div>
             </div>

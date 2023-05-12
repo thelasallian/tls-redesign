@@ -187,5 +187,176 @@
 }
 
 .university {
-    background-color: $color--menagerie;
+    background-color: $transparent--color--university !important;
+
+    .header__navbar__wrapper {
+        border-color: $color--university;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+                
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menagerie {
+    background-color: $transparent--color--menagerie !important;
+
+    .header__navbar__wrapper {
+        border-color: $color--menagerie;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+                
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sports {
+    background-color: $transparent--color--sports !important;
+
+    .header__navbar__wrapper {
+        border-color: $color--sports;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vanguard {
+    background-color: $transparent--color--vanguard !important;
+
+    .header__navbar__wrapper {
+        border-color: $color--vanguard;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.opinion {
+    background-color: $transparent--color--opinion !important;
+
+    .header__navbar__wrapper {
+        border-color: $color--opinion;
+
+        .navbar__option__wrapper {
+            a {
+                color: $white;
+                .button__icon__more {
+                    fill: $white;
+                }
+            }
+        }
+
+        .navbar__button__wrapper {
+            .button__icon__search {
+                fill: $white;
+            }
+        }
+
+        .navbar__dropdown__wrapper {
+            .dropdown__options__list {
+                border-top: none;
+
+                .dropdown__option__wrapper {
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
 }
