@@ -27,19 +27,11 @@ export default function Header({
             );
         }
 
-        if(section !== "None") {
-            return (
-                <HeaderArticle
-                    article={article}
-                    section={section}
-                />
-            );
-        }
+        
 
         
         return (
             <HeaderFull
-                article={article}
                 section={section}
             />
         );

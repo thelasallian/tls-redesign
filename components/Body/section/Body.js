@@ -3,6 +3,6 @@ import React from "react";
 export default function Body() {
 
     return (
-        <div>hello body</div>
+        <div>hello body section</div>
     );
 }
