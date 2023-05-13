@@ -27,6 +27,15 @@ export default function Header({
             );
         }
 
+        if(article != null) {
+            return (
+                <HeaderArticle
+                    article={article}
+                    section={section}
+                />
+            );
+        }
+
         
 
         
