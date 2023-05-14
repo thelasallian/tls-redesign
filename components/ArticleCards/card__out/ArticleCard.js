@@ -17,8 +17,8 @@ export default function ArticleCard({
     isMobile = false,
     isBanner = false,
     hasDate = false,
+    cardSize = "small",
  }) {
-
     
     const wordCount = () => {
         if(isMobile) return 30;
@@ -45,6 +45,12 @@ export default function ArticleCard({
         else if(textLocation == "bottom") return styles.is__bottom;
         else if(textLocation == "top") return styles.is__top;
         else return styles.is__bottom;
+    }
+
+    const setSize = () => {
+        if(cardSize === "medium") return styles.is__medium;
+        if(cardSize === "large") return styles.is__large;
+        else return styles.is__small;
     }
 
     const setTextSize = (property) => {
@@ -76,8 +82,14 @@ export default function ArticleCard({
         null
     );
 
+    const setDate = hasDate ? (
+        <div className={styles.article__date__wrapper}>{date}</div>
+    ) : (
+        null
+    );
+
     const setAuthor = hasAuthor ? (
-        <div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList}</div>
+        <div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList} | {date}</div>
     ) : (
         null
     );
@@ -88,16 +100,10 @@ export default function ArticleCard({
         null
     );
 
-    const setDate = hasDate ? (
-        <div className={styles.article__date__wrapper}>{date}</div>
-    ) : (
-        null
-    );
-
 
     
     return (
-        <div className={`${styles.card__wrapper__full} ${setTextLocation()} ${isBanner ? styles.is__banner : null}`}>
+        <div className={`${styles.card__wrapper__full} ${setTextLocation()} ${setSize()} ${isBanner ? styles.is__banner : null}`}>
 
             {setImage}
 
@@ -105,7 +111,7 @@ export default function ArticleCard({
                 {setHeadline}
                 {setAuthor}
                 {setSnippet}
-                {setDate}
+                {(textAlignment === "left" || textAlignment === "right") ? null : setDate}
             </div>
 
             

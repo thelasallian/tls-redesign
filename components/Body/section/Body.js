@@ -8,6 +8,8 @@ export default function Body({articles}) {
             article={article}
             textLocation={"right"}
             isBanner={false}
+            cardSize={"medium"}
+            hasDate={true}
         />
     );
 

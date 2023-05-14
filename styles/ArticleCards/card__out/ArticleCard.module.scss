@@ -160,6 +160,32 @@
     }
 }
 
+.is__medium {
+
+    .article__image__link {
+        .is__left, .is__right {
+            width: 200px;
+            height: 150px;
+            @media all and (max-width: 900px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+    .is__primary {
+        font-size: 1.2rem;
+    }
+    
+    .is__secondary {
+        font-size: 1rem;
+    }
+    
+    .is__tertiary {
+        font-size: 1rem;
+    }
+}
+
 .is__banner {
     .article__image__link {
         .is__left, .is__right {
