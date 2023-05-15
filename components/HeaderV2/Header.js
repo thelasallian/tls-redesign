@@ -35,9 +35,6 @@ export default function Header({
                 />
             );
         }
-
-        
-
         
         return (
             <HeaderFull

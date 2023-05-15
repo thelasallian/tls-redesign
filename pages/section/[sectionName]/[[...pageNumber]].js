@@ -3,18 +3,19 @@ import Head from "next/head";
 import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/section/Body';
 import Footer from '@/components/Footer/Full/Footer';
+import { useEffect, useState } from "react";
 
-export default function SectionPage({sectionName, articles}) {
+export default function SectionPage({sectionName, articles, category}) {
     const sectionNameCapitalized = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
 
     return (
         <>
             <Head>
-            <title>{sectionNameCapitalized} - The LaSallian</title>
+            <title>{`${sectionNameCapitalized} - The LaSallian`}</title>
             </Head>
             <div className="wrapper">
                 <Header section={sectionNameCapitalized}/>
-                <Body articles={articles}/>
+                <Body articles={articles} category={category}/>
                 <Footer/>
             </div>
         </>
@@ -48,6 +49,7 @@ export async function getServerSideProps({req, res, params}) {
         props: {
             sectionName: sectionName,
             articles: universityArticles,
+            category: category,
         },
     };
 }
