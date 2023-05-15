@@ -21,7 +21,7 @@ export default function Body({articles}) {
     },[]);
 
     const articleCards = articles.map(article => 
-        <div className={styles.article__card__wrapper}>
+        <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
             <ArticleCard 
                 article={article}
                 textLocation={"right"}
