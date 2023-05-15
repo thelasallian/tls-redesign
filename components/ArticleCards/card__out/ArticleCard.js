@@ -89,7 +89,9 @@ export default function ArticleCard({
     );
 
     const setAuthor = hasAuthor ? (
-        <div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList} | {date}</div>
+        (textAlignment === "left" || textAlignment === "right") ? 
+            (<div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList} | {date}</div>) :
+            (<div className={`${styles.article__author__wrapper} ${setTextSize("author")}`}>by {authorsList}</div>)
     ) : (
         null
     );
@@ -111,7 +113,7 @@ export default function ArticleCard({
                 {setHeadline}
                 {setAuthor}
                 {setSnippet}
-                {(textAlignment === "left" || textAlignment === "right") ? null : setDate}
+                {(textLocation == "top" || textLocation == "bottom") ? setDate : null}
             </div>
 
             

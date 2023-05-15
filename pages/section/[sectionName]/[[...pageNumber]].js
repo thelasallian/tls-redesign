@@ -22,10 +22,19 @@ export default function SectionPage({sectionName, articles}) {
     );
 }
 
+function sectionToCategory(sectionName) {
+    if(sectionName === "university") return 4;
+    else if(sectionName === "menagerie") return 8;
+    else if(sectionName === "sports") return 6;
+    else if(sectionName === "vanguard") return 1883;
+    else if(sectionName === "opinion") return 5;
+    else null;
+}
+
 export async function getServerSideProps({req, res, params}) {
     const sectionName = params.sectionName;
     const pageNumber = (isNaN(params.pageNumber)) ? 1 : params.pageNumber;
-    const category = 4;
+    const category = sectionToCategory(sectionName);
 
     res.setHeader(
         'Cache-Control',

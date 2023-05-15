@@ -46,6 +46,31 @@
         height: 100%;
         width: 100%;
         display: grid;
-        grid-row-gap: 20px;
+
+        .article__card__wrapper {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            border-style: solid;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+
+            &:first-child {
+                padding-top: 0px;
+
+                border-top: none;
+            }
+
+            &:not(:first-child) {
+                border-top-width: 1px;
+                border-color: $gray;
+            }
+
+            &:last-child {
+                padding-bottom: 0px;
+            }
+            
+        }
     }
 }
