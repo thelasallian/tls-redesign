@@ -10,7 +10,7 @@ export default function SectionPage({sectionName, articles}) {
     return (
         <>
             <Head>
-            <title>{sectionNameCapitalized}</title>
+            <title>{sectionNameCapitalized} - The LaSallian</title>
             </Head>
             <div className="wrapper">
                 <Header section={sectionNameCapitalized}/>

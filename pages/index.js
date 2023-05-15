@@ -9,7 +9,7 @@ export default function Home({sections}) {
   return (
     <>
       <Head>
-          <title>The LaSallian — The bastion of issue-oriented critical thinking</title>
+          <title>The LaSallian - The bastion of issue-oriented critical thinking</title>
       </Head>
 
       <div className="wrapper">
