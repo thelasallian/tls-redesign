@@ -6,6 +6,7 @@ export default function Body({articles, category}) {
 
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
+    const [isFetching, setIsFetching] = useState(false);
 
     const articleCards = articleData.map(article => 
         <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
@@ -17,6 +18,14 @@ export default function Body({articles, category}) {
                 hasDate={true}
             />
         </div>
+    );
+
+    const setLoading = (isFetching) ? (
+        <div className={styles.body__loading__wrapper}>
+            Fetching more articles...
+        </div>
+    ) : (
+        null
     );
 
     useEffect(() => {
@@ -32,12 +41,10 @@ export default function Body({articles, category}) {
         const bodyWrapperFullHeight = bodyWrapper.offsetHeight - yOffset;
         const currentYValue = window.pageYOffset;
 
-        console.log("category", category);
-        console.log("pageNumber", pageNumber);
-
         if(bodyWrapperFullHeight <= currentYValue) {
             window.removeEventListener("scroll", logCurrentYValue);
-            
+            setIsFetching(true);
+
             const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=${pageNumber}`);
             const newData = await response.json();
 
@@ -50,6 +57,8 @@ export default function Body({articles, category}) {
         console.log("new article data!");
         console.log(articleData)
 
+        setIsFetching(false);
+
         window.addEventListener("scroll", logCurrentYValue);
     }, [articleData]);
 
@@ -57,6 +66,7 @@ export default function Body({articles, category}) {
         <div className={styles.body__wrapper__full}>
             <div className={styles.body__articles__wrapper}>
                 {articleCards}
+                {setLoading}
             </div>
         </div>
     );
