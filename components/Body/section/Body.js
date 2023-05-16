@@ -6,7 +6,6 @@ export default function Body({articles, category}) {
 
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
-    const [isFetchingData, setIsFetchingData] = useState(false);
 
     const articleCards = articleData.map(article => 
         <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
@@ -19,6 +18,10 @@ export default function Body({articles, category}) {
             />
         </div>
     );
+
+    useEffect(() => {
+        window.addEventListener("scroll", logCurrentYValue);
+    },[]);
     
     const logCurrentYValue = async () => {
         const yOffset = 491;
@@ -29,26 +32,26 @@ export default function Body({articles, category}) {
         const bodyWrapperFullHeight = bodyWrapper.offsetHeight - yOffset;
         const currentYValue = window.pageYOffset;
 
+        console.log("category", category);
+        console.log("pageNumber", pageNumber);
+
         if(bodyWrapperFullHeight <= currentYValue) {
-            if(isFetchingData) {
-                console.log("Still fetching data. Please wait!");
-            } else {
-                setIsFetchingData(true);
-                const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=${pageNumber}`);
-                const newData = await response.json();
-                setArticleData(prevData => prevData.concat(newData));
-            }
+            window.removeEventListener("scroll", logCurrentYValue);
+            
+            const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=${pageNumber}`);
+            const newData = await response.json();
+
+            setArticleData(prevState => [...prevState, ...newData]);
+            setPageNumber(prevState => prevState + 1);
         }
     }
 
     useEffect(() => {
-        setIsFetchingData(false);
-        setPageNumber(prevState => prevState + 1);
-    }, [articleData]);
+        console.log("new article data!");
+        console.log(articleData)
 
-    useEffect(() => {
         window.addEventListener("scroll", logCurrentYValue);
-    },[]);
+    }, [articleData]);
 
     return (
         <div className={styles.body__wrapper__full}>
