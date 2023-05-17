@@ -62,8 +62,6 @@
         width: 100%;
         max-width: 100%;
         overflow: hidden;
-        padding-top: 5px;
-        
 
         .article__headline__wrapper {
             .article__headline__link{
@@ -166,9 +164,15 @@
         .is__left, .is__right {
             width: 200px;
             height: 150px;
-            @media all and (max-width: 900px) {
-                width: 100px;
-                height: 100px;
+
+            @media all and (max-width: 750px) {
+                width: 150px;
+                height: 100%;
+            }
+
+            @media all and (max-width: 600px) {
+                width: 200px;
+                height: 100%;
             }
         }
     }
