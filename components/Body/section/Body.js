@@ -7,18 +7,30 @@ export default function Body({articles, category}) {
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
     const [isFetching, setIsFetching] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const articleCards = articleData.map(article => 
         <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
             <ArticleCard 
                 article={article}
+                hasSnippet={!isMobile}
                 textLocation={"right"}
                 isBanner={false}
                 cardSize={"medium"}
                 hasDate={true}
+                isMobile={isMobile}
             />
         </div>
     );
+
+    const handlingWindowResize = () => {
+        setIsMobile(window.innerWidth < 750);
+    }
+    
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 750);
+        window.addEventListener("resize", handlingWindowResize);
+    },[]);
 
     const setLoading = (isFetching) ? (
         <div className={styles.body__loading__wrapper}>
