@@ -260,6 +260,10 @@
 
 .is__bottom {
     flex-direction: column;
+
+    .article__information__wrapper {
+        padding-top: 5px;
+    }
 }
 
 .is__right {
