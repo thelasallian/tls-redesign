@@ -1,15 +1,29 @@
 import styles from "@/styles/Body/author/Body.module.scss";
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
+import { useEffect, useState } from "react";
 
 export default function Body({author, articles}) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    const handlingWindowResize = () => {
+        setIsMobile(window.innerWidth < 750);
+    }
+    
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 750);
+        window.addEventListener("resize", handlingWindowResize);
+    },[]);
+
     const articleCards = articles.map(article => 
         <div className={styles.article__card__wrapper}>
             <ArticleCard 
                 article={article}
+                hasSnippet={!isMobile}
                 textLocation={"right"}
                 isBanner={false}
                 cardSize={"medium"}
                 hasDate={true}
+                isMobile={isMobile}
             />
         </div>
     );
@@ -27,13 +41,19 @@ export default function Body({author, articles}) {
                         {author.name}
                     </div>
                     <div className={styles.author__bio__wrapper}>
-                        {author.description}
+                        {(author.description != "") ? author.description : "A contributor of The LaSallian."}
                     </div>
                 </div>
             </div>
 
             <div className={styles.author__articles__wrapper}>
                 {articleCards}
+            </div>
+
+            <div className={styles.author__button__wrapper}>
+                <div className={styles.author__button__item}>
+                    Show More
+                </div>
             </div>
             
         </div>
