@@ -66,9 +66,6 @@ export default function Body({articles, category}) {
     }
 
     useEffect(() => {
-        console.log("new article data!");
-        console.log(articleData)
-
         setIsFetching(false);
 
         window.addEventListener("scroll", logCurrentYValue);

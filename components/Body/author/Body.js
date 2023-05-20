@@ -3,7 +3,10 @@ import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 import { useEffect, useState } from "react";
 
 export default function Body({author, articles}) {
+    const [pageNumber, setPageNumber] = useState(2);
+    const [articleData, setArticleData] = useState(articles);
     const [isMobile, setIsMobile] = useState(false);
+    const [isFetching, setIsFetching] = useState(false);
 
     const handlingWindowResize = () => {
         setIsMobile(window.innerWidth < 750);
@@ -14,8 +17,8 @@ export default function Body({author, articles}) {
         window.addEventListener("resize", handlingWindowResize);
     },[]);
 
-    const articleCards = articles.map(article => 
-        <div className={styles.article__card__wrapper}>
+    const articleCards = articleData.map(article => 
+        <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
             <ArticleCard 
                 article={article}
                 hasSnippet={!isMobile}
@@ -26,6 +29,28 @@ export default function Body({author, articles}) {
                 isMobile={isMobile}
             />
         </div>
+    );
+
+    const fetchArticles = async () => {
+        setIsFetching(true);
+
+        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+        const newData = await response.json();
+
+        setArticleData(prevState => [...prevState, ...newData]);
+        setPageNumber(prevState => prevState + 1);
+    }
+
+    useEffect(() => {
+        setIsFetching(false);
+    }, [articleData]);
+
+    const setLoading = (isFetching) ? (
+        <div className={styles.body__loading__wrapper}>
+            Fetching more articles...
+        </div>
+    ) : (
+        <button onClick={fetchArticles} className={styles.author__button__item}>Show More</button>
     );
 
 
@@ -41,7 +66,7 @@ export default function Body({author, articles}) {
                         {author.name}
                     </div>
                     <div className={styles.author__bio__wrapper}>
-                        {(author.description != "") ? author.description : "A contributor of The LaSallian."}
+                        {(author.description != "") ? author.description : "A contributor of The LaSallian. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog."}
                     </div>
                 </div>
             </div>
@@ -51,9 +76,7 @@ export default function Body({author, articles}) {
             </div>
 
             <div className={styles.author__button__wrapper}>
-                <div className={styles.author__button__item}>
-                    Show More
-                </div>
+                {setLoading}
             </div>
             
         </div>
