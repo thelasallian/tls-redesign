@@ -97,7 +97,7 @@ export default function ArticleCard({
     );
 
     const setSnippet = hasSnippet ? (
-        <div className={`${styles.article__snippet__wrapper} ${setTextSize("snippet")}`}>{snippet}<a href={`/presents/${article.slug}`}>Read More</a></div>
+        <div className={`${styles.article__snippet__wrapper} ${setTextSize("snippet")}`}>{snippet}</div>
     ) : (
         null
     );
