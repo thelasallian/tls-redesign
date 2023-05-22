@@ -3,10 +3,13 @@ import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 import { useEffect, useState } from "react";
 
 export default function Body({author, articles}) {
+    console.log(author.id);
+
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
     const [isMobile, setIsMobile] = useState(false);
     const [isFetching, setIsFetching] = useState(false);
+    const [hasMoreArticles, setHasMoreArticles] = useState(true);
 
     const handlingWindowResize = () => {
         setIsMobile(window.innerWidth < 750);
@@ -34,8 +37,15 @@ export default function Body({author, articles}) {
     const fetchArticles = async () => {
         setIsFetching(true);
 
-        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&page=${pageNumber}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&page=${pageNumber}&per_page=10&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
         const newData = await response.json();
+
+        if(newData.data["status"] === 400 || newData === null) {
+            console.log("No more articles left.");
+            setIsFetching(false);
+            setHasMoreArticles(false);
+            return;
+        };
 
         setArticleData(prevState => [...prevState, ...newData]);
         setPageNumber(prevState => prevState + 1);
@@ -50,7 +60,11 @@ export default function Body({author, articles}) {
             Fetching more articles...
         </div>
     ) : (
-        <button onClick={fetchArticles} className={styles.author__button__item}>Show More</button>
+        (hasMoreArticles) ? (
+            <button onClick={fetchArticles} className={styles.author__button__item}>Show More</button>
+        ) : (
+            null
+        )
     );
 
 
