@@ -34,7 +34,7 @@ export async function getServerSideProps({req, res, params}) {
     const authorId = authorData[0].id;
 
     
-    const articlesResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?ppma_author=${authorId}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+    const articlesResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${authorId}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
     const articlesData = await articlesResponse.json();
 
     return {
