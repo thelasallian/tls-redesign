@@ -1,9 +1,13 @@
 import { Router, useRouter } from "next/router";
 import Head from "next/head";
+
 import Header from '@/components/HeaderV2/Header';
 import Body from '@/components/Body/section/Body';
 import Footer from '@/components/Footer/Full/Footer';
+
 import { useEffect, useState } from "react";
+
+import sectionToCategory from "@/components/Functions/sectionToCategory";
 
 export default function SectionPage({sectionName, articles, category}) {
     const sectionNameCapitalized = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
@@ -21,15 +25,6 @@ export default function SectionPage({sectionName, articles, category}) {
         </>
         
     );
-}
-
-function sectionToCategory(sectionName) {
-    if(sectionName === "university") return 4;
-    else if(sectionName === "menagerie") return 8;
-    else if(sectionName === "sports") return 6;
-    else if(sectionName === "vanguard") return 1883;
-    else if(sectionName === "opinion") return 5;
-    else null;
 }
 
 export async function getServerSideProps({req, res, params}) {
