@@ -18,7 +18,7 @@ export default function Body({author, articles}) {
     },[]);
 
     const articleCards = articleData.map(article => 
-        <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
+        <div className={styles.articles__card__wrapper} key={`articles__card__wrapper-${article.id}`}>
             <ArticleCard 
                 article={article}
                 hasSnippet={!isMobile}
@@ -34,7 +34,7 @@ export default function Body({author, articles}) {
     const fetchArticles = async () => {
         setIsFetching(true);
 
-        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&page=${pageNumber}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
         const newData = await response.json();
 
         setArticleData(prevState => [...prevState, ...newData]);

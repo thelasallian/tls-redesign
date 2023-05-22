@@ -10,7 +10,7 @@ export default function Body({articles, category}) {
     const [isMobile, setIsMobile] = useState(false);
 
     const articleCards = articleData.map(article => 
-        <div className={styles.article__card__wrapper} key={`article__card__wrapper-${article.id}`}>
+        <div className={styles.articles__card__wrapper} key={`articles__card__wrapper-${article.id}`}>
             <ArticleCard 
                 article={article}
                 hasSnippet={!isMobile}
