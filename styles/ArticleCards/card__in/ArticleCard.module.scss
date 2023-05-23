@@ -14,9 +14,12 @@
     position: relative;
 
     .article__image__link {
+        background-color: $black;
+        border-radius: 8px;
+
         .article__image__wrapper {
             height: 100%;
-            min-width: 50px;
+            min-width: 100%;
     
             overflow: hidden;
             border-radius: 8px;
@@ -24,7 +27,6 @@
             -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
             -moz-box-sizing: border-box;    /* Firefox */
             box-sizing: border-box;
-            background-color: $black;
     
             .article__image__img {
                 width: 100%;
