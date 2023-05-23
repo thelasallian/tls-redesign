@@ -35,18 +35,23 @@ export default function Body({author, publishPressId, articles}) {
     const fetchArticles = async () => {
         setIsFetching(true);
 
-        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${publishPressId}&page=${pageNumber}&per_page=10&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?ppma_author=${publishPressId}&page=${pageNumber}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
         const newData = await response.json();
 
-        if(newData.data["status"] === 400 || newData === null) {
+        if(newData.length === undefined) {
             console.log("No more articles left.");
             setIsFetching(false);
             setHasMoreArticles(false);
             return;
-        };
+        }
 
-        setArticleData(prevState => [...prevState, ...newData]);
-        setPageNumber(prevState => prevState + 1);
+        if(newData.length !== 0) {
+            setArticleData(prevState => [...prevState, ...newData]);
+            setPageNumber(prevState => prevState + 1);
+            return;
+        }
+
+        
     }
 
     useEffect(() => {
