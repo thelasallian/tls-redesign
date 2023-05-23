@@ -57,7 +57,7 @@ export default function Body({articles, category}) {
             window.removeEventListener("scroll", logCurrentYValue);
             setIsFetching(true);
 
-            const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=${pageNumber}`);
+            const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=${pageNumber}`);
             const newData = await response.json();
 
             setArticleData(prevState => [...prevState, ...newData]);

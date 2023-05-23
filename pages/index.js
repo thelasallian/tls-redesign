@@ -27,19 +27,19 @@ export async function getServerSideProps({req, res}) {
     'public, s-maxage=1, stale-while-revalidate=59'
   )
   
-  const universityResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=4');
+  const universityResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=4');
   const universityArticles = await universityResponse.json();
 
-  const menagerieResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=8');
+  const menagerieResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=8');
   const menagerieArticles = await menagerieResponse.json();
 
-  const sportsResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=6');
+  const sportsResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=6');
   const sportsArticles = await sportsResponse.json();
 
-  const vanguardResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=1883');
+  const vanguardResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=1883');
   const vanguardArticles = await vanguardResponse.json();
 
-  const opinionResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=5');
+  const opinionResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=5');
   const opinionArticles = await opinionResponse.json();
 
   return {

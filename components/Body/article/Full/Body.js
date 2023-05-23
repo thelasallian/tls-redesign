@@ -66,21 +66,3 @@ export default function Body({article, section}) {
         </div>
     );
 }
-
-{/* <div className={styles.body__foreground__wrapper}>
-    <div className={styles.body__information__wrapper}>
-        <div className={styles.body__headline__wrapper}>{headline}</div>
-        <div className={styles.body__author__wrapper}>by {authorsList}</div>
-        <div className={styles.body__date__wrapper}>{dateCreated}</div>
-    </div>
-    <div 
-        className={styles.body__content__wrapper} 
-        dangerouslySetInnerHTML={{__html: article.content.rendered}}
-    />
-    <div className={styles.body__suggestions__wrapper}>
-        <div className={styles.suggestions__header__wrapper}>Related posts</div>
-        <div className={styles.suggestions__articles__wrapper}>
-            {relatedArticlesCard}
-        </div>
-    </div>
-</div> */}

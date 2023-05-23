@@ -34,12 +34,12 @@ export async function getServerSideProps({req, res, params}) {
     const authorId = authorData[0].id;
 
     
-    const publishPressResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${authorId}&per_page=1&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+    const publishPressResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${authorId}&per_page=1&_fields=id,authors,excerpt,date,title,slug,categories,jetpack_featured_media_url`);
     const publishPressData = await publishPressResponse.json();
 
     const publishPressId = publishPressData[0].authors[0].term_id;
 
-    const articlesResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?ppma_author=${publishPressId}&per_page=5&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+    const articlesResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?ppma_author=${publishPressId}&per_page=5&_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url`);
     const articlesData = await articlesResponse.json();
 
     return {

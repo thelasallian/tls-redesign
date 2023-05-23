@@ -140,6 +140,11 @@
                     padding-bottom: 15px;
                 }
 
+                p > img {
+                    border-radius: 8px;
+                }
+
+                // does not work for firefox
                 p:has(img) {
                     padding: 0px;
                     margin: 0px;

@@ -36,7 +36,7 @@ export async function getServerSideProps({req, res, params}) {
         'public, s-maxage=1, stale-while-revalidate=59'
     )
 
-    const universityResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=1`);
+    const universityResponse = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,date,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=20&categories=${category}&page=1`);
     const universityArticles = await universityResponse.json();
 
     return {
