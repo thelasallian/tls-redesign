@@ -14,7 +14,7 @@ export default function AuthorPage({author, publishPressId, articles}) {
             <div className="wrapper">
                 <Header section={"University"}/>
                 <Body author={author} publishPressId={publishPressId} articles={articles}/>
-                <Footer/>
+                <Footer section={"University"}/>
             </div>
         </>
     );

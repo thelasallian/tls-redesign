@@ -13,9 +13,9 @@ export default function Home({sections}) {
       </Head>
 
       <div className="wrapper">
-        <Header/>
+        <Header section={"University"}/>
         <Body sections={sections}/>
-        <Footer/>
+        <Footer section={"University"}/>
       </div>
     </>
   )

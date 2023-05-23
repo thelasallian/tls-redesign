@@ -1,7 +1,11 @@
 import styles from '@/styles/Footer/Full/Footer.module.scss'
 import dayjs from 'dayjs';
 
-export default function FooterFull() {
+export default function FooterFull({
+    section="None"
+}) {
+
+    console.log(section);
 
     const goToTheTop = () => {
         window.scrollTo({
@@ -14,9 +18,18 @@ export default function FooterFull() {
     const currentDate = dayjs();
     const tlsEra = currentDate.diff(tlsCreationDate, 'year');
 
+    const setSectionColor = () => {
+        if (section === "University") return styles.university;
+        else if (section === "Menagerie") return styles.menagerie;
+        else if (section === "Sports") return styles.sports;
+        else if (section === "Vanguard") return styles.vanguard;
+        else if (section === "Opinion") return styles.opinion;
+        else return null;
+    }
+
     return (
         <div className={styles.footer__wrapper__full}>
-            <div className={styles.socials__wrapper__list}>
+            <div className={`${styles.socials__wrapper__list} ${setSectionColor()}`}>
                 <a href="https://facebook.com/TheLaSallian">
                     <svg className={styles.socials__icon__facebook} xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">
                         <path d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z"/>

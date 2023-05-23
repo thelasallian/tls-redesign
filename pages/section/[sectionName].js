@@ -20,7 +20,7 @@ export default function SectionPage({sectionName, articles, category}) {
             <div className="wrapper">
                 <Header section={sectionNameCapitalized}/>
                 <Body articles={articles} category={category}/>
-                <Footer/>
+                <Footer section={sectionNameCapitalized}/>
             </div>
         </>
         

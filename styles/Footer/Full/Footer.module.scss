@@ -195,3 +195,48 @@
         }
     }
 }
+
+.university {
+    background-color: $color--university !important;
+    a {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.menagerie {
+    background-color: $color--menagerie !important;
+    a {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.sports {
+    background-color: $color--sports !important;
+    a {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.vanguard {
+    background-color: $color--vanguard !important;
+    a {
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.opinion {
+    background-color: $color--opinion !important;
+    a {
+        svg {
+            fill: $white;
+        }
+    }
+}

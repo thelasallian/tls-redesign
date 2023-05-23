@@ -20,7 +20,7 @@ export default function ArticlePage({article, section}) {
             <div className="wrapper">
                 <Header article={article} section={section}/>
                 <Body article={article} section={section}/>
-                <Footer/>
+                <Footer section={section}/>
             </div>
         </>
     );
