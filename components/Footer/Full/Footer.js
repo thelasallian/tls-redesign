@@ -4,9 +4,6 @@ import dayjs from 'dayjs';
 export default function FooterFull({
     section="None"
 }) {
-
-    console.log(section);
-
     const goToTheTop = () => {
         window.scrollTo({
             top: 0,
