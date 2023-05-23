@@ -98,16 +98,17 @@ export default function Body({sections}) {
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.body__section__wrapper}>
-                <Swiper
+                <Swiper className={styles.swiper__test}
                         spaceBetween={30}
                         loop={true}
-                        pagination={true}
+                        pagination={{
+                            clickable: true,
+                        }}
                         autoplay={{
                             delay: 5000,
                             disableOnInteraction: false,
                         }}
-                        modules={[Autoplay]}
-                        className="mySwiper"
+                        modules={[Pagination, Autoplay]}
                     >
                     {bannerArticlesWrapper}
                 </Swiper>
