@@ -3,8 +3,6 @@ import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 import { useEffect, useState } from "react";
 
 export default function Body({author, publishPressId, articles}) {
-    console.log(articles);
-
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
     const [isMobile, setIsMobile] = useState(false);
