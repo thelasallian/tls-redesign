@@ -46,6 +46,10 @@
         padding-top: 25px;
         padding-bottom: 5px;
 
+        &:not(:first-child) {
+            padding-bottom: 25px;
+        }
+
         @media all and (max-width: 750px) {
             padding-top: 15px;
             padding-bottom: 5px;

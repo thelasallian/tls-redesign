@@ -8,7 +8,7 @@
     grid-template-rows: 15% auto 12%;
 
     @media all and (max-width: 750px) {
-        grid-template-rows: 20% auto 12%;
+        grid-template-rows: 70px auto 12%;
         font-size: 12px;
     }
 
@@ -58,19 +58,9 @@
                 width: 23px;
                 height: 23px;
 
-                @media all and (max-width: 550px) {
-                    width: 42px;
-                    height: 42px;
-                }
-
-                @media all and (max-width: 450px) {
+                @media all and (max-width: 750px) {
                     width: 32px;
                     height: 32px;
-                }
-    
-                @media all and (max-width: 350px) {
-                    width: 22px;
-                    height: 22px;
                 }
 
                 &:hover {
@@ -82,19 +72,9 @@
                 width: 25px;
                 height: 25px;
 
-                @media all and (max-width: 550px) {
-                    width: 45px;
-                    height: 45px;
-                }
-
-                @media all and (max-width: 450px) {
+                @media all and (max-width: 750px) {
                     width: 35px;
                     height: 35px;
-                }
-    
-                @media all and (max-width: 350px) {
-                    width: 25px;
-                    height: 25px;
                 }
 
                 &:hover {
