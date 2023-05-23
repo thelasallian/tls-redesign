@@ -2,9 +2,7 @@ import styles from "@/styles/Body/author/Body.module.scss";
 import ArticleCard from "@/components/ArticleCards/card__out/ArticleCard";
 import { useEffect, useState } from "react";
 
-export default function Body({author, articles}) {
-    console.log(author.id);
-
+export default function Body({author, publishPressId, articles}) {
     const [pageNumber, setPageNumber] = useState(2);
     const [articleData, setArticleData] = useState(articles);
     const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +35,7 @@ export default function Body({author, articles}) {
     const fetchArticles = async () => {
         setIsFetching(true);
 
-        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${author.id}&page=${pageNumber}&per_page=10&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
+        const response = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?author=${publishPressId}&page=${pageNumber}&per_page=10&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
         const newData = await response.json();
 
         if(newData.data["status"] === 400 || newData === null) {
