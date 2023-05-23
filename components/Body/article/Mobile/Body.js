@@ -12,15 +12,18 @@ export default function Body({article, section}) {
     const authorsList = createAuthorsList(article.authors, "link");
     const dateCreated = dayjs(article.date).format("MMMM D, YYYY");
     const relatedArticles = parseRelatedArticles(article["jetpack-related-posts"].slice(0,3));
+    
     const relatedArticlesCard = relatedArticles.map(article => 
-        <ArticleCard 
-            key={`${article.slug}-articleCard`}
-            article={article}
-            hasSnippet={false}
-            hasAuthor={false}
-            hasImage={true}
-            hasDate={true}
-        />
+        <div className={styles.articles__card__wrapper}>
+            <ArticleCard 
+                key={`${article.slug}-articleCard`}
+                article={article}
+                hasSnippet={false}
+                hasAuthor={false}
+                hasImage={true}
+                hasDate={true}
+            />
+        </div>
     )
     
 

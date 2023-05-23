@@ -140,6 +140,16 @@
                     padding-bottom: 15px;
                 }
 
+                p:has(img) {
+                    padding: 0px;
+                    margin: 0px;
+                    text-align: center;
+
+                    img {
+                        border-radius: 8px;
+                    }
+                }
+
                 figure {
                     width: 100%;
 
@@ -205,10 +215,10 @@
 
                 .suggestions__articles__wrapper {
                     width: 100%;
-                    display: grid;
 
-                    grid-template-columns: auto auto auto;
-                    gap: 20px;
+                    display: grid;
+                    grid-template-columns: 32% 32% 32%;
+                    justify-content: space-between;
                 }
             }
 
