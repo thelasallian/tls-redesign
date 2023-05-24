@@ -15,7 +15,7 @@ export default function Body({article, section}) {
     const relatedArticlesCard = relatedArticles.map(article => 
         <div className={styles.articles__card__wrapper}>
             <ArticleCard 
-                key={`${article.slug}-articleCard`}
+                key={`${article.id}-articleCard`}
                 article={article}
                 hasSnippet={false}
                 hasAuthor={false}

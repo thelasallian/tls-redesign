@@ -9,6 +9,7 @@ export default function Header({
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [navbarIsSticky, setNavbarIsSticky] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
 
     const compactWindowSize = 1050;
 
@@ -56,9 +57,14 @@ export default function Header({
         }
     }
 
+    const searchInput = (event) => {
+        const input = event.target.value;
+        setSearchValue(input);
+    }
+
     const setNavbar = (searchIsClicked) ? (
         <>
-            <input className={styles.navbar__input__search}/>
+            <input className={styles.navbar__input__search} onChange={() => searchInput(event)}/>
         </>
     ) : (
         <>
