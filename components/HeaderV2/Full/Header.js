@@ -57,14 +57,37 @@ export default function Header({
         }
     }
 
-    const searchInput = (event) => {
+    const logSearchInput = (event) => {
         const input = event.target.value;
         setSearchValue(input);
     }
 
+    const searchInput = (event) => {
+        if(event.key === "Enter") {
+            console.log("Pressed enter");
+            return;
+        }
+    }
+
+    useEffect(() => {
+        if(searchIsClicked) {
+            console.log("add event listener");
+            window.addEventListener("keyup", searchInput, false);
+            return;
+        } else {
+            console.log("remove event");
+            window.removeEventListener("keyup", searchInput, false);
+            return;
+        }
+    },[searchIsClicked]);
+
+    const startSearch = () => {
+        console.log("You are searching: "+searchValue);
+    }
+
     const setNavbar = (searchIsClicked) ? (
         <>
-            <input className={styles.navbar__input__search} onChange={() => searchInput(event)}/>
+            <input className={styles.navbar__input__search} onChange={() => logSearchInput(event)}/>
         </>
     ) : (
         <>
