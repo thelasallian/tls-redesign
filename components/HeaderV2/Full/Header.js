@@ -57,22 +57,23 @@ export default function Header({
         }
     }
 
-    const logSearchInput = (event) => {
+    var logSearchInput = (event) => {
         const input = event.target.value;
-        setSearchValue(input);
-    }
-
-    const searchInput = (value) => {
-        console.log(value);
+        if(event.key === "Enter" || event.keyCode === 13) {
+            alert("Searched: "+input);
+            return;
+        }
     }
 
     useEffect(() => {
-        window.addEventListener("keyup", () => searchInput(searchIsClicked));
-    },[]);
+        const searchBar = document.querySelector("."+styles.navbar__input__search);
 
-    const startSearch = () => {
-        console.log("You are searching: "+searchValue);
-    }
+        if(searchBar === null) {
+            return;
+        };
+
+        searchBar.addEventListener("keyup", logSearchInput);
+    },[searchIsClicked]);
 
     const setNavbar = (searchIsClicked) ? (
         <>
