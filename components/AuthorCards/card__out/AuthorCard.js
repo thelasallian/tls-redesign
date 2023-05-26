@@ -10,7 +10,7 @@ export default function AuthorCard({
 
             <div className={styles.author__image__wrapper}>
                 <a className={styles.image__link__wrapper} href={`/by/${author.slug}`}>
-                    <div className={styles.image__image__wrapper}>
+                    <div className={styles.image__div__wrapper}>
                         <img className={styles.author__image__img} src={author.avatar_urls["96"]}/>    
                     </div>
                 </a>
@@ -18,7 +18,9 @@ export default function AuthorCard({
 
             <div className={styles.author__information__wrapper}>
                 <div className={styles.author__name__wrapper}>
-                    {author.name}
+                    <a href={`/by/${author.slug}`}>
+                        {author.name}
+                    </a>
                 </div>
                 <div className={styles.author__bio__wrapper}>
                     {(author.description != "") ? author.description : "A contributor of The LaSallian. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog."}
