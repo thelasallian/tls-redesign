@@ -5,9 +5,6 @@ export default function AuthorCard({
     author
  }) {
 
-
-    console.log(author);
-
     return (
         <div className={styles.card__wrapper__full}>
 
