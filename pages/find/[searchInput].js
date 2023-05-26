@@ -4,7 +4,7 @@ import Header from "@/components/HeaderV2/Header";
 import Body from "@/components/Body/search/Body";
 import {default as Footer} from "@/components/Footer/Full/Footer";
 
-export default function FindPage({rawSearchInput, searchInput, articles, users}) {
+export default function FindPage({rawSearchInput, searchInput, articles, authors}) {
 
     return (
         <>
@@ -13,7 +13,7 @@ export default function FindPage({rawSearchInput, searchInput, articles, users})
             </Head>
             <div className="wrapper">
                 <Header section={"University"}/>
-                <Body articles={articles} users={users} searchInput={searchInput} rawSearchInput={rawSearchInput}/>
+                <Body articles={articles} authors={authors} searchInput={searchInput} rawSearchInput={rawSearchInput}/>
                 <Footer section={"University"}/>
             </div>
         </>
@@ -27,8 +27,8 @@ export async function getServerSideProps({req, res, params}) {
     const articlesSearched = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?search=${rawSearchInput}&per_page=10&page=1&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
     const articles = await articlesSearched.json();
 
-    const usersSearched = await fetch(`https://thelasallian.com/wp-json/wp/v2/users/?search=${rawSearchInput}`);
-    const users = await usersSearched.json();
+    const authorsSearched = await fetch(`https://thelasallian.com/wp-json/wp/v2/users/?search=${rawSearchInput}`);
+    const authors = await authorsSearched.json();
 
     res.setHeader(
         'Cache-Control',
@@ -40,7 +40,7 @@ export async function getServerSideProps({req, res, params}) {
             rawSearchInput: rawSearchInput,
             searchInput: searchInput,
             articles: articles,
-            users: users,
+            authors: authors,
         },
     };
 }
