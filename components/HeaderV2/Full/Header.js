@@ -75,7 +75,8 @@ export default function Header({
         if(searchBar === null) {
             return;
         };
-
+        
+        searchBar.focus();
         searchBar.addEventListener("keyup", logSearchInput);
     },[searchIsClicked]);
 
