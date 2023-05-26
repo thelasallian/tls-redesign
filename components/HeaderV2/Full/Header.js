@@ -62,26 +62,13 @@ export default function Header({
         setSearchValue(input);
     }
 
-    const searchInput = (event) => {
-        console.log(searchIsClicked);
-
-        if(event.key === "Enter") {
-            console.log("Pressed enter");
-            return;
-        }
+    const searchInput = (value) => {
+        console.log(value);
     }
 
     useEffect(() => {
-        if(searchIsClicked) {
-            console.log("add event listener");
-            window.addEventListener("keyup", searchInput);
-            return;
-        } else {
-            console.log("remove event");
-            window.addEventListener("keyup", searchInput);
-            return;
-        }
-    },[searchIsClicked]);
+        window.addEventListener("keyup", () => searchInput(searchIsClicked));
+    },[]);
 
     const startSearch = () => {
         console.log("You are searching: "+searchValue);
