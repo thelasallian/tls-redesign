@@ -63,6 +63,8 @@ export default function Header({
     }
 
     const searchInput = (event) => {
+        console.log(searchIsClicked);
+
         if(event.key === "Enter") {
             console.log("Pressed enter");
             return;
@@ -72,11 +74,11 @@ export default function Header({
     useEffect(() => {
         if(searchIsClicked) {
             console.log("add event listener");
-            window.addEventListener("keyup", searchInput, false);
+            window.addEventListener("keyup", searchInput);
             return;
         } else {
             console.log("remove event");
-            window.removeEventListener("keyup", searchInput, false);
+            window.addEventListener("keyup", searchInput);
             return;
         }
     },[searchIsClicked]);
