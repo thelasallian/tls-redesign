@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Full/Header.module.scss";
+import {useRouter } from "next/router";
 
 
 export default function Header({
@@ -10,6 +11,7 @@ export default function Header({
     const [navbarIsSticky, setNavbarIsSticky] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
     const [searchValue, setSearchValue] = useState("");
+    const router = useRouter();
 
     const compactWindowSize = 1050;
 
@@ -57,12 +59,17 @@ export default function Header({
         }
     }
 
-    var logSearchInput = (event) => {
-        const input = event.target.value;
+    const logSearchInput = (event) => {
+        let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
-            alert("Searched: "+input);
-            return;
+            searchInput = searchInput.replaceAll(" ","%20");
+            
+            router.push({
+                pathname: '/find/[searchInput]',
+                query: { searchInput: searchInput },
+            });
         }
+        return;
     }
 
     useEffect(() => {
