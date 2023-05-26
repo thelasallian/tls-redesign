@@ -64,10 +64,7 @@ export default function Header({
         if(event.key === "Enter" || event.keyCode === 13) {
             searchInput = searchInput.replaceAll(" ","%20");
             
-            router.push({
-                pathname: '/find/[searchInput]',
-                query: { searchInput: searchInput },
-            });
+            window.location = "/find/" + searchInput;
         }
         return;
     }
