@@ -150,6 +150,31 @@
             }
             
         }
+
+        .results_headline__wrapper {
+            font-weight: 700;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: row;
+
+            border-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom-width: 1px;
+            border-color: $gray;
+
+            &:not(:first-child) {
+                padding-top: 30px;
+            }
+
+        }
+
+        .results__cards__wrapper {
+            padding-top: 15px;
+
+            
+        }
     }
 
     .author__button__wrapper {

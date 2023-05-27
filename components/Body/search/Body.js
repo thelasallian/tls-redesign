@@ -85,8 +85,10 @@ export default function Body({authors, articles, searchInput, rawSearchInput}) {
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.author__articles__wrapper}>
-                {authorCards}
-                {articleCards}
+                <div className={styles.results_headline__wrapper}>Authors named "{searchInput}"</div>
+                <div className={styles.results__cards__wrapper}>{authorCards}</div>
+                <div className={styles.results_headline__wrapper}>Related articles mentioning "{searchInput}"</div>
+                <div className={styles.results__cards__wrapper}>{articleCards}</div>
             </div>
             <div className={styles.author__button__wrapper}>
                 {setLoading}
