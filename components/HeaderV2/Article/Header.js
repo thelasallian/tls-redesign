@@ -164,6 +164,31 @@ export default function Header({
         window.addEventListener("scroll", logCurrentYValue);
     },[]);
 
+    const logSearchInput = (event) => {
+        let searchInput = event.target.value;
+        if(event.key === "Enter" || event.keyCode === 13) {
+            searchInput = searchInput.replaceAll(" ","%20");
+            window.location = "/find/" + searchInput;
+            return;
+        }
+
+        if(event.key === "Escape") {
+            setSearchIsClicked(false);
+        }
+        return;
+    }
+
+    useEffect(() => {
+        const searchBar = document.querySelector("."+styles.navbar__input__search);
+
+        if(searchBar === null) {
+            return;
+        };
+        
+        searchBar.focus();
+        searchBar.addEventListener("keyup", logSearchInput);
+    },[searchIsClicked]);
+
     return (
         <div className={`${styles.header__wrapper__full} ${setSectionColor()}`}>
 

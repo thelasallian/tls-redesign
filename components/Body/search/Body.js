@@ -82,11 +82,19 @@ export default function Body({authors, articles, searchInput, rawSearchInput}) {
         )
     );
 
+    const setAuthorsSearched = (authors.length === 0) ? (
+        null
+    ) : (
+        <>
+            <div className={styles.results_headline__wrapper}>Authors named "{searchInput}"</div>
+            <div className={styles.results__cards__wrapper}>{authorCards}</div>
+        </>
+    );
+
     return (
         <div className={styles.body__wrapper__full}>
             <div className={styles.author__articles__wrapper}>
-                <div className={styles.results_headline__wrapper}>Authors named "{searchInput}"</div>
-                <div className={styles.results__cards__wrapper}>{authorCards}</div>
+                {setAuthorsSearched}
                 <div className={styles.results_headline__wrapper}>Related articles mentioning "{searchInput}"</div>
                 <div className={styles.results__cards__wrapper}>{articleCards}</div>
             </div>
