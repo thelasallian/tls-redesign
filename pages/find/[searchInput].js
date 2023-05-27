@@ -21,8 +21,8 @@ export default function FindPage({rawSearchInput, searchInput, articles, authors
 }
 
 export async function getServerSideProps({req, res, params}) {
-    const rawSearchInput = params.searchInput;
-    const searchInput = rawSearchInput.replaceAll("%20"," ");
+    const rawSearchInput = encodeURI(params.searchInput);
+    const searchInput = decodeURI(rawSearchInput);
 
     const articlesSearched = await fetch(`https://thelasallian.com/wp-json/wp/v2/posts?search=${rawSearchInput}&per_page=10&page=1&_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url`);
     const articles = await articlesSearched.json();

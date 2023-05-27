@@ -62,8 +62,7 @@ export default function Header({
     const logSearchInput = (event) => {
         let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
-            searchInput = searchInput.replaceAll(" ","%20");
-            window.location = "/find/" + searchInput;
+            router.replace(`/find/${encodeURI(searchInput)}`);
             return;
         }
 
@@ -136,7 +135,7 @@ export default function Header({
                     </div>
                     <div className={styles.dropdown__option__wrapper}>
                         <a href="/painting-with-lights">Painting with Lights</a>
-                    </div>
+                    </div>  
                 </div>
                 
             </div>
