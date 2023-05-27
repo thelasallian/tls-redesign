@@ -10,6 +10,15 @@ export default function Body({authors, articles, searchInput, rawSearchInput}) {
     const [isMobile, setIsMobile] = useState(false);
     const [hasMoreArticles, setHasMoreArticles] = useState(true);
 
+    const handlingWindowResize = () => {
+        setIsMobile(window.innerWidth < 750);
+    }
+    
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 750);
+        window.addEventListener("resize", handlingWindowResize);
+    },[]);
+
     const authorCards = authors.map(author => 
         <div key={`author__card__wrapper-${author.slug}`} className={styles.articles__card__wrapper}>
             <AuthorCard author={author}/>
