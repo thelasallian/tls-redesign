@@ -60,7 +60,7 @@ export default function Body({author, publishPressId, articles}) {
 
     const setLoading = (isFetching) ? (
         <div className={styles.body__loading__wrapper}>
-            Fetching more articles...
+            Grabbing more articles...
         </div>
     ) : (
         (hasMoreArticles) ? (

@@ -63,8 +63,12 @@ export default function Header({
         let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
             searchInput = searchInput.replaceAll(" ","%20");
-            
             window.location = "/find/" + searchInput;
+            return;
+        }
+
+        if(event.key === "Escape") {
+            setSearchIsClicked(false);
         }
         return;
     }

@@ -11,7 +11,7 @@ export default function Body({authors, articles, searchInput, rawSearchInput}) {
     const [hasMoreArticles, setHasMoreArticles] = useState(true);
 
     const authorCards = authors.map(author => 
-        <div className={styles.articles__card__wrapper}>
+        <div key={`author__card__wrapper-${author.slug}`} className={styles.articles__card__wrapper}>
             <AuthorCard author={author}/>
         </div>
     );
@@ -63,7 +63,7 @@ export default function Body({authors, articles, searchInput, rawSearchInput}) {
 
     const setLoading = (isFetching) ? (
         <div className={styles.body__loading__wrapper}>
-            Fetching more articles...
+            Grabbing more articles...
         </div>
     ) : (
         (hasMoreArticles) ? (
