@@ -62,7 +62,7 @@ export default function Header({
     const logSearchInput = (event) => {
         let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
-            router.replace(`/find/${encodeURI(searchInput)}`);
+            window.location = `/find/${encodeURI(searchInput)}`;
             return;
         }
 

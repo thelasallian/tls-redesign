@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Article/Header.module.scss";
 
 import dehtml from "@/components/Functions/dehtml";
+import { useRouter } from "next/router";
 
 
 export default function Header({
@@ -12,6 +13,7 @@ export default function Header({
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
     const [showHeadline, setShowHeadline] = useState(false);
+    const router = useRouter();
 
     const compactWindowSize = 1050;
     const headlineYValue = 500;
@@ -167,7 +169,7 @@ export default function Header({
     const logSearchInput = (event) => {
         let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
-            router.replace(`/find/${encodeURI(searchInput)}`);
+            window.location = `/find/${encodeURI(searchInput)}`;
             return;
         }
 

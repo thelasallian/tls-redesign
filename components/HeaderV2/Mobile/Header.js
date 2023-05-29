@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/HeaderV2/Mobile/Header.module.scss";
+import { useRouter } from "next/router";
 
 export default function Header({
     article,
@@ -7,6 +8,7 @@ export default function Header({
 }) {
     const [settingsIsClicked, setSettingsIsClicked] = useState(false);
     const [searchIsClicked, setSearchIsClicked] = useState(false);
+    const router = useRouter();
 
     const handleSettingsOnClick = () => {
         setSettingsIsClicked(prevState => !prevState);
@@ -63,7 +65,7 @@ export default function Header({
     const logSearchInput = (event) => {
         let searchInput = event.target.value;
         if(event.key === "Enter" || event.keyCode === 13) {
-            router.replace(`/find/${encodeURI(searchInput)}`);
+            window.location = `/find/${encodeURI(searchInput)}`;
             return;
         }
 
